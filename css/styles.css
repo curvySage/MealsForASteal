@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,300,400,600,700,800");
+/* line 3, /Users/Andre/Desktop/projects/cis444-proj/scss/styles.scss */
+body {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  margin: 0px;
+}
+
+/* -----------------------------
+HEADER SECTION
+----------------------------- */
+/* line 14, /Users/Andre/Desktop/projects/cis444-proj/scss/styles.scss */
+#header-section {
+  display: flex;
+  background-color: #cde3f8;
+  height: 70px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* line 22, /Users/Andre/Desktop/projects/cis444-proj/scss/styles.scss */
+#header-section .logo {
+  display: flex;
+  align-items: center;
+}
+
+/* line 26, /Users/Andre/Desktop/projects/cis444-proj/scss/styles.scss */
+#header-section .logo .title {
+  font-size: 36px;
+  font-weight: 400;
+}
+
+/* line 32, /Users/Andre/Desktop/projects/cis444-proj/scss/styles.scss */
+#header-section img {
+  height: 60px;
+  margin: 5px;
+}
+
+/*# sourceMappingURL=../css/styles.map */

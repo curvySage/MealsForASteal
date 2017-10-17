@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../scss/styles.css",
+	"sources": [
+		"../scss/styles.scss"
+	],
+	"sourcesContent": [
+		"@import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,600,700,800');\n\nbody {\n  font-family: 'Raleway', sans-serif;\n  text-align: center;\n  margin: 0px;\n}\n\n\n/* -----------------------------\nHEADER SECTION\n----------------------------- */\n\n#header-section {\n  display: flex;\n  background-color: #cde3f8;\n  height: 70px;\n  width: 100%;\n  justify-content: space-between;\n  align-items: center;\n\n  .logo {\n    display: flex;\n    align-items: center;\n\n    .title {\n      font-size: 36px;\n      font-weight: 400;\n    }\n  }\n\n  img {\n    height: 60px;\n    margin: 5px;\n  }\n}"
+	],
+	"mappings": "AAAA,OAAO,CAAC,8EAAI;;AAEZ,AAAA,IAAI,CAAC;EACH,WAAW,EAAE,qBAAsB;EACnC,UAAU,EAAE,MAAO;EACnB,MAAM,EAAE,GAAI;CACb;;AAGD;;gCAEgC;;AAEhC,AAAA,eAAe,CAAC;EACd,OAAO,EAAE,IAAK;EACd,gBAAgB,EAAE,OAAQ;EAC1B,MAAM,EAAE,IAAK;EACb,KAAK,EAAE,IAAK;EACZ,eAAe,EAAE,aAAc;EAC/B,WAAW,EAAE,MAAO;CAgBrB;;;AAtBD,AAQE,eARa,CAQb,KAAK,CAAC;EACJ,OAAO,EAAE,IAAK;EACd,WAAW,EAAE,MAAO;CAMrB;;;AAhBH,AAYI,eAZW,CAQb,KAAK,CAIH,MAAM,CAAC;EACL,SAAS,EAAE,IAAK;EAChB,WAAW,EAAE,GAAI;CAClB;;;AAfL,AAkBE,eAlBa,CAkBb,GAAG,CAAC;EACF,MAAM,EAAE,IAAK;EACb,MAAM,EAAE,GAAI;CACb",
+	"names": []
+}
