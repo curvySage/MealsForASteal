@@ -11,6 +11,9 @@ body {
 
 
 
+
+
+
 /* -----------------------------
 HEADER SECTION
 ----------------------------- */
@@ -59,6 +62,9 @@ HEADER SECTION
     }
   }
 }
+
+
+
 
 
 
@@ -176,7 +182,7 @@ CONTENT SECTION
           color: #585858;
         }
       }
-      
+
       .votes {
         display: flex;
         flex-direction: column;
@@ -221,7 +227,6 @@ CONTENT SECTION
       p {
         text-align: left;
       }
-
     }
 
     .comments {
@@ -229,9 +234,9 @@ CONTENT SECTION
       width: 580px;
 
       .comments-title {
-        font-size: 22px;  
+        font-size: 22px;
       }
-      
+
 
       a {
         text-decoration: none;
@@ -257,6 +262,151 @@ CONTENT SECTION
       border-radius: 4.2px;
       transition: all ease-in-out 0.2s;
       margin-top: 30px;
+    }
+  }
+
+  /* -----------------------------
+  Account
+  ----------------------------- */
+  .account-options {
+    margin: 20px 0px;
+
+    button {
+      width: 20rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .sign-in {
+      display: none;
+      .input-button {
+        display: flex;
+        font-size: 18px;
+        padding: 12px 50px;
+        border-color: #2595ff;
+        background-color: #2595ff;
+        color: white;
+        line-height: 1.25;
+        border: 1px solid transparent;
+        border-radius: 4.2px;
+        transition: all ease-in-out 0.2s;
+        margin-bottom: 30px;
+      }
+
+      .input-field {
+        display: flex;
+        flex-direction: column;
+        height: 2.5rem;
+        width: 20rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #eaeaea;
+        padding: 0 1rem;
+        margin: 0 10px 0 0;
+        line-height: 45px;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        font-weight: 200;
+      }
+    }
+
+    .sign-up {
+      display: none;
+      .input-button {
+        display: flex;
+        font-size: 18px;
+        padding: 12px 50px;
+        border-color: #2595ff;
+        background-color: #2595ff;
+        color: white;
+        line-height: 1.25;
+        border: 1px solid transparent;
+        border-radius: 4.2px;
+        transition: all ease-in-out 0.2s;
+        margin-bottom: 30px;
+      }
+      .input-field {
+        display: flex;
+        flex-direction: column;
+        height: 2.5rem;
+        width: 20rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #eaeaea;
+        padding: 0 1rem;
+        margin: 0 10px 0 0;
+        line-height: 45px;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        font-weight: 200;
+      }
+    }
+
+    .sign-out {
+      .input-button {
+        display: flex;
+        font-size: 18px;
+        padding: 12px 50px;
+        border-color: #2595ff;
+        background-color: #2595ff;
+        color: white;
+        line-height: 1.25;
+        border: 1px solid transparent;
+        border-radius: 4.2px;
+        transition: all ease-in-out 0.2s;
+        margin-bottom: 30px;
+      }
+    }
+
+    .account-settings {
+      .input-button {
+          display: flex;
+          font-size: 18px;
+          padding: 12px 50px;
+          border-color: #2595ff;
+          background-color: #2595ff;
+          color: white;
+          line-height: 1.25;
+          border: 1px solid transparent;
+          border-radius: 4.2px;
+          transition: all ease-in-out 0.2s;
+          margin-bottom: 30px;
+        }
+      .change-password {
+        display: none;
+        
+        .input-field {
+          display: flex;
+          flex-direction: column;
+          height: 2.5rem;
+          width: 20rem;
+          border: none;
+          border-radius: 5px;
+          background-color: #eaeaea;
+          padding: 0 1rem;
+          margin: 0 10px 0 0;
+          line-height: 45px;
+          margin-bottom: 10px;
+          font-size: 1.1rem;
+          font-weight: 200;
+        }
+      }
+
+      .delete-account {
+        .input-button {
+          display: flex;
+          font-size: 18px;
+          padding: 12px 50px;
+          border-color: #2595ff;
+          background-color: #ff3547;
+          color: white;
+          line-height: 1.25;
+          border: 1px solid transparent;
+          border-radius: 4.2px;
+          transition: all ease-in-out 0.2s;
+          margin-bottom: 30px;
+        }
+      }
     }
   }
 }

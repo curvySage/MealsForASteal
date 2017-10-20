@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Meals for a Steal</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/png" href="../img/favicon.png" />
+</head>
+
+<body>
+  <div id="header-section">
+    <div class="logo">
+      <!-- Will need to replace these links later -->
+      <a href="XXXXXX"><img src="../img/logo.svg" alt="logo"></a>
+      <div class="header-text">
+        <span class="title">Meals for a Steal</span>
+        <span class="current-page">Account</span>
+      </div>
+    </div>
+    <div class="account-selector">
+      <!-- Will need to replace these links later -->
+      <a href="XXXXXX"><img src="../img/user.svg" alt="account"></a>
+      <a class="username" href="XXXXXX">jamesParty</a>
+    </div>
+  </div>
+  <div id="content-section">
+    <div class="account-options">
+      <div class="sign-in">
+        <form action="/signin" method="post" id="subscribe-form" autocomplete="off">
+          <input type="username" value="" name="username" placeholder="Enter your username" class="input-field" required>
+          <input type="password" value="" name="password" placeholder="Enter your password" class="input-field" required>
+          <input type="submit" value="Sign In" name="subscribe" class="input-button">
+        </form>
+      </div>
+      <div class="sign-up">
+        <form action="/signup" method="post" id="subscribe-form" autocomplete="off">
+          <input type="username" value="" name="username" placeholder="Enter your username" class="input-field" required>
+          <input type="password" value="" name="password" placeholder="Enter your password" class="input-field" required>
+          <input type="password" value="" name="password" placeholder="Re-enter your password" class="input-field" required>
+          <input type="submit" value="Sign Up" name="subscribe" class="input-button">
+        </form>
+      </div>
+      <div class="sign-out">
+        <button class="input-button">Sign Out</button>
+      </div>
+      <div class="account-settings">
+        <button class="input-button">Change Password</button>
+        <div class="change-password">  
+          <form action="/changePassword" method="post" id="subscribe-form" autocomplete="off" class="change-password-form">
+            <input type="password" value="" name="password" placeholder="Enter your new password" class="input-field" required>
+            <input type="password" value="" name="password" placeholder="Re-enter your new password" class="input-field" required>
+            <input type="submit" value="Update Password" name="subscribe" class="input-button">
+          </form>
+        </div>
+        <div class="delete-account">
+          <button class="input-button">DELETE ACCOUNT</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <script src="../js/app.js"></script> -->
+</body>
