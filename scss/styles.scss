@@ -15,6 +15,7 @@ body {
 
 
 
+
 /* -----------------------------
 HEADER SECTION
 ----------------------------- */
@@ -63,6 +64,7 @@ HEADER SECTION
     }
   }
 }
+
 
 
 
@@ -414,6 +416,7 @@ CONTENT SECTION
 }
 
 
+
 /* -----------------------------
   Add Recipe
   ----------------------------- */
@@ -451,7 +454,6 @@ CONTENT SECTION
   }
 
   .add-recipe-photo {
-    //padding: top right bottom left
     padding: 10px 10px 10px 10px;
     margin: 0 0 20px;
     width: 28rem;
@@ -464,7 +466,7 @@ CONTENT SECTION
     border: {
       style: dashed;
       width: 3px;
-      color: grey;
+      color: #808080;
     }
 
     img {
@@ -562,65 +564,75 @@ CONTENT SECTION
     }
   }
 }
- /* -----------------------------
+
+
+/* -----------------------------
   Profile
    ----------------------------- */
-  .profile{
-    .profile-side{
-      margin: 10px auto 10px auto;
-      display: flex;
-      width: 800px;
-      border-radius: 7px;
-      box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
-      align-items: center;
-      background-color: white;
-      
-      img{
-        margin: 10px;
-        height:100px;
-        width: 100px;
+
+.profile {
+  .profile-side {
+    margin: 10px auto 10px auto;
+    display: flex;
+    width: 800px;
+    border-radius: 7px;
+    box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
+    align-items: center;
+    background-color: white;
+
+    img {
+      margin: 10px;
+      height: 100px;
+      width: 100px;
+    }
+    .account-details {
+      margin: 10px auto;
+
+      table {
+        border-collapse: collapse;
       }
-      .account-details{
-        margin:10px auto;
-        
-        table{ border-collapse: collapse;}
-        tr { border: none; }
-        td,th{
-          border-left: solid 1px lightgrey;
-          padding: 10px 10px 2px 10px;
-        }
-        .username{
-          margin: auto 10px auto 10px;
-          font-size: xx-large;
-        }
-        .info{
-          th{
-            font-size: medium;
-          }
+      tr {
+        border: none;
+      }
+      td,
+      th {
+        border-left: solid 1px #D3D3D3;
+        padding: 10px 10px 2px 10px;
+      }
+      .username {
+        margin: auto 10px auto 10px;
+        font-size: xx-large;
+      }
+      .info {
+        th {
+          font-size: medium;
         }
       }
     }
-    .posts-side{
-      display:flex;
-      flex-direction: column;
-      align-items: center;
-      .posts{
-        font-size: x-large;
-        padding: 5px;
-        margin: 35px auto 0px auto;
-        width: 800px;
-        border-radius: 7px;
-        background-color: white;
-        box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
-
-        a {
-          display: inline-block;
-          color: black;
-          text-align: center;
-          padding: 14px;
-          text-decoration: none;
-        }
-        a:hover { background-color: lightgrey;}
-      }
-    }    
   }
+  .posts-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .posts {
+      font-size: x-large;
+      padding: 5px;
+      margin: 35px auto 0px auto;
+      width: 800px;
+      border-radius: 7px;
+      background-color: white;
+      box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
+
+      a {
+        display: inline-block;
+        color: black;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+      }
+      a:hover {
+        background-color: #D3D3D3;
+      }
+    }
+  }
+}
