@@ -1,4 +1,5 @@
-><!doctype html>
+>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -15,7 +16,7 @@
       <a href="XXXXXX"><img src="../img/logo.svg" alt="logo"></a>
       <div class="header-text">
         <span class="title">Meals for a Steal</span>
-        <span class="current-page">Add Recipe</span>  
+        <span class="current-page">Add Recipe</span>
       </div>
     </div>
     <div class="account-selector">
@@ -28,45 +29,41 @@
     <!-- Stuff goes here -->
     <div class="add-recipe">
       <div class="add-recipe-title">
-	<span class="title-label">Title:</span>  
-	<input type="text" value="" placeholder="Title" class="recipe-title">
-	</input>
+        <span class="title-label">Title:</span>
+        <input type="text" value="" placeholder="Title" class="recipe-title">
+        </input>
       </div>
       <div class="add-recipe-photo">
-	<!-- Link here must direct user to his/her own photo directory -->
-	<a href="XXXX"><img src="../img/addphoto.svg" alt="add photo"></a>
-      	Upload Photo
+        <!-- Link here must direct user to his/her own photo directory -->
+        <a href="XXXX"><img src="../img/addphoto.svg" alt="add photo"></a> Upload Photo
       </div>
       <div class="add-recipe-ingredients">
-	<span class="ingredients-title">Ingredients:</span>
-
-	  <!-- Dynamically add/remove text fields for ingredients -->
-	  <form action="/addIngredient" method="post" id="ingredient-form" 
-		class="add-ingredient"> 
-	    <div class ="add-ingredient-input"> 
-	      <input type="text" value="" placeholder="Amount & Ingredient" 
-		     class="ingredient">
-	      </input>
-	      <img src="../img/plus.svg" alt="add">
-	      <img src="../img/minus.svg" alt="remove">
-	    </div>
-	  </form>
+        <span class="ingredients-title">Ingredients:</span>
+        <!-- Dynamically add/remove text fields for ingredients -->
+        <form action="/addIngredient" method="post" id="ingredient-form" class="add-ingredient">
+          <div class="add-ingredient-input">
+            <input type="text" value="" placeholder="Amount & Ingredient" class="ingredient">
+            </input>
+            <img src="../img/plus.svg" alt="add">
+            <img src="../img/minus.svg" alt="remove">
+          </div>
+        </form>
       </div>
       <div class="add-recipe-instructions">
-	<span class="instructions-title">Instructions:</span>
-	<textarea class="instructions" placeholder="Add instructions"></textarea>
-	
+        <span class="instructions-title">Instructions:</span>
+        <textarea class="instructions" placeholder="Add instructions"></textarea>
       </div>
       <!-- Submit form-->
       <form action="/addRecipe" method="post" id="add-recipe" class="add-recipe-form">
-	<div class="final-buttons">
-	  <input type="submit" value="Add" class="add-button">
-	  </input>
-	  <input type="reset" value="Clear" class="clear-button">
-	  </input>
-	</div>
+        <div class="final-buttons">
+          <input type="submit" value="Add" class="add-button">
+          </input>
+          <input type="reset" value="Clear" class="clear-button">
+          </input>
+        </div>
       </form>
-  </div>
-  <!-- <script src="../js/app.js"></script> -->
+    </div>
+    <!-- <script src="../js/app.js"></script> -->
 </body>
+
 </html>
