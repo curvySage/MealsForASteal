@@ -380,7 +380,7 @@ CONTENT SECTION
   background-color: #cccccc;
   border-style: dashed;
   border-width: 3px;
-  border-color: grey;
+  border-color: #808080;
 }
 
 .add-recipe .add-recipe-photo img {
@@ -470,4 +470,78 @@ CONTENT SECTION
   border: 1px solid transparent;
   border-radius: 4.2px;
   transition: all ease-in-out 0.2s;
+}
+
+/* -----------------------------
+  Profile
+   ----------------------------- */
+.profile .profile-side {
+  margin: 10px auto 10px auto;
+  display: flex;
+  width: 800px;
+  border-radius: 7px;
+  box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
+  align-items: center;
+  background-color: white;
+}
+
+.profile .profile-side img {
+  margin: 10px;
+  height: 100px;
+  width: 100px;
+}
+
+.profile .profile-side .account-details {
+  margin: 10px auto;
+}
+
+.profile .profile-side .account-details table {
+  border-collapse: collapse;
+}
+
+.profile .profile-side .account-details tr {
+  border: none;
+}
+
+.profile .profile-side .account-details td,
+.profile .profile-side .account-details th {
+  border-left: solid 1px #D3D3D3;
+  padding: 10px 10px 2px 10px;
+}
+
+.profile .profile-side .account-details .username {
+  margin: auto 10px auto 10px;
+  font-size: xx-large;
+}
+
+.profile .profile-side .account-details .info th {
+  font-size: medium;
+}
+
+.profile .posts-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile .posts-side .posts {
+  font-size: x-large;
+  padding: 5px;
+  margin: 35px auto 0px auto;
+  width: 800px;
+  border-radius: 7px;
+  background-color: white;
+  box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
+}
+
+.profile .posts-side .posts a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.profile .posts-side .posts a:hover {
+  background-color: #D3D3D3;
 }
