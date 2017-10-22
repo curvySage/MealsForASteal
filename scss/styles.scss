@@ -14,6 +14,7 @@ body {
 
 
 
+
 /* -----------------------------
 HEADER SECTION
 ----------------------------- */
@@ -62,6 +63,7 @@ HEADER SECTION
     }
   }
 }
+
 
 
 
@@ -360,21 +362,21 @@ CONTENT SECTION
 
     .account-settings {
       .input-button {
-          display: flex;
-          font-size: 18px;
-          padding: 12px 50px;
-          border-color: #2595ff;
-          background-color: #2595ff;
-          color: white;
-          line-height: 1.25;
-          border: 1px solid transparent;
-          border-radius: 4.2px;
-          transition: all ease-in-out 0.2s;
-          margin-bottom: 30px;
-        }
+        display: flex;
+        font-size: 18px;
+        padding: 12px 50px;
+        border-color: #2595ff;
+        background-color: #2595ff;
+        color: white;
+        line-height: 1.25;
+        border: 1px solid transparent;
+        border-radius: 4.2px;
+        transition: all ease-in-out 0.2s;
+        margin-bottom: 30px;
+      }
       .change-password {
         display: none;
-        
+
         .input-field {
           display: flex;
           flex-direction: column;
@@ -406,6 +408,156 @@ CONTENT SECTION
           transition: all ease-in-out 0.2s;
           margin-bottom: 30px;
         }
+      }
+    }
+  }
+}
+
+
+/* -----------------------------
+  Add Recipe
+  ----------------------------- */
+
+.add-recipe {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  align-items: center;
+  margin: 20px 20px 20px 20px;
+  padding: 10px 20px 20px 20px;
+  border-radius: 7px;
+  box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
+
+  .add-recipe-title {
+    margin: 0 0 20px;
+
+    .title-label {
+      font-size: 22px;
+    }
+    .recipe-title {
+      display: flex;
+      height: 2.5rem;
+      width: 20rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #eaeaea;
+      padding: 0 1rem;
+      margin: 0 10px 0 0;
+      line-height: 45px;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      font-weight: 200;
+    }
+  }
+
+  .add-recipe-photo {
+    //padding: top right bottom left
+    padding: 10px 10px 10px 10px;
+    margin: 0 0 20px;
+    width: 28rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #cccccc;
+
+    border: {
+      style: dashed;
+      width: 3px;
+      color: grey;
+    }
+
+    img {
+      width: 120px;
+      cursor: pointer;
+    }
+  }
+
+  .add-recipe-ingredients {
+
+    .ingredients-title {
+      font-size: 22px;
+    }
+
+    .add-ingredient {
+      .add-ingredient-input {
+        display: flex;
+        .ingredient {
+          height: 2.5rem;
+          width: 20rem;
+          border: none;
+          border-radius: 5px;
+          background-color: #eaeaea;
+          padding: 0 1rem;
+          line-height: 45px;
+          margin-bottom: 10px;
+          font-size: 1.1rem;
+          font-weight: 200;
+        }
+
+        img {
+          align-self: flex-start;
+          margin: 0 0 0 0.5rem;
+          width: 2rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .add-recipe-instructions {
+    display: flex;
+    flex-direction: column;
+
+    .instructions-title {
+      font-size: 22px;
+    }
+
+    .instructions {
+      height: 20rem;
+      width: 30rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #eaeaea;
+      padding: 0 1rem;
+      line-height: 45px;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      font-weight: 200;
+      resize: none;
+    }
+  }
+
+  .add-recipe-form {
+    .final-buttons {
+      display: flex;
+      margin: 20px;
+      .add-button {
+        cursor: pointer;
+        font-size: 18px;
+        padding: 12px 50px;
+        border-color: #88C057;
+        background-color: #88C057;
+        color: white;
+        line-height: 1.25;
+        border: 1px solid transparent;
+        border-radius: 4.2px;
+        transition: all ease-in-out 0.2s;
+        margin: 0 .5rem;
+      }
+
+      .clear-button {
+        cursor: pointer;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 12px 50px;
+        border-color: #A82116;
+        background-color: #A82116;
+        color: white;
+        line-height: 1.25;
+        border: 1px solid transparent;
+        border-radius: 4.2px;
+        transition: all ease-in-out 0.2s;
       }
     }
   }
