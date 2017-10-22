@@ -271,17 +271,19 @@ CONTENT SECTION
   Account
   ----------------------------- */
   .account-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 20px 0px;
 
     button {
-      width: 20rem;
+      width: 22rem;
       display: flex;
       justify-content: center;
     }
 
-    .sign-in {
-      display: none;
-      .input-button {
+    .input-button {
         display: flex;
         font-size: 18px;
         padding: 12px 50px;
@@ -299,7 +301,7 @@ CONTENT SECTION
         display: flex;
         flex-direction: column;
         height: 2.5rem;
-        width: 20rem;
+        width: 18rem;
         border: none;
         border-radius: 5px;
         background-color: #eaeaea;
@@ -310,38 +312,14 @@ CONTENT SECTION
         font-size: 1.1rem;
         font-weight: 200;
       }
+
+    .sign-in {
+      display: none;
     }
 
     .sign-up {
       display: none;
-      .input-button {
-        display: flex;
-        font-size: 18px;
-        padding: 12px 50px;
-        border-color: #2595ff;
-        background-color: #2595ff;
-        color: white;
-        line-height: 1.25;
-        border: 1px solid transparent;
-        border-radius: 4.2px;
-        transition: all ease-in-out 0.2s;
-        margin-bottom: 30px;
-      }
-      .input-field {
-        display: flex;
-        flex-direction: column;
-        height: 2.5rem;
-        width: 20rem;
-        border: none;
-        border-radius: 5px;
-        background-color: #eaeaea;
-        padding: 0 1rem;
-        margin: 0 10px 0 0;
-        line-height: 45px;
-        margin-bottom: 10px;
-        font-size: 1.1rem;
-        font-weight: 200;
-      }
+      
     }
 
     .sign-out {
@@ -361,37 +339,12 @@ CONTENT SECTION
     }
 
     .account-settings {
-      .input-button {
-        display: flex;
-        font-size: 18px;
-        padding: 12px 50px;
-        border-color: #2595ff;
-        background-color: #2595ff;
-        color: white;
-        line-height: 1.25;
-        border: 1px solid transparent;
-        border-radius: 4.2px;
-        transition: all ease-in-out 0.2s;
-        margin-bottom: 30px;
-      }
+      
       .change-password {
         display: none;
-
-        .input-field {
-          display: flex;
-          flex-direction: column;
-          height: 2.5rem;
-          width: 20rem;
-          border: none;
-          border-radius: 5px;
-          background-color: #eaeaea;
-          padding: 0 1rem;
-          margin: 0 10px 0 0;
-          line-height: 45px;
-          margin-bottom: 10px;
-          font-size: 1.1rem;
-          font-weight: 200;
-        }
+        flex-direction: column;
+        align-items: center;
+        
       }
 
       .delete-account {

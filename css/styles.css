@@ -247,81 +247,55 @@ CONTENT SECTION
 }
 
 #content-section .account-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 20px 0px;
 }
 
 #content-section .account-options button {
-  width: 20rem;
+  width: 22rem;
   display: flex;
   justify-content: center;
+}
+
+#content-section .account-options .input-button {
+  display: flex;
+  font-size: 18px;
+  padding: 12px 50px;
+  border-color: #2595ff;
+  background-color: #2595ff;
+  color: white;
+  line-height: 1.25;
+  border: 1px solid transparent;
+  border-radius: 4.2px;
+  transition: all ease-in-out 0.2s;
+  margin-bottom: 30px;
+}
+
+#content-section .account-options .input-field {
+  display: flex;
+  flex-direction: column;
+  height: 2.5rem;
+  width: 18rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #eaeaea;
+  padding: 0 1rem;
+  margin: 0 10px 0 0;
+  line-height: 45px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 200;
 }
 
 #content-section .account-options .sign-in {
   display: none;
 }
 
-#content-section .account-options .sign-in .input-button {
-  display: flex;
-  font-size: 18px;
-  padding: 12px 50px;
-  border-color: #2595ff;
-  background-color: #2595ff;
-  color: white;
-  line-height: 1.25;
-  border: 1px solid transparent;
-  border-radius: 4.2px;
-  transition: all ease-in-out 0.2s;
-  margin-bottom: 30px;
-}
-
-#content-section .account-options .sign-in .input-field {
-  display: flex;
-  flex-direction: column;
-  height: 2.5rem;
-  width: 20rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #eaeaea;
-  padding: 0 1rem;
-  margin: 0 10px 0 0;
-  line-height: 45px;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-  font-weight: 200;
-}
-
 #content-section .account-options .sign-up {
   display: none;
-}
-
-#content-section .account-options .sign-up .input-button {
-  display: flex;
-  font-size: 18px;
-  padding: 12px 50px;
-  border-color: #2595ff;
-  background-color: #2595ff;
-  color: white;
-  line-height: 1.25;
-  border: 1px solid transparent;
-  border-radius: 4.2px;
-  transition: all ease-in-out 0.2s;
-  margin-bottom: 30px;
-}
-
-#content-section .account-options .sign-up .input-field {
-  display: flex;
-  flex-direction: column;
-  height: 2.5rem;
-  width: 20rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #eaeaea;
-  padding: 0 1rem;
-  margin: 0 10px 0 0;
-  line-height: 45px;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-  font-weight: 200;
 }
 
 #content-section .account-options .sign-out .input-button {
@@ -338,38 +312,10 @@ CONTENT SECTION
   margin-bottom: 30px;
 }
 
-#content-section .account-options .account-settings .input-button {
-  display: flex;
-  font-size: 18px;
-  padding: 12px 50px;
-  border-color: #2595ff;
-  background-color: #2595ff;
-  color: white;
-  line-height: 1.25;
-  border: 1px solid transparent;
-  border-radius: 4.2px;
-  transition: all ease-in-out 0.2s;
-  margin-bottom: 30px;
-}
-
 #content-section .account-options .account-settings .change-password {
   display: none;
-}
-
-#content-section .account-options .account-settings .change-password .input-field {
-  display: flex;
   flex-direction: column;
-  height: 2.5rem;
-  width: 20rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #eaeaea;
-  padding: 0 1rem;
-  margin: 0 10px 0 0;
-  line-height: 45px;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-  font-weight: 200;
+  align-items: center;
 }
 
 #content-section .account-options .account-settings .delete-account .input-button {
