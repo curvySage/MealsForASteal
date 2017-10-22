@@ -1,0 +1,591 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:200,300,400,600,700,800');
+
+body {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  margin: 0px;
+  background-color: #fafafa;
+}
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------
+HEADER SECTION
+----------------------------- */
+
+#header-section {
+  display: flex;
+  background-color: #fff;
+  height: 50px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+
+
+  .logo {
+    display: flex;
+    align-items: center;
+
+    .header-text {
+      .title {
+        font-size: 24px;
+        font-weight: 400;
+        margin-right: 10px;
+      }
+    }
+
+    img {
+      height: 40px;
+      margin: 5px;
+    }
+  }
+
+  .account-selector {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+    .username {
+      font-size: 14px;
+      color: black;
+      text-decoration: none;
+    }
+
+    img {
+      height: 20px;
+      margin: 5px 5px 0px 0px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+/* -----------------------------
+CONTENT SECTION
+----------------------------- */
+
+#content-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 800px;
+  justify-content: center;
+  margin: 0px auto 20px auto;
+
+  /* -----------------------------
+  Homepage postings
+  ----------------------------- */
+  .page-posting {
+    display: flex;
+    height: 150px; // background-color: #ccc;
+    width: 800px;
+    align-items: center;
+    margin: 20px 20px 0px 20px;
+    border-radius: 7px;
+    box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
+
+
+
+    .posting-number {
+      font-size: 32px;
+      color: #8e8e8e;
+      margin: 20px;
+      width: 40px;
+    }
+
+    .votes {
+      display: flex;
+      flex-direction: column;
+      font-size: 44px;
+      margin: 20px;
+      align-items: center;
+      width: 50px;
+
+      img {
+        height: 22px;
+        width: 22px;
+        cursor: pointer;
+      }
+    }
+
+    img {
+      height: 120px;
+      width: 200px;
+      cursor: pointer;
+    }
+
+    .posting-details {
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .food-title {
+        font-size: 32px;
+        cursor: pointer;
+      }
+
+      .date {
+        color: #7f7f7f;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+
+  /* -----------------------------
+  Recipe postings
+  ----------------------------- */
+  .recipe-posting {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    align-items: center;
+    margin: 20px 20px 0px 20px;
+    padding: 10px 20px 20px 20px;
+    border-radius: 7px;
+    box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
+
+    .recipe-header {
+      display: flex;
+      width: 600px;
+      height: 100px;
+
+      .posting-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        a {
+          text-decoration: none;
+          color: black;
+        }
+
+        .food-title {
+          font-size: 24px;
+        }
+
+        .date {
+          color: #585858;
+        }
+      }
+
+      .votes {
+        display: flex;
+        flex-direction: column;
+        font-size: 22px;
+        margin: 20px;
+        align-items: center;
+        width: 50px;
+
+        img {
+          height: 18px;
+          width: 18px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .finished-food {
+      width: 600px;
+      margin: 0px 0px 20px 0px;
+    }
+
+    .recipe-details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      font-size: 16px;
+      width: 580px;
+
+      .detail-title {
+        font-size: 22px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      p {
+        text-align: left;
+      }
+    }
+
+    .comments {
+      text-align: left;
+      width: 580px;
+
+      .comments-title {
+        font-size: 22px;
+      }
+
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .comment-date {
+        color: #585858;
+      }
+    }
+  }
+
+  .load-more {
+    button {
+      display: flex;
+      font-size: 18px;
+      padding: 12px 50px;
+      border-color: #2595ff;
+      background-color: #2595ff;
+      color: white;
+      line-height: 1.25;
+      border: 1px solid transparent;
+      border-radius: 4.2px;
+      transition: all ease-in-out 0.2s;
+      margin-top: 30px;
+    }
+  }
+
+  /* -----------------------------
+  Account
+  ----------------------------- */
+  .account-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px;
+
+    button {
+      width: 22rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .input-button {
+        display: flex;
+        font-size: 18px;
+        padding: 12px 50px;
+        border-color: #2595ff;
+        background-color: #2595ff;
+        color: white;
+        line-height: 1.25;
+        border: 1px solid transparent;
+        border-radius: 4.2px;
+        transition: all ease-in-out 0.2s;
+        margin-bottom: 30px;
+      }
+
+      .input-field {
+        display: flex;
+        flex-direction: column;
+        height: 2.5rem;
+        width: 18rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #eaeaea;
+        padding: 0 1rem;
+        margin: 0 10px 0 0;
+        line-height: 45px;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        font-weight: 200;
+      }
+
+    .sign-in {
+      display: none;
+    }
+
+    .sign-up {
+      display: none;
+      
+    }
+
+    .sign-out {
+      .input-button {
+        display: flex;
+        font-size: 18px;
+        padding: 12px 50px;
+        border-color: #2595ff;
+        background-color: #2595ff;
+        color: white;
+        line-height: 1.25;
+        border: 1px solid transparent;
+        border-radius: 4.2px;
+        transition: all ease-in-out 0.2s;
+        margin-bottom: 30px;
+      }
+    }
+
+    .account-settings {
+      
+      .change-password {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        
+      }
+
+      .delete-account {
+        .input-button {
+          display: flex;
+          font-size: 18px;
+          padding: 12px 50px;
+          border-color: #2595ff;
+          background-color: #ff3547;
+          color: white;
+          line-height: 1.25;
+          border: 1px solid transparent;
+          border-radius: 4.2px;
+          transition: all ease-in-out 0.2s;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+
+
+
+/* -----------------------------
+  Add Recipe
+  ----------------------------- */
+
+.add-recipe {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  align-items: center;
+  margin: 20px 20px 20px 20px;
+  padding: 10px 20px 20px 20px;
+  border-radius: 7px;
+  box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
+
+  .add-recipe-title {
+    margin: 0 0 20px;
+
+    .title-label {
+      font-size: 22px;
+    }
+    .recipe-title {
+      display: flex;
+      height: 2.5rem;
+      width: 20rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #eaeaea;
+      padding: 0 1rem;
+      margin: 0 10px 0 0;
+      line-height: 45px;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      font-weight: 200;
+    }
+  }
+
+  .add-recipe-photo {
+    padding: 10px 10px 10px 10px;
+    margin: 0 0 20px;
+    width: 28rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #cccccc;
+
+    border: {
+      style: dashed;
+      width: 3px;
+      color: #808080;
+    }
+
+    img {
+      width: 120px;
+      cursor: pointer;
+    }
+  }
+
+  .add-recipe-ingredients {
+
+    .ingredients-title {
+      font-size: 22px;
+    }
+
+    .add-ingredient {
+      .add-ingredient-input {
+        display: flex;
+        .ingredient {
+          height: 2.5rem;
+          width: 20rem;
+          border: none;
+          border-radius: 5px;
+          background-color: #eaeaea;
+          padding: 0 1rem;
+          line-height: 45px;
+          margin-bottom: 10px;
+          font-size: 1.1rem;
+          font-weight: 200;
+        }
+
+        img {
+          align-self: flex-start;
+          margin: 0 0 0 0.5rem;
+          width: 2rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .add-recipe-instructions {
+    display: flex;
+    flex-direction: column;
+
+    .instructions-title {
+      font-size: 22px;
+    }
+
+    .instructions {
+      height: 20rem;
+      width: 30rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #eaeaea;
+      padding: 0 1rem;
+      line-height: 45px;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      font-weight: 200;
+      resize: none;
+    }
+  }
+
+  .add-recipe-form {
+    .final-buttons {
+      display: flex;
+      margin: 20px;
+      .add-button {
+        cursor: pointer;
+        font-size: 18px;
+        padding: 12px 50px;
+        border-color: #88C057;
+        background-color: #88C057;
+        color: white;
+        line-height: 1.25;
+        border: 1px solid transparent;
+        border-radius: 4.2px;
+        transition: all ease-in-out 0.2s;
+        margin: 0 .5rem;
+      }
+
+      .clear-button {
+        cursor: pointer;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 12px 50px;
+        border-color: #A82116;
+        background-color: #A82116;
+        color: white;
+        line-height: 1.25;
+        border: 1px solid transparent;
+        border-radius: 4.2px;
+        transition: all ease-in-out 0.2s;
+      }
+    }
+  }
+}
+
+
+/* -----------------------------
+  Profile
+   ----------------------------- */
+
+.profile {
+  .profile-side {
+    margin: 10px auto 10px auto;
+    display: flex;
+    width: 800px;
+    border-radius: 7px;
+    box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
+    align-items: center;
+    background-color: white;
+
+    img {
+      margin: 10px;
+      height: 100px;
+      width: 100px;
+    }
+    .account-details {
+      margin: 10px auto;
+
+      table {
+        border-collapse: collapse;
+      }
+      tr {
+        border: none;
+      }
+      td,
+      th {
+        border-left: solid 1px #D3D3D3;
+        padding: 10px 10px 2px 10px;
+      }
+      .username {
+        margin: auto 10px auto 10px;
+        font-size: xx-large;
+      }
+      .info {
+        th {
+          font-size: medium;
+        }
+      }
+    }
+  }
+  .posts-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .posts {
+      font-size: x-large;
+      padding: 5px;
+      margin: 35px auto 0px auto;
+      width: 800px;
+      border-radius: 7px;
+      background-color: white;
+      box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
+
+      a {
+        display: inline-block;
+        color: black;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+      }
+      a:hover {
+        background-color: #D3D3D3;
+      }
+    }
+  }
+}
