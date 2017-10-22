@@ -1,9 +1,10 @@
 //===INIT VARIABLES===
 //Data List of Filler Posts to simulate load more button
 var loadMore = [];
-var loadStr = '<div class="load-more"><button id="loadmore">Load More</button></div>';
+var loadStr = '';
 //Keep Position in Load More Array (What you have loaded so far)
 var curNum = 0;
+var contentBlock = document.getElementById("content-section");
 
 //Create filler posts using struct to load into loadMore
 var post1 = {title:"Bacon Cheeseburger",postTime:"2 hours ago",user:"coolguy32",rating:"8"};
@@ -23,9 +24,7 @@ function makeContent(){
 "use strict";
 //Initialize I/set I counter to 0
 var i = 0;
-
-//Remove Load More Button tags and text
-loadStr = loadStr.slice(0,-69); 
+var loadButton = document.getElementsByClassName("load-more");
 
 //Make 3 Units of Content OR However many left in loadMore[]
 //Maybe put img src inside post object too
@@ -33,29 +32,35 @@ loadStr = loadStr.slice(0,-69);
 //Example '...http://www.mealsforsteal.com/u/'+user+'...' or postid or something
 
 while(i < 3 && curNum <= loadMore.length-1){
-	loadStr += '<div class="page-posting"><span class="posting-number">'
+
+//Create a new postElement of tag div and give it a class name 
+	var postElem = document.createElement('div');
+	postElem.className="page-posting";
+	contentBlock.insertBefore(postElem,loadButton[0]);
+
+	loadStr = '<span class="posting-number">'
 	+(curNum+5)+'</span><div class="votes"><img src="../img/voting/upvote-not-selected.svg" alt="upvote"><span class="score">'
 	+loadMore[curNum].rating+'</span><img src="../img/voting/downvote-not-selected.svg" alt="downvote"></div><img class="thumbnail" src="../img/filler/food2.png"><div class="posting-details"><span class="food-title">'
 	+loadMore[curNum].title+'</span><span class="date">'
 	+loadMore[curNum].postTime+'</span><a class="author" href="XXXXXX">'
-	+loadMore[curNum].user+'</a></div></div><br>';
-	document.getElementById("dynamicLoading").innerHTML = loadStr;
+	+loadMore[curNum].user+'</a></div>';
+	postElem.innerHTML = loadStr;
 	
 	curNum+=1;
 	i+=1;
 	}//end While
 	
+
 //If you can still load more stuff re-add the load more button
-if(curNum < loadMore.length-1){
-	loadStr += '<div class="load-more"><button id="loadmore">Load More</button></div>';
-	document.getElementById("dynamicLoading").innerHTML = loadStr;
+if(curNum == loadMore.length){
+	//Remove Load More Button tags and text
+	contentBlock.removeChild(loadButton[0]);
 	}
 }
 
 //===LISTENERS===
 //When you click on the load more button class
-var elem = document.getElementById('dynamicLoading');
-if(elem){
-  elem.addEventListener('click', makeContent);
-  document.getElementById("dynamicLoading").innerHTML = loadStr;
+var buttonElem = document.getElementById('loadmore');
+if(buttonElem){
+  buttonElem.addEventListener('click', makeContent);
 }
