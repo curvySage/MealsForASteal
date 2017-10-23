@@ -40,7 +40,8 @@
         <span class="ingredients-title">Ingredients:</span>
         <!-- Dynamically add/remove text fields for ingredients -->
         <form action="/addIngredient" method="post" id="ingredient-form" class="add-ingredient">
-          <div class="add-ingredient-input">
+          <div class="add-ingredient-input" id="ingredients-form">
+            <div></div>
             <input type="text" value="" placeholder="Amount & Ingredient" class="ingredient" id = "items">
             </input>
             <img src="../img/plus.svg" alt="add" onclick = "addItem();">

@@ -33,15 +33,23 @@ function loadImg(){
 }
 
 function addItem(){
-	var elem = document.getElementById("list");
-	elem.innerHTML += document.getElementById("items").value + "\n";
+	var elem = document.getElementById("ingredient-form");
+	// elem.innerHTML += document.getElementById("items").value + "\n";
+	// for (var i = 0; i < 4; i++) {
+ //  		elem.removeChild(elem.lastChild);
+ //  	}
+  	// elem.removeChild(elem.lastChild);
+  	// elem.removeChild(elem.lastChild);
+	elem.innerHTML += '<div class="add-ingredient-input" id="ingredients-form"><div></div><input type="text" value="" placeholder="Amount & Ingredient" class="ingredient" id = "items"></input><img src="../img/plus.svg" alt="add" onclick = "addItem();"><img src="../img/minus.svg" alt="remove" onclick = "removeItem();"></div>';
 }
 
 function removeItem(){
-	var allTxt = document.getElementById("list");
-	var rmTxt = document.getElementById("items");
+	var select = document.getElementById('ingredient-form');
+  	select.removeChild(select.lastChild);
+	// var allTxt = document.getElementById("list");
+	// var rmTxt = document.getElementById("items");
 	
-	allTxt.value = allTxt.value - rmTxt.value;	
+	// allTxt.value = allTxt.value - rmTxt.value;	
 	}
 	
 function clearAll(){
