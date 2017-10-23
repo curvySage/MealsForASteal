@@ -34,7 +34,7 @@
       </div>
       <div class="add-recipe-photo">
         <!-- Link here must direct user to his/her own photo directory -->
-        <a href="XXXX"><img src="../img/addphoto.svg" alt="add photo"></a> Upload Photo
+        <a href="XXXX"><img src="../img/addphoto.svg" alt="add photo" id = "photo"></a> Upload Photo
       </div>
       <div class="add-recipe-ingredients">
         <span class="ingredients-title">Ingredients:</span>
@@ -43,8 +43,8 @@
           <div class="add-ingredient-input">
             <input type="text" value="" placeholder="Amount & Ingredient" class="ingredient">
             </input>
-            <img src="../img/plus.svg" alt="add">
-            <img src="../img/minus.svg" alt="remove">
+            <img src="../img/plus.svg" alt="add" onclick = "addItem();">
+            <img src="../img/minus.svg" alt="remove" onclick = "removeItem();>
           </div>
         </form>
       </div>
@@ -57,12 +57,12 @@
         <div class="final-buttons">
           <input type="submit" value="Add" class="add-button">
           </input>
-          <input type="reset" value="Clear" class="clear-button">
+          <input type="reset" value="Clear" class="clear-button" onclick = "clearAll();)>
           </input>
         </div>
       </form>
     </div>
-    <!-- <script src="../js/app.js"></script> -->
+    <script src="../js/app.js"></script>
 </body>
 
 </html>
