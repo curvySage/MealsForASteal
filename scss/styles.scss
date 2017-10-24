@@ -98,25 +98,6 @@ label {
   width: 800px;
   justify-content: center;
   margin: 0px auto 20px auto; // button {
-  //   display: flex;
-  //   font-size: 18px;
-  //   padding: 12px 50px;
-  //   border-color: #2595ff;
-  //   background-color: #2595ff;
-  //   color: white;
-  //   line-height: 1.25;
-  //   border: 1px solid transparent;
-  //   border-radius: 4.2px;
-  //   transition: all ease-in-out 0.2s;
-  //   margin-top: 30px;
-  // }
-  // button:hover,
-  // button:focus {
-  //   background-color: #007cf1;
-  //   background-image: none;
-  //   border-color: #007cf1;
-  //   color: white;
-  // }
   .posting-selection {
     display: flex;
     flex-direction: column;
@@ -127,28 +108,7 @@ label {
     width: 100%;
     border-radius: 7px;
     background-color: white;
-    box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75); // .search-input {
-    //   margin-top: 5px;
-    //   height: 40px;
-    //   .input-group {
-    //     height: 35px;
-    //     width: 150px;
-    //     input {
-    //       font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
-    //     }
-    //     .search-field {
-    //       height: 100%;
-    //       padding: 0 10px;
-    //       margin: 0;
-    //       font-size: 14px;
-    //     }
-    //     .search-field::placeholder {
-    //       font-size: 14px;
-    //       text-align: center;
-    //       color: #ccc;
-    //     }
-    //   }
-    // }
+    box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75); 
     a {
       display: inline-block;
       color: black;
@@ -179,19 +139,13 @@ label {
 
 
 
-
-
-
-
-
-
 /* -----------------------------
   Homepage postings
   ----------------------------- */
 
 .page-posting {
   display: flex;
-  height: 150px; // background-color: #ccc;
+  height: 150px;
   width: 800px;
   align-items: center;
   margin: 20px 20px 0px 20px;
@@ -271,7 +225,7 @@ label {
       font-size: 18px;
       margin: 10px;
       width: 100px;
-      justify-content: space-evenly;
+      justify-content: space-between;
     }
 
     .posting-details {
@@ -428,7 +382,6 @@ label {
       font-size: 18px;
       padding: 12px 50px;
       justify-content: center;
-      border-color: #2595ff;
       background-color: #2595ff;
       color: white;
       line-height: 1.25;
@@ -444,7 +397,6 @@ label {
     button:focus {
       background-color: #007cf1;
       background-image: none;
-      border-color: #007cf1;
       color: white;
     }
   }
@@ -496,7 +448,6 @@ label {
     display: flex;
     font-size: 18px;
     padding: 12px 50px;
-    border-color: #2595ff;
     background-color: #2595ff;
     color: white;
     line-height: 1.25;
@@ -510,7 +461,6 @@ label {
   button:focus {
     background-color: #007cf1;
     background-image: none;
-    border-color: #007cf1;
     color: white;
   }
 }
@@ -521,7 +471,6 @@ label {
   display: flex;
   font-size: 18px;
   padding: 12px 50px;
-  border-color: #43A047;
   background-color: #43A047;
   color: white;
   line-height: 1.25;
@@ -536,7 +485,6 @@ label {
 .go-home:focus {
   background-color: #2E7D32;
   background-image: none;
-  border-color: #2E7D32;
   color: white;
 }
 
@@ -570,7 +518,6 @@ label {
     display: flex;
     font-size: 18px;
     padding: 12px 50px;
-    border-color: #2595ff;
     background-color: #2595ff;
     color: white;
     line-height: 1.25;
@@ -584,7 +531,6 @@ label {
   .input-button:focus {
     background-color: #007cf1;
     background-image: none;
-    border-color: #007cf1;
     color: white;
   }
 
@@ -617,7 +563,6 @@ label {
       display: flex;
       font-size: 18px;
       padding: 12px 50px;
-      border-color: #2595ff;
       background-color: #2595ff;
       color: white;
       line-height: 1.25;
@@ -631,7 +576,6 @@ label {
     button:focus {
       background-color: #007cf1;
       background-image: none;
-      border-color: #007cf1;
       color: white;
     }
   }
@@ -649,7 +593,6 @@ label {
         display: flex;
         font-size: 18px;
         padding: 12px 50px;
-        border-color: #2595ff;
         background-color: #ff3547;
         color: white;
         line-height: 1.25;
@@ -663,7 +606,6 @@ label {
       button:focus {
         background-color: red;
         background-image: none;
-        border-color: red;
         color: white;
       }
     }
@@ -759,6 +701,7 @@ label {
 
       .add-ingredient-input {
         display: flex;
+        flex-direction: column;
         .ingredient {
           height: 2.5rem;
           width: 20rem;
@@ -812,7 +755,6 @@ label {
         cursor: pointer;
         font-size: 18px;
         padding: 12px 50px;
-        border-color: #88C057;
         background-color: #88C057;
         color: white;
         line-height: 1.25;
@@ -827,7 +769,6 @@ label {
         cursor: pointer;
         font-size: 18px;
         padding: 12px 50px;
-        border-color: #A82116;
         background-color: #A82116;
         color: white;
         line-height: 1.25;
@@ -994,7 +935,6 @@ label {
     font-size: 14px;
     margin: 5px 0 5px;
     padding: 12px 50px;
-    border-color: #A82116;
     background-color: #A82116;
     color: white;
     border: 1px solid transparent;

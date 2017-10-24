@@ -3,6 +3,7 @@ var downVote = "../img/voting/downvote-selected.svg";
 
 function up(clicked_id){
 var upImage = document.getElementById(clicked_id);
+var downImage = upImage.nextSibling.nextSibling.nextSibling.nextSibling;
 
 	if(upVote == "../img/voting/upvote-selected.svg"){
 		upImage.src = "../img/voting/upvote-selected.svg";
@@ -12,10 +13,15 @@ var upImage = document.getElementById(clicked_id);
 		upImage.src = "../img/voting/upvote-not-selected.svg";
 		upVote = "../img/voting/upvote-selected.svg";
 	}
+
+	
+
+	downImage.src = "../img/voting/downvote-not-selected.svg";
 }
 
 function down(clicked_id){
 var downImage = document.getElementById(clicked_id);
+var upImage = downImage.previousSibling.previousSibling.previousSibling.previousSibling;
 
 	if(downVote == "../img/voting/downvote-selected.svg"){
 		downImage.src = "../img/voting/downvote-selected.svg";
@@ -25,6 +31,10 @@ var downImage = document.getElementById(clicked_id);
 		downImage.src = "../img/voting/downvote-not-selected.svg";
 		downVote = "../img/voting/downvote-selected.svg";
 	}
+
+	
+
+	upImage.src = "../img/voting/upvote-not-selected.svg";
 }
 
 function loadImg(Img){
@@ -35,22 +45,28 @@ function loadImg(Img){
 
 function addItem(){
 	var elem = document.getElementById("ingredient-form");
-	elem.innerHTML += '<div class="add-ingredient-input" id="ingredients-form"><div></div><input type="text" value="" placeholder="Amount & Ingredient" class="ingredient" id = "items"></input><img src="../img/plus.svg" alt="add" onclick = "addItem();"><img src="../img/minus.svg" alt="remove" onclick = "removeItem();"></div>';
+	elem.appendChild += '<input type="text" value="" placeholder="Amount & Ingredient" class="ingredient" title="amount and ingredient" />';
 }
 
 function removeItem(){
 	var select = document.getElementById('ingredient-form');
-  	select.removeChild(select.lastChild);
-	}
+  	if (select.childNodes.length > 5) {
+  		select.removeChild(select.lastChild);
+  	}
+}
 	
 function clearAll(){
 	var title = document.getElementById("title");
-	var item = document.getElementById("items");
-	var list = document.getElementById("list");
+	var item = document.getElementById("first-ingredient");
 	var photo = document.getElementById("photo");
+	var ingredients = document.getElementById("ingredient-form");
 	
 	photo.src = "../img/addphoto.svg";
 	title.value = "";
 	item.value = "";
-	list.value = "";
+
+	while (ingredients.childNodes.length > 5) {
+  		ingredients.removeChild(ingredients.lastChild);
+  		console.log("hehe");
+  	}
 }
