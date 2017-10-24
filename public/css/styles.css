@@ -61,9 +61,18 @@ HEADER SECTION
 }
 
 @media (max-width: 700px) {
+  #header-section {
+    height: 80px;
+  }
   #header-section .header-text {
     display: flex;
     flex-direction: column;
+  }
+  #header-section .logo img {
+    height: 70px;
+  }
+  #header-section .right-header .account-selector img {
+    height: 40px;
   }
 }
 

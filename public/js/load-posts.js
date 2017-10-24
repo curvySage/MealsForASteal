@@ -39,8 +39,8 @@ function makeContent() {
     contentBlock.insertBefore(postElem, loadButton[0]);
 
     loadStr = '<span class="posting-number">' +
-      (curNum + 5) + '</span><div class="votes"><img src="../img/voting/upvote-not-selected.svg" alt="upvote"><span class="score">' +
-      loadMore[curNum].rating + '</span><img src="../img/voting/downvote-not-selected.svg" alt="downvote"></div><img class="thumbnail" src="../img/filler/food2.png"><div class="posting-details"><span class="food-title">' +
+      (curNum + 5) + '</span><div class="votes"><img src="public/img/voting/upvote-not-selected.svg" alt="upvote"><span class="score">' +
+      loadMore[curNum].rating + '</span><img src="public/img/voting/downvote-not-selected.svg" alt="downvote"></div><img class="thumbnail" src="public/img/filler/food2.png"><div class="posting-details"><span class="food-title">' +
       loadMore[curNum].title + '</span><span class="date">' +
       loadMore[curNum].postTime + '</span><a class="author" href="XXXXXX">' +
       loadMore[curNum].user + '</a></div>';

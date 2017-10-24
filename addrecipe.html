@@ -5,15 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <title>Meals for a Steal</title>
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="icon" type="image/png" href="../img/favicon.png" />
+  <link rel="stylesheet" href="public/css/styles.css">
+  <link rel="icon" type="image/png" href="public/img/favicon.png" />
 </head>
 
 <body>
   <div id="header-section">
     <div class="logo">
       <!-- Will need to replace these links later -->
-      <a href="home.html"><img src="../img/logo.svg" alt="Meals for a Steal logo"></a>
+      <a href="index.html"><img src="public/img/logo.svg" alt="Meals for a Steal logo"></a>
       <div class="header-text">
         <span class="title">Meals for a Steal</span>
         <span class="current-page">Add Recipe</span>
@@ -23,8 +23,8 @@
       <div class="account-selector">
         <!-- Will need to replace these links later -->
         <div>
-          <a href="account.html"><img src="../img/user.svg" alt="account"></a>
-          <a href="addrecipe.html"><img src="../img/plus.svg" alt="recipe"></a>
+          <a href="account.html"><img src="public/img/user.svg" alt="account"></a>
+          <a href="addrecipe.html"><img src="public/img/plus.svg" alt="recipe"></a>
         </div>
         <a class="username" href="profile.html">jamesParty</a>
       </div>
@@ -39,7 +39,7 @@
       </div>
       <div class="add-recipe-photo">
         <!-- Link here must direct user to his/her own photo directory -->
-        <a href="XXXX"><img src="../img/addphoto.svg" alt="add photo" id = "photo"></a> Upload Photo
+        <a href="XXXX"><img src="public/img/addphoto.svg" alt="add photo" id = "photo"></a> Upload Photo
         <input type="file" id="image" onclick="loadImg(this.id);"></input>
       </div>
       <div class="add-recipe-ingredients">
@@ -47,8 +47,8 @@
         <!-- Dynamically add/remove text fields for ingredients -->
         <div class="add-ingredient-input" id=ingredient-form>
           <div>
-            <img src="../img/plus.svg" alt="add" onclick = "addItem();">
-            <img src="../img/minus.svg" alt="remove" onclick = "removeItem();">
+            <img src="public/img/plus.svg" alt="add" onclick = "addItem();">
+            <img src="public/img/minus.svg" alt="remove" onclick = "removeItem();">
           </div>
           <input type="text" value="" placeholder="Amount & Ingredient" class="ingredient" id="first-ingredient" title="amount and ingredient" />
         </div>
@@ -65,7 +65,7 @@
         </div>
       </form>
     </div>
-    <script src="../js/app.js"></script>
+    <script src="public/js/app.js"></script>
   </div>
 </body>
 
