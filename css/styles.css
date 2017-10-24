@@ -366,9 +366,6 @@ CONTENT SECTION
 
 .go-home {
   text-decoration: none;
-}
-
-.go-home button {
   display: flex;
   font-size: 18px;
   padding: 12px 50px;
@@ -383,8 +380,8 @@ CONTENT SECTION
   text-decoration: none;
 }
 
-.go-home button:hover,
-.go-home button:focus {
+.go-home:hover,
+.go-home:focus {
   background-color: #2E7D32;
   background-image: none;
   border-color: #2E7D32;
