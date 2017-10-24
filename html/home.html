@@ -3,29 +3,43 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <title>Meals for a Steal</title>
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="icon" type="image/png" href="../img/favicon.png" />
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" />
 </head>
 
 <body>
   <div id="header-section">
     <div class="logo">
       <!-- Will need to replace these links later -->
-      <a href="XXXXXX"><img src="../img/logo.svg" alt="logo"></a>
+      <a href="home.html"><img src="../img/logo.svg" alt="Meals for a Steal logo"></a>
       <div class="header-text">
         <span class="title">Meals for a Steal</span>
         <span class="current-page">Home</span>
       </div>
     </div>
-    <div class="account-selector">
-      <!-- Will need to replace these links later -->
-      <a href="XXXXXX"><img src="../img/user.svg" alt="account"></a>
-      <a class="username" href="XXXXXX">jamesParty</a>
+    <div class="right-header">
+      <div class="account-selector">
+        <!-- Will need to replace these links later -->
+        <div>
+          <a href="account.html"><img src="../img/user.svg" alt="account"></a>
+          <a href="addrecipe.html"><img src="../img/plus.svg" alt="recipe"></a>
+        </div>
+        <a class="username" href="profile.html">jamesParty</a>
+      </div>
     </div>
   </div>
   <div id="content-section">
     <!-- Stuff goes here -->
+    <div class="posting-selection">
+      <div>
+        <a class="selected" href=" ">Popular</a>
+        <a href=" ">Recent</a>
+      </div>
+    </div>
     <div class="page-posting">
       <span class="posting-number">1</span>
       <div class="votes">
@@ -33,11 +47,11 @@
         <span class="score">27</span>
         <img src="../img/voting/downvote-not-selected.svg" alt="downvote" id = "downSub" onclick = "down(this.id);">
       </div>
-      <img class="thumbnail" src="../img/filler/food1.png">
+      <img class="thumbnail" src="../img/filler/food1.png" alt="user submitted food">
       <div class="posting-details">
-        <span class="food-title">Hot Deli Sub Sandwich</span>
+        <a class="food-title" href="recipe.html">Hot Deli Sub Sandwich</a>
         <span class="date">8 hours ago</span>
-        <a class="author" href="XXXXXX">love2cook</a>
+        <a class="author" href="profile.html">jamesParty</a>
       </div>
     </div>
     <div class="page-posting">
@@ -47,9 +61,9 @@
         <span class="score">32</span>
         <img src="../img/voting/downvote-not-selected.svg" alt="downvote" id = "downBur" onclick = "down(this.id);">
       </div>
-      <img class="thumbnail" src="../img/filler/food2.png">
+      <img class="thumbnail" src="../img/filler/food2.png" alt="user submitted food">
       <div class="posting-details">
-        <span class="food-title">Spicy Cajun Cheeseburger</span>
+        <a class="food-title">Spicy Cajun Cheeseburger</a>
         <span class="date">14 hours ago</span>
         <a class="author" href="XXXXXX">rocketMan1992</a>
       </div>
@@ -61,9 +75,9 @@
         <span class="score">8</span>
         <img src="../img/voting/downvote-not-selected.svg" alt="downvote" id = "downSal" onclick = "down(this.id);">
       </div>
-      <img class="thumbnail" src="../img/filler/food3.png">
+      <img class="thumbnail" src="../img/filler/food3.png" alt="user submitted food">
       <div class="posting-details">
-        <span class="food-title">Smoked Pink Salmon</span>
+        <a class="food-title">Smoked Pink Salmon</a>
         <span class="date">4 hours ago</span>
         <a class="author" href="XXXXXX">paulaDeanRox</a>
       </div>
@@ -75,9 +89,9 @@
         <span class="score">9</span>
         <img src="../img/voting/downvote-not-selected.svg" alt="downvote" id = "downRon" onclick = "down(this.id);">
       </div>
-      <img class="thumbnail" src="../img/filler/food4.png">
+      <img class="thumbnail" src="../img/filler/food4.png" alt="user submitted food">
       <div class="posting-details">
-        <span class="food-title">Cheesy Pasta Roni</span>
+        <a class="food-title">Cheesy Pasta Roni</a>
         <span class="date">6 hours ago</span>
         <a class="author" href="XXXXXX">paulaDeanRox</a>
       </div>
@@ -89,4 +103,5 @@
 <!--  <script type="text/javascript" src="../js/load-posts.js"></script> -->
   <script type="text/javascript" src="../js/app.js"></script>
 </body>
+
 </html>

@@ -35,26 +35,45 @@ HEADER SECTION
   margin: 5px;
 }
 
-#header-section .account-selector {
+#header-section .right-header {
+  display: flex;
+}
+
+#header-section .right-header .account-selector {
   display: flex;
   flex-direction: column;
   margin-right: 5px;
 }
 
-#header-section .account-selector .username {
+#header-section .right-header .account-selector .username {
   font-size: 14px;
   color: black;
   text-decoration: none;
 }
 
-#header-section .account-selector img {
+#header-section .right-header .account-selector a:hover {
+  text-decoration: underline;
+}
+
+#header-section .right-header .account-selector img {
   height: 20px;
   margin: 5px 5px 0px 0px;
+}
+
+@media (max-width: 700px) {
+  #header-section .header-text {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* -----------------------------
 CONTENT SECTION
 ----------------------------- */
+label {
+  display: none;
+}
+
 #content-section {
   display: flex;
   flex-direction: column;
@@ -62,18 +81,50 @@ CONTENT SECTION
   width: 800px;
   justify-content: center;
   margin: 0px auto 20px auto;
-  /* -----------------------------
-  Homepage postings
-  ----------------------------- */
-  /* -----------------------------
-  Recipe postings
-  ----------------------------- */
-  /* -----------------------------
-  Account
-  ----------------------------- */
 }
 
-#content-section .page-posting {
+#content-section .posting-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: x-large;
+  padding: 5px 0px;
+  margin: 20px auto 10px auto;
+  width: 100%;
+  border-radius: 7px;
+  background-color: white;
+  box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
+}
+
+#content-section .posting-selection a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+#content-section .posting-selection a:hover {
+  background-color: #D3D3D3;
+}
+
+#content-section .posting-selection .selected {
+  background-color: #e0e0e0;
+}
+
+@media (max-width: 800px) {
+  #content-section {
+    width: 100vw;
+  }
+  .posting-selection {
+    border-radius: 3px;
+  }
+}
+
+/* -----------------------------
+  Homepage postings
+  ----------------------------- */
+.page-posting {
   display: flex;
   height: 150px;
   width: 800px;
@@ -83,14 +134,14 @@ CONTENT SECTION
   box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
 }
 
-#content-section .page-posting .posting-number {
+.page-posting .posting-number {
   font-size: 32px;
   color: #8e8e8e;
   margin: 20px;
   width: 40px;
 }
 
-#content-section .page-posting .votes {
+.page-posting .votes {
   display: flex;
   flex-direction: column;
   font-size: 44px;
@@ -99,40 +150,72 @@ CONTENT SECTION
   width: 50px;
 }
 
-#content-section .page-posting .votes img {
+.page-posting .votes img {
   height: 22px;
   width: 22px;
   cursor: pointer;
 }
 
-#content-section .page-posting img {
+.page-posting img {
   height: 120px;
   width: 200px;
   cursor: pointer;
 }
 
-#content-section .page-posting .posting-details {
+.page-posting .posting-details {
   margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-#content-section .page-posting .posting-details .food-title {
+.page-posting .posting-details .food-title {
   font-size: 32px;
   cursor: pointer;
 }
 
-#content-section .page-posting .posting-details .date {
+.page-posting .posting-details .date {
   color: #7f7f7f;
 }
 
-#content-section .page-posting .posting-details a {
+.page-posting .posting-details a {
   text-decoration: none;
   color: black;
 }
 
-#content-section .recipe-posting {
+.page-posting .posting-details a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .page-posting {
+    flex-direction: column;
+    height: 320px;
+    width: 100vw;
+    box-shadow: none;
+    margin: 0px;
+    border-radius: 0px;
+    border-bottom: 1px #ccc solid;
+  }
+  .page-posting .posting-number {
+    display: none;
+  }
+  .page-posting .votes {
+    flex-direction: row;
+    font-size: 18px;
+    margin: 10px;
+    width: 100px;
+    justify-content: space-evenly;
+  }
+  .page-posting .posting-details {
+    align-items: center;
+  }
+}
+
+/* -----------------------------
+  Recipe postings
+  ----------------------------- */
+.recipe-posting {
   display: flex;
   flex-direction: column;
   width: 800px;
@@ -143,33 +226,37 @@ CONTENT SECTION
   box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
 }
 
-#content-section .recipe-posting .recipe-header {
+.recipe-posting .recipe-header {
   display: flex;
   width: 600px;
   height: 100px;
 }
 
-#content-section .recipe-posting .recipe-header .posting-details {
+.recipe-posting .recipe-header .posting-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
 
-#content-section .recipe-posting .recipe-header .posting-details a {
+.recipe-posting .recipe-header .posting-details a {
   text-decoration: none;
   color: black;
 }
 
-#content-section .recipe-posting .recipe-header .posting-details .food-title {
+.recipe-posting .recipe-header .posting-details a:hover {
+  text-decoration: underline;
+}
+
+.recipe-posting .recipe-header .posting-details .food-title {
   font-size: 24px;
 }
 
-#content-section .recipe-posting .recipe-header .posting-details .date {
+.recipe-posting .recipe-header .posting-details .date {
   color: #585858;
 }
 
-#content-section .recipe-posting .recipe-header .votes {
+.recipe-posting .recipe-header .votes {
   display: flex;
   flex-direction: column;
   font-size: 22px;
@@ -178,18 +265,18 @@ CONTENT SECTION
   width: 50px;
 }
 
-#content-section .recipe-posting .recipe-header .votes img {
+.recipe-posting .recipe-header .votes img {
   height: 18px;
   width: 18px;
   cursor: pointer;
 }
 
-#content-section .recipe-posting .finished-food {
+.recipe-posting .finished-food {
   width: 600px;
   margin: 0px 0px 20px 0px;
 }
 
-#content-section .recipe-posting .recipe-details {
+.recipe-posting .recipe-details {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -198,41 +285,123 @@ CONTENT SECTION
   width: 580px;
 }
 
-#content-section .recipe-posting .recipe-details .detail-title {
+.recipe-posting .recipe-details .detail-title {
   font-size: 22px;
   display: flex;
   align-items: flex-start;
 }
 
-#content-section .recipe-posting .recipe-details ul {
+.recipe-posting .recipe-details ul {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-#content-section .recipe-posting .recipe-details p {
+.recipe-posting .recipe-details p {
   text-align: left;
 }
 
-#content-section .recipe-posting .comments {
+.recipe-posting .comments {
   text-align: left;
   width: 580px;
 }
 
-#content-section .recipe-posting .comments .comments-title {
+.recipe-posting .comments .comments-title {
   font-size: 22px;
 }
 
-#content-section .recipe-posting .comments a {
+.recipe-posting .comments a {
   text-decoration: none;
   color: black;
 }
 
-#content-section .recipe-posting .comments .comment-date {
+.recipe-posting .comments .comment-date {
   color: #585858;
 }
 
-#content-section .load-more button {
+.recipe-posting .comments .comment-id {
+  color: #bdbdbd;
+}
+
+.recipe-posting .add-comment {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-posting .add-comment .add-comment-title {
+  font-size: 22px;
+}
+
+.recipe-posting .add-comment .add-comment-box {
+  height: 14rem;
+  width: 560px;
+  border: none;
+  border-radius: 5px;
+  background-color: #eaeaea;
+  padding: 0 1rem;
+  line-height: 45px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 200;
+  resize: none;
+}
+
+.recipe-posting .add-comment button {
+  display: flex;
+  font-size: 18px;
+  padding: 12px 50px;
+  justify-content: center;
+  border-color: #2595ff;
+  background-color: #2595ff;
+  color: white;
+  line-height: 1.25;
+  border: 1px solid transparent;
+  border-radius: 4.2px;
+  transition: all ease-in-out 0.2s;
+  margin-top: 30px;
+  width: 240px;
+  margin: auto;
+}
+
+.recipe-posting .add-comment button:hover,
+.recipe-posting .add-comment button:focus {
+  background-color: #007cf1;
+  background-image: none;
+  border-color: #007cf1;
+  color: white;
+}
+
+@media (max-width: 800px) {
+  .recipe-posting {
+    border-radius: 0px;
+    width: 100vw;
+  }
+  .recipe-posting .recipe-header {
+    width: 95vw;
+    padding: 0px 20px;
+  }
+  .recipe-posting .finished-food {
+    width: 95vw;
+  }
+  .recipe-posting .recipe-details {
+    width: 95vw;
+  }
+  .recipe-posting .comments {
+    width: 95vw;
+    padding: 0px 10px;
+  }
+  .recipe-posting .add-comment .add-comment-box {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 450px) {
+  .recipe-posting .finished-food {
+    width: 300px;
+  }
+}
+
+.load-more button {
   display: flex;
   font-size: 18px;
   padding: 12px 50px;
@@ -246,7 +415,42 @@ CONTENT SECTION
   margin-top: 30px;
 }
 
-#content-section .account-options {
+.load-more button:hover,
+.load-more button:focus {
+  background-color: #007cf1;
+  background-image: none;
+  border-color: #007cf1;
+  color: white;
+}
+
+.go-home {
+  text-decoration: none;
+  display: flex;
+  font-size: 18px;
+  padding: 12px 50px;
+  border-color: #43A047;
+  background-color: #43A047;
+  color: white;
+  line-height: 1.25;
+  border: 1px solid transparent;
+  border-radius: 4.2px;
+  transition: all ease-in-out 0.2s;
+  margin-top: 30px;
+  text-decoration: none;
+}
+
+.go-home:hover,
+.go-home:focus {
+  background-color: #2E7D32;
+  background-image: none;
+  border-color: #2E7D32;
+  color: white;
+}
+
+/* -----------------------------
+  Account
+  ----------------------------- */
+.account-options {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -254,13 +458,13 @@ CONTENT SECTION
   margin: 20px 0px;
 }
 
-#content-section .account-options button {
+.account-options button {
   width: 22rem;
   display: flex;
   justify-content: center;
 }
 
-#content-section .account-options .input-button {
+.account-options .input-button {
   display: flex;
   font-size: 18px;
   padding: 12px 50px;
@@ -274,7 +478,15 @@ CONTENT SECTION
   margin-bottom: 30px;
 }
 
-#content-section .account-options .input-field {
+.account-options .input-button:hover,
+.account-options .input-button:focus {
+  background-color: #007cf1;
+  background-image: none;
+  border-color: #007cf1;
+  color: white;
+}
+
+.account-options .input-field {
   display: flex;
   flex-direction: column;
   height: 2.5rem;
@@ -290,15 +502,15 @@ CONTENT SECTION
   font-weight: 200;
 }
 
-#content-section .account-options .sign-in {
+.account-options .sign-in {
   display: none;
 }
 
-#content-section .account-options .sign-up {
+.account-options .sign-up {
   display: none;
 }
 
-#content-section .account-options .sign-out .input-button {
+.account-options .sign-out .input-button {
   display: flex;
   font-size: 18px;
   padding: 12px 50px;
@@ -312,13 +524,21 @@ CONTENT SECTION
   margin-bottom: 30px;
 }
 
-#content-section .account-options .account-settings .change-password {
+.account-options .sign-out button:hover,
+.account-options .sign-out button:focus {
+  background-color: #007cf1;
+  background-image: none;
+  border-color: #007cf1;
+  color: white;
+}
+
+.account-options .account-settings .change-password {
   display: none;
   flex-direction: column;
   align-items: center;
 }
 
-#content-section .account-options .account-settings .delete-account .input-button {
+.account-options .account-settings .delete-account .input-button {
   display: flex;
   font-size: 18px;
   padding: 12px 50px;
@@ -330,6 +550,23 @@ CONTENT SECTION
   border-radius: 4.2px;
   transition: all ease-in-out 0.2s;
   margin-bottom: 30px;
+}
+
+.account-options .account-settings .delete-account button:hover,
+.account-options .account-settings .delete-account button:focus {
+  background-color: red;
+  background-image: none;
+  border-color: red;
+  color: white;
+}
+
+@media (max-width: 450px) {
+  .account-options button {
+    width: 20rem;
+  }
+  .account-options .input-field {
+    width: 16rem;
+  }
 }
 
 /* -----------------------------
@@ -392,11 +629,11 @@ CONTENT SECTION
   font-size: 22px;
 }
 
-.add-recipe .add-recipe-ingredients .add-ingredient .add-ingredient-input {
+.add-recipe .add-recipe-ingredients .add-ingredient-input {
   display: flex;
 }
 
-.add-recipe .add-recipe-ingredients .add-ingredient .add-ingredient-input .ingredient {
+.add-recipe .add-recipe-ingredients .add-ingredient-input .ingredient {
   height: 2.5rem;
   width: 20rem;
   border: none;
@@ -409,7 +646,7 @@ CONTENT SECTION
   font-weight: 200;
 }
 
-.add-recipe .add-recipe-ingredients .add-ingredient .add-ingredient-input img {
+.add-recipe .add-recipe-ingredients .add-ingredient-input img {
   align-self: flex-start;
   margin: 0 0 0 0.5rem;
   width: 2rem;
@@ -472,13 +709,39 @@ CONTENT SECTION
   transition: all ease-in-out 0.2s;
 }
 
+@media (max-width: 800px) {
+  .add-recipe {
+    width: 100vw;
+    border-radius: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .add-recipe .add-recipe-title .recipe-title {
+    width: 300px;
+  }
+  .add-recipe .add-recipe-photo {
+    width: 300px;
+  }
+  .add-recipe .add-recipe-ingredients .add-ingredient-input .ingredient {
+    width: 250px;
+  }
+  .add-recipe .add-recipe-instructions .instructions {
+    width: 300px;
+  }
+}
+
 /* -----------------------------
   Profile
    ----------------------------- */
+.profile {
+  width: 100%;
+}
+
 .profile .profile-side {
   margin: 10px auto 10px auto;
   display: flex;
-  width: 800px;
+  width: 100%;
   border-radius: 7px;
   box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
   align-items: center;
@@ -495,27 +758,24 @@ CONTENT SECTION
   margin: 10px auto;
 }
 
-.profile .profile-side .account-details table {
-  border-collapse: collapse;
-}
-
-.profile .profile-side .account-details tr {
-  border: none;
-}
-
-.profile .profile-side .account-details td,
-.profile .profile-side .account-details th {
-  border-left: solid 1px #D3D3D3;
-  padding: 10px 10px 2px 10px;
-}
-
 .profile .profile-side .account-details .username {
   margin: auto 10px auto 10px;
   font-size: xx-large;
 }
 
-.profile .profile-side .account-details .info th {
-  font-size: medium;
+.profile .profile-side .account-details .info {
+  display: flex;
+}
+
+.profile .profile-side .account-details .info .stat-column {
+  display: flex;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile .profile-side .account-details .info .stat-column .stat-header {
+  font-weight: 600;
 }
 
 .profile .posts-side {
@@ -524,24 +784,138 @@ CONTENT SECTION
   align-items: center;
 }
 
-.profile .posts-side .posts {
-  font-size: x-large;
-  padding: 5px;
-  margin: 35px auto 0px auto;
-  width: 800px;
+.profile .posts-side .posting-selection {
+  margin-left: 20px;
+}
+
+@media (max-width: 450px) {
+  .profile .profile-side img {
+    display: none;
+  }
+}
+
+/* -----------------------------
+  Admin Control Panel
+   ----------------------------- */
+.admin-panel {
+  display: flex;
+  width: 350px;
+  flex-direction: column;
+  margin: 20px 20px 20px 20px;
+  padding: 10px 20px 20px 20px;
   border-radius: 7px;
-  background-color: white;
   box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
 }
 
-.profile .posts-side .posts a {
-  display: inline-block;
-  color: black;
-  text-align: center;
-  padding: 14px;
-  text-decoration: none;
+.admin-panel hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 98%;
+  background-color: #000000;
+  height: 1px;
 }
 
-.profile .posts-side .posts a:hover {
-  background-color: #D3D3D3;
+.admin-panel input[type=text] {
+  height: 2rem;
+  width: 10rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #eaeaea;
+  padding: 0 1rem;
+  margin: 5px 10px 5px 0;
+  line-height: 45px;
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+.admin-panel label {
+  margin: 7px 0 0 10px;
+}
+
+.admin-panel div {
+  margin: 0 0 0 10px;
+  width: 97%;
+}
+
+.admin-panel .delete-button {
+  cursor: pointer;
+  font-size: 14px;
+  margin: 5px 0 5px;
+  padding: 12px 50px;
+  border-color: #A82116;
+  background-color: #A82116;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 4.2px;
+  transition: all ease-in-out 0.2s;
+}
+
+.admin-panel .section-headers {
+  align-self: flex-start;
+  margin: 0 0 0 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.admin-panel .prompt {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.admin-panel .prompt label {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-panel .welcome {
+  align-self: flex-start;
+  margin: auto 10px auto 10px;
+  font-size: xx-large;
+}
+
+.admin-panel .mod-type {
+  font-weight: bold;
+  color: #FD8469;
+  text-decoration: underline;
+}
+
+.admin-panel .user-admin {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+.admin-panel .user-admin .user-actions {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: #d9d9d9;
+}
+
+.admin-panel .post-admin {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+.admin-panel .post-admin .post-actions {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: #d9d9d9;
+}
+
+.admin-panel .comment-admin {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+.admin-panel .comment-admin .comment-actions {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: #d9d9d9;
 }
