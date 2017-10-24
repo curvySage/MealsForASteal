@@ -27,9 +27,10 @@ var downImage = document.getElementById(clicked_id);
 	}
 }
 
-function loadImg(){
+function loadImg(Img){
+	var photo = document.getElementById("img")
 	var image = document.getElementById("photo");
-	image.src = "";
+	image.src = photo.src;
 }
 
 function addItem(){
@@ -46,7 +47,9 @@ function clearAll(){
 	var title = document.getElementById("title");
 	var item = document.getElementById("items");
 	var list = document.getElementById("list");
+	var photo = document.getElementById("photo");
 	
+	photo.src = "../img/addphoto.svg";
 	title.value = "";
 	item.value = "";
 	list.value = "";

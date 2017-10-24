@@ -35,13 +35,14 @@
       <div class="add-recipe-photo">
         <!-- Link here must direct user to his/her own photo directory -->
         <a href="XXXX"><img src="../img/addphoto.svg" alt="add photo" id = "photo"></a> Upload Photo
+		<input type = "file" id = "image" onclick = "loadImg(this.id);"></input>
       </div>
       <div class="add-recipe-ingredients">
         <span class="ingredients-title">Ingredients:</span>
         <!-- Dynamically add/remove text fields for ingredients -->
-        <form action="/addIngredient" method="post" id="ingredient-form" class="add-ingredient">
+        <form action="/addIngredient" method="post" id="ingredients-form" class="add-ingredient">
           <div class="add-ingredient-input">
-            <input type="text" value="" placeholder="Amount & Ingredient" class="ingredient">
+            <input type="text" value="" placeholder="Amount & Ingredient" class="ingredient" id = "items">
             </input>
             <img src="../img/plus.svg" alt="add" onclick = "addItem();">
             <img src="../img/minus.svg" alt="remove" onclick = "removeItem();">
