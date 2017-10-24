@@ -35,19 +35,22 @@
     <div class="add-recipe">
       <div class="add-recipe-title">
         <span class="title-label">Title:</span>
-        <input type="text" value="" placeholder="Title" class="recipe-title" title="title" />
+        <input type="text" value="" placeholder="Title" class="recipe-title" title="title" id="title" />
       </div>
       <div class="add-recipe-photo">
         <!-- Link here must direct user to his/her own photo directory -->
-        <a href="XXXX"><img src="../img/addphoto.svg" alt="add photo"></a> Upload Photo
+        <a href="XXXX"><img src="../img/addphoto.svg" alt="add photo" id = "photo"></a> Upload Photo
+        <input type="file" id="image" onclick="loadImg(this.id);"></input>
       </div>
       <div class="add-recipe-ingredients">
         <span class="ingredients-title">Ingredients:</span>
         <!-- Dynamically add/remove text fields for ingredients -->
-        <div class="add-ingredient-input">
-          <input type="text" value="" placeholder="Amount & Ingredient" class="ingredient" title="amount and ingredient" />
-          <img src="../img/plus.svg" alt="add">
-          <img src="../img/minus.svg" alt="remove">
+        <div class="add-ingredient-input" id=ingredient-form>
+          <div>
+            <img src="../img/plus.svg" alt="add" onclick = "addItem();">
+            <img src="../img/minus.svg" alt="remove" onclick = "removeItem();">
+          </div>
+          <input type="text" value="" placeholder="Amount & Ingredient" class="ingredient" id="first-ingredient" title="amount and ingredient" />
         </div>
       </div>
       <div class="add-recipe-instructions">
@@ -58,11 +61,11 @@
       <form action="/addRecipe" method="post" id="add-recipe" class="add-recipe-form">
         <div class="final-buttons">
           <input type="submit" value="Add" class="add-button" />
-          <input type="reset" value="Clear" class="clear-button" />
+          <input type="reset" value="Clear" class="clear-button" onclick="clearAll();" />
         </div>
       </form>
     </div>
-    <!-- <script src="../js/app.js"></script> -->
+    <script src="../js/app.js"></script>
   </div>
 </body>
 
