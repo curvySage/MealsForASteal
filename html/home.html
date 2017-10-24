@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <title>Meals for a Steal</title>
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="icon" type="image/png" href="../img/favicon.png" />
@@ -12,7 +13,7 @@
   <div id="header-section">
     <div class="logo">
       <!-- Will need to replace these links later -->
-      <a href="XXXXXX"><img src="../img/logo.svg" alt="logo"></a>
+      <a href="home.html"><img src="../img/logo.svg" alt="logo"></a>
       <div class="header-text">
         <span class="title">Meals for a Steal</span>
         <span class="current-page">Home</span>
@@ -20,12 +21,19 @@
     </div>
     <div class="account-selector">
       <!-- Will need to replace these links later -->
-      <a href="XXXXXX"><img src="../img/user.svg" alt="account"></a>
-      <a class="username" href="XXXXXX">jamesParty</a>
+      <div>
+        <a href="account.html"><img src="../img/user.svg" alt="account"></a>
+        <a href="addrecipe.html"><img src="../img/plus.svg" alt="recipe"></a>
+      </div>
+      <a class="username" href="profile.html">jamesParty</a>
     </div>
   </div>
   <div id="content-section">
     <!-- Stuff goes here -->
+    <div class="posting-selection">
+      <a class="selected" href=" ">Popular</a>
+      <a href=" ">Recent</a>
+    </div>
     <div class="page-posting">
       <span class="posting-number">1</span>
       <div class="votes">
@@ -35,9 +43,9 @@
       </div>
       <img class="thumbnail" src="../img/filler/food1.png">
       <div class="posting-details">
-        <span class="food-title">Hot Deli Sub Sandwich</span>
+        <a class="food-title" href="recipe.html">Hot Deli Sub Sandwich</a>
         <span class="date">8 hours ago</span>
-        <a class="author" href="XXXXXX">love2cook</a>
+        <a class="author" href="profile.html">jamesParty</a>
       </div>
     </div>
     <div class="page-posting">
@@ -49,7 +57,7 @@
       </div>
       <img class="thumbnail" src="../img/filler/food2.png">
       <div class="posting-details">
-        <span class="food-title">Spicy Cajun Cheeseburger</span>
+        <a class="food-title">Spicy Cajun Cheeseburger</a>
         <span class="date">14 hours ago</span>
         <a class="author" href="XXXXXX">rocketMan1992</a>
       </div>
@@ -63,7 +71,7 @@
       </div>
       <img class="thumbnail" src="../img/filler/food3.png">
       <div class="posting-details">
-        <span class="food-title">Smoked Pink Salmon</span>
+        <a class="food-title">Smoked Pink Salmon</a>
         <span class="date">4 hours ago</span>
         <a class="author" href="XXXXXX">paulaDeanRox</a>
       </div>
@@ -77,7 +85,7 @@
       </div>
       <img class="thumbnail" src="../img/filler/food4.png">
       <div class="posting-details">
-        <span class="food-title">Cheesy Pasta Roni</span>
+        <a class="food-title">Cheesy Pasta Roni</a>
         <span class="date">6 hours ago</span>
         <a class="author" href="XXXXXX">paulaDeanRox</a>
       </div>
@@ -88,4 +96,5 @@
   </div>
   <script type="text/javascript" src="../js/load-posts.js"></script>
 </body>
+
 </html>
