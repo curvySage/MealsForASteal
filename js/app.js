@@ -45,7 +45,7 @@ function loadImg(Img){
 
 function addItem(){
 	var elem = document.getElementById("ingredient-form");
-	elem.appendChild += '<input type="text" value="" placeholder="Amount & Ingredient" class="ingredient" title="amount and ingredient" />';
+	elem.innerHTML += '<input type="text" value="" placeholder="Amount & Ingredient" class="ingredient" title="amount and ingredient" />';
 }
 
 function removeItem(){
