@@ -356,6 +356,41 @@ CONTENT SECTION
   margin-top: 30px;
 }
 
+.load-more button:hover,
+.load-more button:focus {
+  background-color: #007cf1;
+  background-image: none;
+  border-color: #007cf1;
+  color: white;
+}
+
+.go-home {
+  text-decoration: none;
+}
+
+.go-home button {
+  display: flex;
+  font-size: 18px;
+  padding: 12px 50px;
+  border-color: #43A047;
+  background-color: #43A047;
+  color: white;
+  line-height: 1.25;
+  border: 1px solid transparent;
+  border-radius: 4.2px;
+  transition: all ease-in-out 0.2s;
+  margin-top: 30px;
+  text-decoration: none;
+}
+
+.go-home button:hover,
+.go-home button:focus {
+  background-color: #2E7D32;
+  background-image: none;
+  border-color: #2E7D32;
+  color: white;
+}
+
 /* -----------------------------
   Account
   ----------------------------- */
@@ -385,6 +420,14 @@ CONTENT SECTION
   border-radius: 4.2px;
   transition: all ease-in-out 0.2s;
   margin-bottom: 30px;
+}
+
+.account-options .input-button:hover,
+.account-options .input-button:focus {
+  background-color: #007cf1;
+  background-image: none;
+  border-color: #007cf1;
+  color: white;
 }
 
 .account-options .input-field {
@@ -425,6 +468,14 @@ CONTENT SECTION
   margin-bottom: 30px;
 }
 
+.account-options .sign-out button:hover,
+.account-options .sign-out button:focus {
+  background-color: #007cf1;
+  background-image: none;
+  border-color: #007cf1;
+  color: white;
+}
+
 .account-options .account-settings .change-password {
   display: none;
   flex-direction: column;
@@ -443,6 +494,14 @@ CONTENT SECTION
   border-radius: 4.2px;
   transition: all ease-in-out 0.2s;
   margin-bottom: 30px;
+}
+
+.account-options .account-settings .delete-account button:hover,
+.account-options .account-settings .delete-account button:focus {
+  background-color: red;
+  background-image: none;
+  border-color: red;
+  color: white;
 }
 
 @media (max-width: 450px) {

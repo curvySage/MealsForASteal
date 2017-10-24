@@ -22,6 +22,7 @@ body {
 
 
 
+
 /* -----------------------------
 HEADER SECTION
 ----------------------------- */
@@ -109,6 +110,27 @@ CONTENT SECTION
   justify-content: center;
   margin: 0px auto 20px auto;
 
+  // button {
+  //   display: flex;
+  //   font-size: 18px;
+  //   padding: 12px 50px;
+  //   border-color: #2595ff;
+  //   background-color: #2595ff;
+  //   color: white;
+  //   line-height: 1.25;
+  //   border: 1px solid transparent;
+  //   border-radius: 4.2px;
+  //   transition: all ease-in-out 0.2s;
+  //   margin-top: 30px;
+  // }
+
+  // button:hover,
+  // button:focus {
+  //   background-color: #007cf1;
+  //   background-image: none;
+  //   border-color: #007cf1;
+  //   color: white;
+  // }
 
   .posting-selection {
     display: flex;
@@ -120,27 +142,21 @@ CONTENT SECTION
     width: 100%;
     border-radius: 7px;
     background-color: white;
-    box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
-
-    // .search-input {
+    box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75); // .search-input {
     //   margin-top: 5px;
     //   height: 40px;
-
     //   .input-group {
     //     height: 35px;
     //     width: 150px;
-
     //     input {
     //       font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
     //     }
-
     //     .search-field {
     //       height: 100%;
     //       padding: 0 10px;
     //       margin: 0;
     //       font-size: 14px;
     //     }
-
     //     .search-field::placeholder {
     //       font-size: 14px;
     //       text-align: center;
@@ -148,7 +164,6 @@ CONTENT SECTION
     //     }
     //   }
     // }
-
     a {
       display: inline-block;
       color: black;
@@ -175,6 +190,7 @@ CONTENT SECTION
     border-radius: 3px;
   }
 }
+
 
 
 
@@ -276,6 +292,7 @@ CONTENT SECTION
     }
   }
 }
+
 
 
 
@@ -441,7 +458,44 @@ CONTENT SECTION
     transition: all ease-in-out 0.2s;
     margin-top: 30px;
   }
+
+  button:hover,
+  button:focus {
+    background-color: #007cf1;
+    background-image: none;
+    border-color: #007cf1;
+    color: white;
+  }
 }
+
+.go-home {
+
+  text-decoration: none;
+
+  button {
+    display: flex;
+    font-size: 18px;
+    padding: 12px 50px;
+    border-color: #43A047;
+    background-color: #43A047;
+    color: white;
+    line-height: 1.25;
+    border: 1px solid transparent;
+    border-radius: 4.2px;
+    transition: all ease-in-out 0.2s;
+    margin-top: 30px;
+    text-decoration: none;
+  }
+
+  button:hover,
+  button:focus {
+    background-color: #2E7D32;
+    background-image: none;
+    border-color: #2E7D32;
+    color: white;
+  }
+}
+
 
 
 
@@ -478,6 +532,14 @@ CONTENT SECTION
     border-radius: 4.2px;
     transition: all ease-in-out 0.2s;
     margin-bottom: 30px;
+  }
+
+  .input-button:hover,
+  .input-button:focus {
+    background-color: #007cf1;
+    background-image: none;
+    border-color: #007cf1;
+    color: white;
   }
 
   .input-field {
@@ -518,6 +580,14 @@ CONTENT SECTION
       transition: all ease-in-out 0.2s;
       margin-bottom: 30px;
     }
+
+    button:hover,
+    button:focus {
+      background-color: #007cf1;
+      background-image: none;
+      border-color: #007cf1;
+      color: white;
+    }
   }
 
   .account-settings {
@@ -542,6 +612,14 @@ CONTENT SECTION
         transition: all ease-in-out 0.2s;
         margin-bottom: 30px;
       }
+
+      button:hover,
+      button:focus {
+        background-color: red;
+        background-image: none;
+        border-color: red;
+        color: white;
+      }
     }
   }
 }
@@ -556,6 +634,7 @@ CONTENT SECTION
     }
   }
 }
+
 
 
 
@@ -748,6 +827,7 @@ CONTENT SECTION
     }
   }
 }
+
 
 
 
