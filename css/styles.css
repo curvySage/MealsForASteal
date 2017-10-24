@@ -319,6 +319,58 @@ label {
   color: #585858;
 }
 
+.recipe-posting .comments .comment-id {
+  color: #bdbdbd;
+}
+
+.recipe-posting .add-comment {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-posting .add-comment .add-comment-title {
+  font-size: 22px;
+}
+
+.recipe-posting .add-comment .add-comment-box {
+  height: 14rem;
+  width: 560px;
+  border: none;
+  border-radius: 5px;
+  background-color: #eaeaea;
+  padding: 0 1rem;
+  line-height: 45px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 200;
+  resize: none;
+}
+
+.recipe-posting .add-comment button {
+  display: flex;
+  font-size: 18px;
+  padding: 12px 50px;
+  justify-content: center;
+  border-color: #2595ff;
+  background-color: #2595ff;
+  color: white;
+  line-height: 1.25;
+  border: 1px solid transparent;
+  border-radius: 4.2px;
+  transition: all ease-in-out 0.2s;
+  margin-top: 30px;
+  width: 240px;
+  margin: auto;
+}
+
+.recipe-posting .add-comment button:hover,
+.recipe-posting .add-comment button:focus {
+  background-color: #007cf1;
+  background-image: none;
+  border-color: #007cf1;
+  color: white;
+}
+
 @media (max-width: 800px) {
   .recipe-posting {
     border-radius: 0px;
@@ -337,6 +389,9 @@ label {
   .recipe-posting .comments {
     width: 95vw;
     padding: 0px 10px;
+  }
+  .recipe-posting .add-comment .add-comment-box {
+    width: 80vw;
   }
 }
 
@@ -744,8 +799,8 @@ label {
    ----------------------------- */
 .admin-panel {
   display: flex;
+  width: 350px;
   flex-direction: column;
-  width: 800px;
   margin: 20px 20px 20px 20px;
   padding: 10px 20px 20px 20px;
   border-radius: 7px;
@@ -805,7 +860,13 @@ label {
 
 .admin-panel .prompt {
   display: flex;
-  align-self: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.admin-panel .prompt label {
+  display: flex;
+  flex-direction: column;
 }
 
 .admin-panel .welcome {

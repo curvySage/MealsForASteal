@@ -11,16 +11,21 @@
   <div id="header-section">
     <div class="logo">
       <!-- Will need to replace these links later -->
-      <a href="XXXXXX"><img src="../img/logo.svg" alt="logo"></a>
+      <a href="home.html"><img src="../img/logo.svg" alt="Meals for a Steal logo"></a>
       <div class="header-text">
-	<span class="title">Meals for a Steal</span>
-	<span class="current-page">Control Panel</span> 
+        <span class="title">Meals for a Steal</span>
+        <!-- <span class="current-page">Home</span>   -->
       </div>
     </div>
-    <div class="account-selector">
-      <!-- Will need to replace these links later -->
-      <a href="XXXXXX"><img src="../img/user.svg" alt="account"></a>
-      <a class="username" href="XXXXXX">Admin</a>
+    <div class="right-header">
+      <div class="account-selector">
+        <!-- Will need to replace these links later -->
+        <div>
+          <a href="account.html"><img src="../img/user.svg" alt="account"></a>
+          <a href="addrecipe.html"><img src="../img/plus.svg" alt="recipe"></a>
+        </div>
+        <a class="username" href="profile.html">Admin</a>
+      </div>
     </div>
   </div>
   <div id="content-section">
@@ -32,9 +37,9 @@
 	<div class="user-actions">
 	  <div class="prompt">
 	    <label>
-	      Enter the url/ID of the <span class="mod-type">user</span> to delete:
+	      <span>ID of the <span class="mod-type">user</span> to delete:</span>
 	      &nbsp;&nbsp;&nbsp;
-	      <input type="text" id="mod-user-id">
+	      <input type="text" id="del-user-id">
 	    </label>
 	    <form action="/deleteUser" method="post" id="delete-user-id">
 	      <div class="user-button">
@@ -51,9 +56,9 @@
 	<div class="post-actions">
 	  <div class="prompt">
 	    <label>
-	      Enter the url/ID of the <span class="mod-type">post</span> to delete:
+	      <span>ID of the <span class="mod-type">post</span> to delete:</span>
 	      &nbsp;&nbsp;&nbsp;
-	      <input type="text" id="mod-post-id">
+	      <input type="text" id="del-post-id">
 	    </label>
 	    <form action="/deletePost" method="post" id="delete-post-id">
 	      <div class="post-button">
@@ -70,8 +75,12 @@
 	<div class="comment-actions">
 	  <div class="prompt">
 	    <label>
-	      Enter the ID of the <span class="mod-type">comment</span> to delete:&nbsp;
-	      <input type="text" id="mod-comment-id">
+	      <span>Enter the ID of the <span class="mod-type">comment</span> to delete:&nbsp;</span>
+	      <input type="text" id="del-comment-id">
+	    </label>
+	    <label>
+	      <span>Enter the ID of the <span class="mod-type">post</span> to delete:&nbsp;</span>
+	      <input type="text" id="del-comment-on-post-id">
 	    </label>
 	    <form action="/deleteComment" method="post" id="delete-comment">
 	      <div class="comment-button">
