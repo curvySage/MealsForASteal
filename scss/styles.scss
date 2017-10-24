@@ -7,15 +7,6 @@ body {
   background-color: #fafafa;
 }
 
-
-
-
-
-
-
-
-
-
 /* -----------------------------
 HEADER SECTION
 ----------------------------- */
@@ -588,4 +579,134 @@ CONTENT SECTION
       }
     }
   }
+}
+
+/* -----------------------------
+  Admin Control Panel
+   ----------------------------- */
+
+.admin-panel {
+   display: flex;
+   flex-direction: column;
+   width: 800px;
+   margin: 20px 20px 20px 20px;
+   padding: 10px 20px 20px 20px;
+   border-radius: 7px;
+   box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
+
+   hr {
+      border: 0;
+      clear:both;
+      display:block;
+      width: 98%;               
+      background-color:#000000;
+      height: 1px;
+   }
+
+   input[type=text] {
+      height: 2rem;
+      width: 10rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #eaeaea;
+      padding: 0 1rem;
+      margin: 5px 10px 5px 0;
+      line-height: 45px;
+      font-size: 1rem;
+      font-weight: 200;
+   }
+
+   label {
+      margin: 7px 0 0 10px;
+   }
+
+   div {
+      margin: 0 0 0 10px;
+      width: 97%;
+   }
+
+   .delete-button {
+      cursor: pointer;
+      font-size: 14px;
+      margin: 5px 0 5px;
+      padding: 12px 50px;
+      border-color: #A82116;
+      background-color: #A82116;
+      color: white;
+      border: 1px solid transparent;
+      border-radius: 4.2px;
+      transition: all ease-in-out 0.2s;
+      }
+
+   .section-headers {
+      align-self: flex-start;
+      margin: 0 0 0 10px;
+
+      font: {
+         size: 30px;
+	 weight: bold;
+      }
+   }
+   
+   .prompt {
+      display: flex;
+      align-self: flex-start;
+   }
+
+   .welcome {
+      align-self: flex-start;
+      margin: auto 10px auto 10px;
+      font-size: xx-large;
+   }
+
+   .mod-type {
+      font-weight: bold;
+      color: #FD8469;
+      text-decoration: underline;
+   }
+
+   .user-admin {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+
+      .user-actions {
+         border: {
+	    style: solid;
+	    width: 1px;
+	    radius: 5px;
+	    color: #d9d9d9;
+	 }
+      }
+   }
+
+   .post-admin {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+
+      .post-actions {
+         border: {
+	    style: solid;
+	    width: 1px;
+	    radius: 5px;
+	    color: #d9d9d9;
+	 }
+      }      
+   }
+
+   .comment-admin {	
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+   
+      .comment-actions {
+         border: {
+	    style: solid;
+	    width: 1px;
+	    radius: 5px;
+	    color: #d9d9d9;
+	 }
+      }       
+   }
 }

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Meals for a Steal</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/png" href="../img/favicon.png" />
+</head>
+<body>
+  <div id="header-section">
+    <div class="logo">
+      <!-- Will need to replace these links later -->
+      <a href="XXXXXX"><img src="../img/logo.svg" alt="logo"></a>
+      <div class="header-text">
+	<span class="title">Meals for a Steal</span>
+	<span class="current-page">Control Panel</span> 
+      </div>
+    </div>
+    <div class="account-selector">
+      <!-- Will need to replace these links later -->
+      <a href="XXXXXX"><img src="../img/user.svg" alt="account"></a>
+      <a class="username" href="XXXXXX">Admin</a>
+    </div>
+  </div>
+  <div id="content-section">
+    <div class="admin-panel">
+      <span class="welcome">Admin Dashboard</span>
+      <hr>
+      <div class="user-admin">
+	<span class="section-headers">Users</span>
+	<div class="user-actions">
+	  <div class="prompt">
+	    <label>
+	      Enter the url/ID of the <span class="mod-type">user</span> to delete:
+	      &nbsp;&nbsp;&nbsp;
+	      <input type="text" id="mod-user-id">
+	    </label>
+	    <form action="/deleteUser" method="post" id="delete-user-id">
+	      <div class="user-button">
+		<button name="delete-user" class="delete-button">
+	        Delete
+		</button>
+	      </div>
+	    </form>
+	  </div>
+	</div>
+      </div>
+      <div class="post-admin">
+	<span class="section-headers">Posts</span>
+	<div class="post-actions">
+	  <div class="prompt">
+	    <label>
+	      Enter the url/ID of the <span class="mod-type">post</span> to delete:
+	      &nbsp;&nbsp;&nbsp;
+	      <input type="text" id="mod-post-id">
+	    </label>
+	    <form action="/deletePost" method="post" id="delete-post-id">
+	      <div class="post-button">
+		<button name="delete-post" class="delete-button">
+	        Delete
+		</button>
+	      </div>
+	    </form>
+	  </div>
+	</div>
+      </div>
+      <div class="comment-admin">
+	<span class="section-headers">Comments</span>
+	<div class="comment-actions">
+	  <div class="prompt">
+	    <label>
+	      Enter the ID of the <span class="mod-type">comment</span> to delete:&nbsp;
+	      <input type="text" id="mod-comment-id">
+	    </label>
+	    <form action="/deleteComment" method="post" id="delete-comment">
+	      <div class="comment-button">
+		<button name="delete-comment" class="delete-button">
+	        Delete
+		</button>
+	      </div>
+	    </form>
+	  </div>
+	</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
