@@ -70,6 +70,10 @@ HEADER SECTION
 /* -----------------------------
 CONTENT SECTION
 ----------------------------- */
+label {
+  display: none;
+}
+
 #content-section {
   display: flex;
   flex-direction: column;
@@ -699,27 +703,24 @@ CONTENT SECTION
   margin: 10px auto;
 }
 
-.profile .profile-side .account-details table {
-  border-collapse: collapse;
-}
-
-.profile .profile-side .account-details tr {
-  border: none;
-}
-
-.profile .profile-side .account-details td,
-.profile .profile-side .account-details th {
-  border-left: solid 1px #D3D3D3;
-  padding: 10px 10px 2px 10px;
-}
-
 .profile .profile-side .account-details .username {
   margin: auto 10px auto 10px;
   font-size: xx-large;
 }
 
-.profile .profile-side .account-details .info th {
-  font-size: medium;
+.profile .profile-side .account-details .info {
+  display: flex;
+}
+
+.profile .profile-side .account-details .info .stat-column {
+  display: flex;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile .profile-side .account-details .info .stat-column .stat-header {
+  font-weight: 600;
 }
 
 .profile .posts-side {
@@ -732,8 +733,8 @@ CONTENT SECTION
   margin-left: 20px;
 }
 
-@media (max-width: 800px) {
-  .profile table {
+@media (max-width: 450px) {
+  .profile .profile-side img {
     display: none;
   }
 }

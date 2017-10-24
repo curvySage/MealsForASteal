@@ -103,6 +103,10 @@ HEADER SECTION
 CONTENT SECTION
 ----------------------------- */
 
+label {
+  display: none;
+}
+
 #content-section {
   display: flex;
   flex-direction: column;
@@ -858,25 +862,20 @@ CONTENT SECTION
     }
     .account-details {
       margin: 10px auto;
-
-      table {
-        border-collapse: collapse;
-      }
-      tr {
-        border: none;
-      }
-      td,
-      th {
-        border-left: solid 1px #D3D3D3;
-        padding: 10px 10px 2px 10px;
-      }
       .username {
         margin: auto 10px auto 10px;
         font-size: xx-large;
       }
       .info {
-        th {
-          font-size: medium;
+        display: flex;
+        .stat-column {
+          display: flex;
+          margin: 5px;
+          display: flex;
+          flex-direction: column;
+          .stat-header {
+            font-weight: 600;
+          }
         }
       }
     }
@@ -892,10 +891,12 @@ CONTENT SECTION
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 450px) {
   .profile {
-    table {
-      display: none;
+    .profile-side {
+      img {
+        display: none;
+      }
     }
   }
 }

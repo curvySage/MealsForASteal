@@ -35,7 +35,7 @@
     <div class="add-recipe">
       <div class="add-recipe-title">
         <span class="title-label">Title:</span>
-        <input type="text" value="" placeholder="Title" class="recipe-title" />
+        <input type="text" value="" placeholder="Title" class="recipe-title" title="title" />
       </div>
       <div class="add-recipe-photo">
         <!-- Link here must direct user to his/her own photo directory -->
@@ -44,9 +44,9 @@
       <div class="add-recipe-ingredients">
         <span class="ingredients-title">Ingredients:</span>
         <!-- Dynamically add/remove text fields for ingredients -->
-        <form action="/addIngredient" method="post" id="ingredient-form" class="add-ingredient">
+        <form action="/addIngredient" id="ingredient-form" class="add-ingredient">
           <div class="add-ingredient-input">
-            <input type="text" value="" placeholder="Amount & Ingredient" class="ingredient" />
+            <input type="text" value="" placeholder="Amount & Ingredient" class="ingredient" title="amount and ingredient" />
             <img src="../img/plus.svg" alt="add">
             <img src="../img/minus.svg" alt="remove">
           </div>
@@ -54,7 +54,7 @@
       </div>
       <div class="add-recipe-instructions">
         <span class="instructions-title">Instructions:</span>
-        <textarea class="instructions" placeholder="Add instructions"></textarea>
+        <textarea class="instructions" placeholder="Add instructions" title="add instructions"></textarea>
       </div>
       <!-- Submit form-->
       <form action="/addRecipe" method="post" id="add-recipe" class="add-recipe-form">
