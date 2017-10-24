@@ -39,19 +39,241 @@ HEADER SECTION
     }
   }
 
-  .account-selector {
+  .right-header {
+    display: flex;
+
+    .account-selector {
+      display: flex;
+      flex-direction: column;
+      margin-right: 5px;
+      .username {
+        font-size: 14px;
+        color: black;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      img {
+        height: 20px;
+        margin: 5px 5px 0px 0px;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  #header-section {
+    .header-text {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+// @media (max-width: 550px) {
+//   #header-section {
+//     height: 90px;
+//     .right-header {
+//       flex-direction: column;
+//     } 
+//   }
+// }
+
+/* -----------------------------
+CONTENT SECTION
+----------------------------- */
+
+label {
+  display: none;
+}
+
+#content-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 800px;
+  justify-content: center;
+  margin: 0px auto 20px auto; // button {
+  //   display: flex;
+  //   font-size: 18px;
+  //   padding: 12px 50px;
+  //   border-color: #2595ff;
+  //   background-color: #2595ff;
+  //   color: white;
+  //   line-height: 1.25;
+  //   border: 1px solid transparent;
+  //   border-radius: 4.2px;
+  //   transition: all ease-in-out 0.2s;
+  //   margin-top: 30px;
+  // }
+  // button:hover,
+  // button:focus {
+  //   background-color: #007cf1;
+  //   background-image: none;
+  //   border-color: #007cf1;
+  //   color: white;
+  // }
+  .posting-selection {
     display: flex;
     flex-direction: column;
-    margin-right: 5px;
-    .username {
-      font-size: 14px;
+    align-items: center;
+    font-size: x-large;
+    padding: 5px 0px;
+    margin: 20px auto 10px auto;
+    width: 100%;
+    border-radius: 7px;
+    background-color: white;
+    box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75); // .search-input {
+    //   margin-top: 5px;
+    //   height: 40px;
+    //   .input-group {
+    //     height: 35px;
+    //     width: 150px;
+    //     input {
+    //       font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+    //     }
+    //     .search-field {
+    //       height: 100%;
+    //       padding: 0 10px;
+    //       margin: 0;
+    //       font-size: 14px;
+    //     }
+    //     .search-field::placeholder {
+    //       font-size: 14px;
+    //       text-align: center;
+    //       color: #ccc;
+    //     }
+    //   }
+    // }
+    a {
+      display: inline-block;
       color: black;
+      text-align: center;
+      padding: 14px;
       text-decoration: none;
     }
+    a:hover {
+      background-color: #D3D3D3;
+    }
+
+    .selected {
+      background-color: #e0e0e0;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  #content-section {
+    width: 100vw;
+  }
+
+  .posting-selection {
+    border-radius: 3px;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* -----------------------------
+  Homepage postings
+  ----------------------------- */
+
+.page-posting {
+  display: flex;
+  height: 150px; // background-color: #ccc;
+  width: 800px;
+  align-items: center;
+  margin: 20px 20px 0px 20px;
+  border-radius: 7px;
+  box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
+
+  .posting-number {
+    font-size: 32px;
+    color: #8e8e8e;
+    margin: 20px;
+    width: 40px;
+  }
+
+  .votes {
+    display: flex;
+    flex-direction: column;
+    font-size: 44px;
+    margin: 20px;
+    align-items: center;
+    width: 50px;
 
     img {
-      height: 20px;
-      margin: 5px 5px 0px 0px;
+      height: 22px;
+      width: 22px;
+      cursor: pointer;
+    }
+  }
+
+  img {
+    height: 120px;
+    width: 200px;
+    cursor: pointer;
+  }
+
+  .posting-details {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .food-title {
+      font-size: 32px;
+      cursor: pointer;
+    }
+
+    .date {
+      color: #7f7f7f;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .page-posting {
+    flex-direction: column;
+    height: 320px;
+    width: 100vw;
+    box-shadow: none;
+    margin: 0px;
+    border-radius: 0px;
+    border-bottom: 1px #ccc solid;
+
+    .posting-number {
+      display: none;
+    }
+
+    .votes {
+      flex-direction: row;
+      font-size: 18px;
+      margin: 10px;
+      width: 100px;
+      justify-content: space-evenly;
+    }
+
+    .posting-details {
+      align-items: center;
     }
   }
 }
@@ -65,187 +287,271 @@ HEADER SECTION
 
 
 /* -----------------------------
-CONTENT SECTION
------------------------------ */
+  Recipe postings
+  ----------------------------- */
 
-#content-section {
+.recipe-posting {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 800px;
-  justify-content: center;
-  margin: 0px auto 20px auto;
+  align-items: center;
+  margin: 20px 20px 0px 20px;
+  padding: 10px 20px 20px 20px;
+  border-radius: 7px;
+  box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
 
-  /* -----------------------------
-  Homepage postings
-  ----------------------------- */
-  .page-posting {
+  .recipe-header {
     display: flex;
-    height: 150px; // background-color: #ccc;
-    width: 800px;
-    align-items: center;
-    margin: 20px 20px 0px 20px;
-    border-radius: 7px;
-    box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
+    width: 600px;
+    height: 100px;
 
+    .posting-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
 
+      a {
+        text-decoration: none;
+        color: black;
+      }
 
-    .posting-number {
-      font-size: 32px;
-      color: #8e8e8e;
-      margin: 20px;
-      width: 40px;
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .food-title {
+        font-size: 24px;
+      }
+
+      .date {
+        color: #585858;
+      }
     }
 
     .votes {
       display: flex;
       flex-direction: column;
-      font-size: 44px;
+      font-size: 22px;
       margin: 20px;
       align-items: center;
       width: 50px;
 
       img {
-        height: 22px;
-        width: 22px;
+        height: 18px;
+        width: 18px;
         cursor: pointer;
-      }
-    }
-
-    img {
-      height: 120px;
-      width: 200px;
-      cursor: pointer;
-    }
-
-    .posting-details {
-      margin: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-
-      .food-title {
-        font-size: 32px;
-        cursor: pointer;
-      }
-
-      .date {
-        color: #7f7f7f;
-      }
-
-      a {
-        text-decoration: none;
-        color: black;
       }
     }
   }
 
-  /* -----------------------------
-  Recipe postings
-  ----------------------------- */
-  .recipe-posting {
+  .finished-food {
+    width: 600px;
+    margin: 0px 0px 20px 0px;
+  }
+
+  .recipe-details {
     display: flex;
     flex-direction: column;
-    width: 800px;
-    align-items: center;
-    margin: 20px 20px 0px 20px;
-    padding: 10px 20px 20px 20px;
-    border-radius: 7px;
-    box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 16px;
+    width: 580px;
+
+    .detail-title {
+      font-size: 22px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    p {
+      text-align: left;
+    }
+  }
+
+  .comments {
+    text-align: left;
+    width: 580px;
+
+    .comments-title {
+      font-size: 22px;
+    }
+
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .comment-date {
+      color: #585858;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .recipe-posting {
+    border-radius: 0px;
+    width: 100vw;
 
     .recipe-header {
-      display: flex;
-      width: 600px;
-      height: 100px;
-
-      .posting-details {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-
-        a {
-          text-decoration: none;
-          color: black;
-        }
-
-        .food-title {
-          font-size: 24px;
-        }
-
-        .date {
-          color: #585858;
-        }
-      }
-
-      .votes {
-        display: flex;
-        flex-direction: column;
-        font-size: 22px;
-        margin: 20px;
-        align-items: center;
-        width: 50px;
-
-        img {
-          height: 18px;
-          width: 18px;
-          cursor: pointer;
-        }
-      }
+      width: 95vw;
+      padding: 0px 20px;
     }
 
     .finished-food {
-      width: 600px;
-      margin: 0px 0px 20px 0px;
+      width: 95vw;
     }
 
     .recipe-details {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      font-size: 16px;
-      width: 580px;
-
-      .detail-title {
-        font-size: 22px;
-        display: flex;
-        align-items: flex-start;
-      }
-
-      ul {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      p {
-        text-align: left;
-      }
+      width: 95vw;
     }
 
     .comments {
-      text-align: left;
-      width: 580px;
-
-      .comments-title {
-        font-size: 22px;
-      }
-
-
-      a {
-        text-decoration: none;
-        color: black;
-      }
-
-      .comment-date {
-        color: #585858;
-      }
+      width: 95vw;
+      padding: 0px 10px;
     }
   }
+}
 
-  .load-more {
-    button {
+@media (max-width: 450px) {
+  .recipe-posting {
+    .finished-food {
+      width: 300px;
+    }
+  }
+}
+
+
+
+.load-more {
+  button {
+    display: flex;
+    font-size: 18px;
+    padding: 12px 50px;
+    border-color: #2595ff;
+    background-color: #2595ff;
+    color: white;
+    line-height: 1.25;
+    border: 1px solid transparent;
+    border-radius: 4.2px;
+    transition: all ease-in-out 0.2s;
+    margin-top: 30px;
+  }
+
+  button:hover,
+  button:focus {
+    background-color: #007cf1;
+    background-image: none;
+    border-color: #007cf1;
+    color: white;
+  }
+}
+
+.go-home {
+
+  text-decoration: none;
+  display: flex;
+  font-size: 18px;
+  padding: 12px 50px;
+  border-color: #43A047;
+  background-color: #43A047;
+  color: white;
+  line-height: 1.25;
+  border: 1px solid transparent;
+  border-radius: 4.2px;
+  transition: all ease-in-out 0.2s;
+  margin-top: 30px;
+  text-decoration: none;
+}
+
+.go-home:hover,
+.go-home:focus {
+  background-color: #2E7D32;
+  background-image: none;
+  border-color: #2E7D32;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+/* -----------------------------
+  Account
+  ----------------------------- */
+
+.account-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px;
+
+  button {
+    width: 22rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .input-button {
+    display: flex;
+    font-size: 18px;
+    padding: 12px 50px;
+    border-color: #2595ff;
+    background-color: #2595ff;
+    color: white;
+    line-height: 1.25;
+    border: 1px solid transparent;
+    border-radius: 4.2px;
+    transition: all ease-in-out 0.2s;
+    margin-bottom: 30px;
+  }
+
+  .input-button:hover,
+  .input-button:focus {
+    background-color: #007cf1;
+    background-image: none;
+    border-color: #007cf1;
+    color: white;
+  }
+
+  .input-field {
+    display: flex;
+    flex-direction: column;
+    height: 2.5rem;
+    width: 18rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #eaeaea;
+    padding: 0 1rem;
+    margin: 0 10px 0 0;
+    line-height: 45px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 200;
+  }
+
+  .sign-in {
+    display: none;
+  }
+
+  .sign-up {
+    display: none;
+  }
+
+  .sign-out {
+    .input-button {
       display: flex;
       font-size: 18px;
       padding: 12px 50px;
@@ -256,72 +562,33 @@ CONTENT SECTION
       border: 1px solid transparent;
       border-radius: 4.2px;
       transition: all ease-in-out 0.2s;
-      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    button:hover,
+    button:focus {
+      background-color: #007cf1;
+      background-image: none;
+      border-color: #007cf1;
+      color: white;
     }
   }
 
-  /* -----------------------------
-  Account
-  ----------------------------- */
-  .account-options {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0px;
+  .account-settings {
 
-    button {
-      width: 22rem;
-      display: flex;
-      justify-content: center;
-    }
-
-    .input-button {
-        display: flex;
-        font-size: 18px;
-        padding: 12px 50px;
-        border-color: #2595ff;
-        background-color: #2595ff;
-        color: white;
-        line-height: 1.25;
-        border: 1px solid transparent;
-        border-radius: 4.2px;
-        transition: all ease-in-out 0.2s;
-        margin-bottom: 30px;
-      }
-
-      .input-field {
-        display: flex;
-        flex-direction: column;
-        height: 2.5rem;
-        width: 18rem;
-        border: none;
-        border-radius: 5px;
-        background-color: #eaeaea;
-        padding: 0 1rem;
-        margin: 0 10px 0 0;
-        line-height: 45px;
-        margin-bottom: 10px;
-        font-size: 1.1rem;
-        font-weight: 200;
-      }
-
-    .sign-in {
+    .change-password {
       display: none;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .sign-up {
-      display: none;
-      
-    }
-
-    .sign-out {
+    .delete-account {
       .input-button {
         display: flex;
         font-size: 18px;
         padding: 12px 50px;
         border-color: #2595ff;
-        background-color: #2595ff;
+        background-color: #ff3547;
         color: white;
         line-height: 1.25;
         border: 1px solid transparent;
@@ -329,35 +596,37 @@ CONTENT SECTION
         transition: all ease-in-out 0.2s;
         margin-bottom: 30px;
       }
-    }
 
-    .account-settings {
-      
-      .change-password {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        
-      }
-
-      .delete-account {
-        .input-button {
-          display: flex;
-          font-size: 18px;
-          padding: 12px 50px;
-          border-color: #2595ff;
-          background-color: #ff3547;
-          color: white;
-          line-height: 1.25;
-          border: 1px solid transparent;
-          border-radius: 4.2px;
-          transition: all ease-in-out 0.2s;
-          margin-bottom: 30px;
-        }
+      button:hover,
+      button:focus {
+        background-color: red;
+        background-image: none;
+        border-color: red;
+        color: white;
       }
     }
   }
 }
+
+@media (max-width: 450px) {
+  .account-options {
+    button {
+      width: 20rem;
+    }
+    .input-field {
+      width: 16rem;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -509,16 +778,61 @@ CONTENT SECTION
   }
 }
 
+@media (max-width: 800px) {
+  .add-recipe {
+    width: 100vw;
+    border-radius: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .add-recipe {
+    .add-recipe-title {
+      .recipe-title {
+        width: 300px;
+      }
+    }
+    .add-recipe-photo {
+      width: 300px;
+    }
+
+    .add-recipe-ingredients {
+      .add-ingredient {
+        .add-ingredient-input {
+          .ingredient {
+            width: 250px;
+          }
+        }
+      }
+    }
+    .add-recipe-instructions {
+      .instructions {
+        width: 300px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
 
 /* -----------------------------
   Profile
    ----------------------------- */
 
 .profile {
+
+  width: 100%;
   .profile-side {
     margin: 10px auto 10px auto;
     display: flex;
-    width: 800px;
+    width: 100%;
     border-radius: 7px;
     box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
     align-items: center;
@@ -531,25 +845,20 @@ CONTENT SECTION
     }
     .account-details {
       margin: 10px auto;
-
-      table {
-        border-collapse: collapse;
-      }
-      tr {
-        border: none;
-      }
-      td,
-      th {
-        border-left: solid 1px #D3D3D3;
-        padding: 10px 10px 2px 10px;
-      }
       .username {
         margin: auto 10px auto 10px;
         font-size: xx-large;
       }
       .info {
-        th {
-          font-size: medium;
+        display: flex;
+        .stat-column {
+          display: flex;
+          margin: 5px;
+          display: flex;
+          flex-direction: column;
+          .stat-header {
+            font-weight: 600;
+          }
         }
       }
     }
@@ -558,24 +867,18 @@ CONTENT SECTION
     display: flex;
     flex-direction: column;
     align-items: center;
-    .posts {
-      font-size: x-large;
-      padding: 5px;
-      margin: 35px auto 0px auto;
-      width: 800px;
-      border-radius: 7px;
-      background-color: white;
-      box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
 
-      a {
-        display: inline-block;
-        color: black;
-        text-align: center;
-        padding: 14px;
-        text-decoration: none;
-      }
-      a:hover {
-        background-color: #D3D3D3;
+    .posting-selection {
+      margin-left: 20px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .profile {
+    .profile-side {
+      img {
+        display: none;
       }
     }
   }
