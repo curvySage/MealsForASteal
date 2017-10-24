@@ -19,6 +19,9 @@ body {
 
 
 
+
+
+
 /* -----------------------------
 HEADER SECTION
 ----------------------------- */
@@ -51,28 +54,32 @@ HEADER SECTION
     }
   }
 
-  .account-selector {
+  .right-header {
     display: flex;
-    flex-direction: column;
-    margin-right: 5px;
-    .username {
-      font-size: 14px;
-      color: black;
-      text-decoration: none;
-    }
 
-    a:hover {
-      text-decoration: underline;
-    }
+    .account-selector {
+      display: flex;
+      flex-direction: column;
+      margin-right: 5px;
+      .username {
+        font-size: 14px;
+        color: black;
+        text-decoration: none;
+      }
 
-    img {
-      height: 20px;
-      margin: 5px 5px 0px 0px;
+      a:hover {
+        text-decoration: underline;
+      }
+
+      img {
+        height: 20px;
+        margin: 5px 5px 0px 0px;
+      }
     }
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 700px) {
   #header-section {
     .header-text {
       display: flex;
@@ -81,14 +88,14 @@ HEADER SECTION
   }
 }
 
-
-
-
-
-
-
-
-
+// @media (max-width: 550px) {
+//   #header-section {
+//     height: 90px;
+//     .right-header {
+//       flex-direction: column;
+//     } 
+//   }
+// }
 
 /* -----------------------------
 CONTENT SECTION
@@ -104,6 +111,9 @@ CONTENT SECTION
 
 
   .posting-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: x-large;
     padding: 5px 0px;
     margin: 20px auto 10px auto;
@@ -111,6 +121,33 @@ CONTENT SECTION
     border-radius: 7px;
     background-color: white;
     box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
+
+    // .search-input {
+    //   margin-top: 5px;
+    //   height: 40px;
+
+    //   .input-group {
+    //     height: 35px;
+    //     width: 150px;
+
+    //     input {
+    //       font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+    //     }
+
+    //     .search-field {
+    //       height: 100%;
+    //       padding: 0 10px;
+    //       margin: 0;
+    //       font-size: 14px;
+    //     }
+
+    //     .search-field::placeholder {
+    //       font-size: 14px;
+    //       text-align: center;
+    //       color: #ccc;
+    //     }
+    //   }
+    // }
 
     a {
       display: inline-block;
@@ -138,6 +175,9 @@ CONTENT SECTION
     border-radius: 3px;
   }
 }
+
+
+
 
 
 
@@ -236,6 +276,9 @@ CONTENT SECTION
     }
   }
 }
+
+
+
 
 
 
@@ -358,7 +401,7 @@ CONTENT SECTION
       width: 95vw;
       padding: 0px 20px;
     }
-    
+
     .finished-food {
       width: 95vw;
     }
@@ -399,6 +442,9 @@ CONTENT SECTION
     margin-top: 30px;
   }
 }
+
+
+
 
 
 
@@ -510,6 +556,9 @@ CONTENT SECTION
     }
   }
 }
+
+
+
 
 
 
@@ -665,17 +714,17 @@ CONTENT SECTION
   }
 }
 
-@media (max-width: 800px){
+@media (max-width: 800px) {
   .add-recipe {
     width: 100vw;
     border-radius: none;
   }
 }
 
-@media (max-width: 600px){
+@media (max-width: 600px) {
   .add-recipe {
     .add-recipe-title {
-      .recipe-title{
+      .recipe-title {
         width: 300px;
       }
     }
@@ -699,6 +748,9 @@ CONTENT SECTION
     }
   }
 }
+
+
+
 
 
 

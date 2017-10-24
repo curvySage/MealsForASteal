@@ -35,28 +35,32 @@ HEADER SECTION
   margin: 5px;
 }
 
-#header-section .account-selector {
+#header-section .right-header {
+  display: flex;
+}
+
+#header-section .right-header .account-selector {
   display: flex;
   flex-direction: column;
   margin-right: 5px;
 }
 
-#header-section .account-selector .username {
+#header-section .right-header .account-selector .username {
   font-size: 14px;
   color: black;
   text-decoration: none;
 }
 
-#header-section .account-selector a:hover {
+#header-section .right-header .account-selector a:hover {
   text-decoration: underline;
 }
 
-#header-section .account-selector img {
+#header-section .right-header .account-selector img {
   height: 20px;
   margin: 5px 5px 0px 0px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 700px) {
   #header-section .header-text {
     display: flex;
     flex-direction: column;
@@ -76,6 +80,9 @@ CONTENT SECTION
 }
 
 #content-section .posting-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: x-large;
   padding: 5px 0px;
   margin: 20px auto 10px auto;
