@@ -629,11 +629,11 @@ label {
   font-size: 22px;
 }
 
-.add-recipe .add-recipe-ingredients .add-ingredient .add-ingredient-input {
+.add-recipe .add-recipe-ingredients .add-ingredient-input {
   display: flex;
 }
 
-.add-recipe .add-recipe-ingredients .add-ingredient .add-ingredient-input .ingredient {
+.add-recipe .add-recipe-ingredients .add-ingredient-input .ingredient {
   height: 2.5rem;
   width: 20rem;
   border: none;
@@ -646,7 +646,7 @@ label {
   font-weight: 200;
 }
 
-.add-recipe .add-recipe-ingredients .add-ingredient .add-ingredient-input img {
+.add-recipe .add-recipe-ingredients .add-ingredient-input img {
   align-self: flex-start;
   margin: 0 0 0 0.5rem;
   width: 2rem;
@@ -723,7 +723,7 @@ label {
   .add-recipe .add-recipe-photo {
     width: 300px;
   }
-  .add-recipe .add-recipe-ingredients .add-ingredient .add-ingredient-input .ingredient {
+  .add-recipe .add-recipe-ingredients .add-ingredient-input .ingredient {
     width: 250px;
   }
   .add-recipe .add-recipe-instructions .instructions {

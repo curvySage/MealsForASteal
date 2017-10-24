@@ -757,7 +757,6 @@ label {
       font-size: 22px;
     }
 
-    .add-ingredient {
       .add-ingredient-input {
         display: flex;
         .ingredient {
@@ -780,7 +779,6 @@ label {
           cursor: pointer;
         }
       }
-    }
   }
 
   .add-recipe-instructions {
@@ -860,13 +858,11 @@ label {
     }
 
     .add-recipe-ingredients {
-      .add-ingredient {
         .add-ingredient-input {
           .ingredient {
             width: 250px;
           }
         }
-      }
     }
     .add-recipe-instructions {
       .instructions {
