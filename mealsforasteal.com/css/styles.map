@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "scss/styles.css",
+	"sources": [
+		"scss/styles.scss"
+	],
+	"sourcesContent": [
+		".navbar {\n  .navbar-brand {\n    display: flex;\n\n    img {\n      margin-right: 10px;\n    }\n  }\n}\n\n.signup {\n  .colorgraph {\n    height: 5px;\n    border-top: 0;\n    background: #c4e17f;\n    border-radius: 5px;\n    background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);\n    background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);\n    background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);\n    background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);\n  }\n}"
+	],
+	"mappings": ";AAAA,AACE,OADK,CACL,aAAa,CAAC;EACZ,OAAO,EAAE,IAAK;CAKf;;;AAPH,AAII,OAJG,CACL,aAAa,CAGX,GAAG,CAAC;EACF,YAAY,EAAE,IAAK;CACpB;;;AAIL,AACE,OADK,CACL,WAAW,CAAC;EACV,MAAM,EAAE,GAAI;EACZ,UAAU,EAAE,CAAE;EACd,UAAU,EAAE,OAAQ;EACpB,aAAa,EAAE,GAAI;EACnB,gBAAgB,EAAE,qPAAuB;EACzC,gBAAgB,EAAE,kPAAoB;EACtC,gBAAgB,EAAE,gPAAkB;EACpC,gBAAgB,EAAE,iPAAe;CAClC",
+	"names": []
+}
