@@ -1,4 +1,4 @@
-<?php
+<?
 $db = @mysqli_connect (localhost, "root", "root")
   Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
 
@@ -9,42 +9,43 @@ $date_created = time();
 $target_dir = "public/img/uploads";
 $target_file = $target_dir . '/' . $date_created . '_' . $_FILES["image"]["name"];
 
-echo $target_file . '<br/>';
-
 // Check if file already exists
 if (file_exists($target_file)) {
    echo "Sorry, file already exists.";
 }
 
-//        echo "a";
-
+// If moved successfully to specified path
 if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-   echo "1";
-
    if ($target_file != null){
       $_POST['image'] = $target_file;
    }
-   else{
-      $_POST['image'] = '../../uploads//0_none.jpg';
+   else {
+      $_POST['image'] = $target_dir . '/0_none.jpg';
    }
 
-   echo "2";
+   // Get user id of logged in user
+   $q = 'SELECT user_id
+     	FROM users
+     	WHERE username="' . $_COOKIE['username'] . '"';
 
-  $_POST['created'] = Time::now();
-  $_POST['user_id'] = $this->user->user_id;
-  DB::instance(DB_NAME)->insert_row('recipes', $_POST);
+   $result = mysqli_query($db, $q);
+   $rows = mysqli_fetch_row($result);
+   mysqli_free_result($result);
 
-  $q = 'SELECT *
-        FROM recipes
-        WHERE title="'.$_POST["title"].'"
-        AND created="'.$_POST["created"].'"';
+   // Insert user specified values into db
+   $q = 'INSERT INTO recipes(title, ingredients, description, created, user_id, image)
+      		VALUES("' . $_POST['title'] . '", "' . $_POST['ingredients'] . '", "'
+		       . $_POST['instructions'] . '", "' . $date_created . '", "'
+		       . $rows[0] . '", "' . $_POST['image'] . '")';
 
-  $qres = DB::instance(DB_NAME)->select_row($q);
+   $result = mysqli_query($db, $q);
+   mysqli_free_result($result);
+   mysqli_close($db);
 
-  Router::redirect('/recipes/detail/'.$qres["recipe_id"]);
-
-  } else {
-    echo "Sorry, there was an error uploading your file.";
-  }
-
+   // Redirect to home
+   // Want: redirect to details page
+   header("Location: /index.php"); // how do i redirect to details page?
+} else {
+  echo "Sorry, there was an error uploading your file.";
+}
 ?>

@@ -36,7 +36,7 @@
       <!-- Stuff goes here -->
       <div class="add-title">
         <label for="title">Title:
-          <input type="text" value="" placeholder="Title" class="title-input" title="title" id="title" />
+          <input type="text" value="" placeholder="Title" class="title-input" title="title" name="title" id="title" />
 	</label>
       </div>
       <input type="file" id="image" name="image" accept="image/*" onchange="loadImage(this);" />
@@ -47,12 +47,12 @@
       </div>
       <div class="add-ingredients">
         <label for="first-ingredient">Ingredients:
-          <br/><textarea type="text" value="" placeholder="Amount & Ingredient (separated by commas)" id="first-ingredient" title="amount and ingredient"></textarea>  
+          <br/><textarea type="text" value="" placeholder="Amount & Ingredient (separated by commas)" name="ingredients" title="amount and ingredient"></textarea>  
 	</label>
       </div>
       <div class="add-instructions">
         <label for="instructions">Instructions:
-          <br/><textarea  placeholder="Add instructions" title="add instructions" id="instructions"></textarea>
+          <br/><textarea  placeholder="Add instructions" title="add instructions" name="instructions"></textarea>
 	</label>
       </div>
       <div class="buttons">

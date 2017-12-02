@@ -93,7 +93,7 @@ mysqli_close($db);
         </form>
       </div>
       <div class="sign-up">
-        <form action="/signup" method="post" id="sign-up-form" autocomplete="off">
+        <form action="/signup.php" method="post" id="sign-up-form" autocomplete="off">
           <span class="account-error-msg" id="sign-up-form-error">&nbsp;</span>
           <label for="sign-up-form-username">sign-up-form-username</label>
           <input id="sign-up-form-username" value="" name="username" placeholder="Enter your username" class="input-field" required>
