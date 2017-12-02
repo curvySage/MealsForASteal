@@ -1,6 +1,6 @@
 function loadImg(Img){
 	var photo = document.getElementById("img")
-	var image = document.getElementById("photo");
+	var image = document.getElementById("image");
 	image.src = photo.src;
 }
 

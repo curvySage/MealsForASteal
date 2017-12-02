@@ -92,7 +92,7 @@ CONTENT SECTION
 ----------------------------- */
 
 label {
-  display: none;
+//  display: none;
 }
 
 #content-section {
@@ -645,7 +645,7 @@ label {
   Add Recipe
   ----------------------------- */
 
-.add-recipe {
+.add-recipe-form {
   display: flex;
   flex-direction: column;
   width: 800px;
@@ -655,13 +655,28 @@ label {
   border-radius: 7px;
   box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
 
-  .add-recipe-title {
+  label {
+    font-size: 22px;
+  }
+
+  textarea {
+    height: 20rem;
+    width: 30rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #eaeaea;
+    padding: 0 1rem;
+    line-height: 45px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 200;
+    resize: none;
+  }
+
+  .add-title {
     margin: 0 0 20px;
 
-    .title-label {
-      font-size: 22px;
-    }
-    .recipe-title {
+    .title-input {
       display: flex;
       height: 2.5rem;
       width: 20rem;
@@ -677,9 +692,9 @@ label {
     }
   }
 
-  .add-recipe-photo {
+  .add-photo-preview {
     padding: 10px 10px 10px 10px;
-    margin: 0 0 20px;
+    margin: 0 0 10px;
     width: 28rem;
     height: 10rem;
     display: flex;
@@ -697,67 +712,29 @@ label {
       width: 120px;
       cursor: pointer;
     }
+
   }
 
-  .add-recipe-ingredients {
-
-    .ingredients-title {
-      font-size: 22px;
-    }
-
-      .add-ingredient-input {
-        display: flex;
-        flex-direction: column;
-        .ingredient {
-          height: 2.5rem;
-          width: 20rem;
-          border: none;
-          border-radius: 5px;
-          background-color: #eaeaea;
-          padding: 0 1rem;
-          line-height: 45px;
-          margin-bottom: 10px;
-          font-size: 1.1rem;
-          font-weight: 200;
-        }
-
-        img {
-          align-self: flex-start;
-          margin: 0 0 0 0.5rem;
-          width: 2rem;
-          cursor: pointer;
-        }
-      }
+  .thumb {
+    height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0; 
   }
 
-  .add-recipe-instructions {
+  .add-ingredients {
     display: flex;
     flex-direction: column;
-
-    .instructions-title {
-      font-size: 22px;
-    }
-
-    .instructions {
-      height: 20rem;
-      width: 30rem;
-      border: none;
-      border-radius: 5px;
-      background-color: #eaeaea;
-      padding: 0 1rem;
-      line-height: 45px;
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-      font-weight: 200;
-      resize: none;
-    }
   }
 
-  .add-recipe-form {
-    .final-buttons {
-      display: flex;
-      margin: 20px;
-      .add-button {
+  .add-instructions {
+    display: flex;
+    flex-direction: column;
+  }
+  .buttons {
+    display: flex;
+    margin: 20px;
+     
+    .add-button {
         cursor: pointer;
         font-size: 18px;
         padding: 12px 50px;
@@ -770,7 +747,7 @@ label {
         margin: 0 .5rem;
       }
 
-      .clear-button {
+    .clear-button {
         cursor: pointer;
         cursor: pointer;
         font-size: 18px;
@@ -782,8 +759,7 @@ label {
         border-radius: 4.2px;
         transition: all ease-in-out 0.2s;
       }
-    }
-  }
+   }
 }
 
 @media (max-width: 800px) {
