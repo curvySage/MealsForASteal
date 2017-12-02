@@ -536,6 +536,7 @@ label {
     background-color: #007cf1;
     background-image: none;
     color: white;
+    cursor: pointer;
   }
 
   .input-field {
@@ -554,15 +555,24 @@ label {
     font-weight: 200;
   }
 
-
-  // DEBUG XXX
-  .sign-in {
-    // display: none;
+  .account-error-msg {
+      color: red;
   }
 
-  .sign-up {
-    // display: none;
-  }
+
+  // // DEBUG XXX
+  // .sign-in {
+  //   color: blue;
+  //   .account-error-msg {
+  //     color: red;
+  //   }
+  // }
+
+  // .sign-up {
+  //   .account-error-msg {
+  //     color: red;
+  //   }
+  // }
 
   .sign-out {
     .input-button {
@@ -583,6 +593,7 @@ label {
       background-color: #007cf1;
       background-image: none;
       color: white;
+      cursor: pointer;
     }
   }
 
@@ -614,6 +625,18 @@ label {
         background-image: none;
         color: white;
       }
+
+      .delete-account-form {
+        display: flex;
+        flex-direction: column;
+        .input-button {
+          width: 170px;
+        }
+        .input-button:hover,
+        .input-button:focus {
+          background-color: red;
+        }
+      }
     }
   }
 }
@@ -626,6 +649,7 @@ label {
     .input-field {
       width: 16rem;
     }
+    
   }
 }
 
