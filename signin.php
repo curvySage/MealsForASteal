@@ -1,5 +1,11 @@
 <?php
 // $db = @mysqli_connect (localhost, "abedm001", "Vt564j")
+
+if (isset($_COOKIE['token'])) {
+  header("Location: /index.php");
+  exit();
+}
+
 $db = @mysqli_connect (localhost, "root", "root")
   Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
 
@@ -26,8 +32,8 @@ while ($row = mysqli_fetch_assoc($res)) {
 
 if(isset($token))
 {
-    setcookie("token", $token);
-    setcookie("username", $_POST['username']);
+    setcookie("token", $token, time()+3600);
+    setcookie("username", $_POST['username'], time() + 3600);
     mysqli_free_result($res);
     mysqli_close($db);
     header("Location: /index.php"); /* Redirect browser */
@@ -67,54 +73,18 @@ mysqli_close($db);
       <div class="account-selector">
         <!-- Will need to replace these links later -->
         <div>
-          <a href="account.html"><img src="public/img/user.svg" alt="account"></a>
+          <a href="account.php"><img src="public/img/user.svg" alt="account"></a>
           <a href="addrecipe.html"><img src="public/img/plus.svg" alt="recipe"></a>
         </div>
         <a class="username" href="profile.html">jamesParty</a>
       </div>
     </div>
   </div>
-  
-  <?php
-  // $db = @mysqli_connect (localhost, "abedm001", "Vt564j")
-  $db = @mysqli_connect (localhost, "root", "root")
-    Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
-  
-  @mysqli_select_db($db, "group_c")
-    Or die("<div class='error'><p>Could not connect to database<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
-  
-  
-  // $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
-
-  $_POST['password'] = sha1('asjdokasjkdasdnjkanbshdadjnaskdbakhbhabsdkhakjdnakjsndjkasnsad'.$_POST['password']);
-
-  $res = mysqli_query($db, 'SELECT token
-  FROM users
-  WHERE username = "'.$_POST['username'].'"
-  AND password = "'.$_POST['password'].'"'); 
-
-  // $q = 'SELECT token
-  // FROM users
-  // WHERE username = "'.$_POST['username'].'"
-  // AND password = "'.$_POST['password'].'"';
-
-  $token;
-  
-  mysqli_free_result($res);
-  mysqli_close($db);
-  ?>
-
-
-
-
-
-
-
   <div id="content-section">
     <div class="account-options">
       <div class="sign-in">
-        <form action="/signin" method="post" id="sign-in-form" autocomplete="off">
-          <span class="account-error-msg" id="sign-in-form-error">&nbsp;</span>
+        <form action="signin.php" method="post" id="sign-in-form" autocomplete="off">
+          <span class="account-error-msg" id="sign-in-form-error">Username and Password combination not valid.</span>
           <label for="sign-in-form-username">sign-in-form-username</label>
           <input id="sign-in-form-username" value="" name="username" placeholder="Enter your username" class="input-field" required>
           <label for="sign-in-form-password">sign-in-form-password</label>
@@ -133,25 +103,6 @@ mysqli_close($db);
           <input type="password" id="sign-up-form-password2" value="" name="password" placeholder="Re-enter your password" class="input-field" required>
           <input type="submit" id="sign-up-form-submit" value="Sign Up" name="subscribe" class="input-button">
         </form>
-      </div>
-      <div class="sign-out">
-        <button class="input-button">Sign Out</button>
-      </div>
-      <div class="account-settings">
-        <button id="change-password-button" class="input-button">Change Password</button>
-        <div id="change-password-div" class="change-password">  
-          <form action="/changePassword" method="post" id="change-password-form" autocomplete="off">
-            <span class="account-error-msg" id="change-password-form-password2-error">&nbsp;</span>
-            <label for="change-password-form-password1">change-password-form-password1</label>
-            <input type="password" id="change-password-form-password1" value="" name="password" placeholder="Enter your new password" class="input-field" required>
-            <label for="change-password-form-password2">change-password-form-password2</label>
-            <input type="password" id="change-password-form-password2" value="" name="password" placeholder="Re-enter your new password" class="input-field" required>
-            <input type="submit" id="change-password-form-submit" value="Update Password" name="subscribe" class="input-button">
-          </form>
-        </div>
-        <div class="delete-account">
-          <button id="delete-account-warning" class="input-button">DELETE ACCOUNT</button>
-        </div>
       </div>
     </div>
   </div>

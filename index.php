@@ -41,7 +41,7 @@
 
 
 
-          <a href="account.html"><img src="public/img/user.svg" alt="account"></a>
+          <a href="account.php"><img src="public/img/user.svg" alt="account"></a>
           <a href="addrecipe.html"><img src="public/img/plus.svg" alt="recipe"></a>
         </div>
         <a class="username" href="profile.html">jamesParty</a>

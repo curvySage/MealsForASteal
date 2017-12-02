@@ -481,6 +481,7 @@ CONTENT SECTION
   background-color: #007cf1;
   background-image: none;
   color: white;
+  cursor: pointer;
 }
 
 .account-options .input-field {
@@ -497,6 +498,10 @@ CONTENT SECTION
   margin-bottom: 10px;
   font-size: 1.1rem;
   font-weight: 200;
+}
+
+.account-options .account-error-msg {
+  color: red;
 }
 
 .account-options .sign-out .input-button {
@@ -517,6 +522,7 @@ CONTENT SECTION
   background-color: #007cf1;
   background-image: none;
   color: white;
+  cursor: pointer;
 }
 
 .account-options .account-settings .change-password {
@@ -543,6 +549,20 @@ CONTENT SECTION
   background-color: red;
   background-image: none;
   color: white;
+}
+
+.account-options .account-settings .delete-account .delete-account-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-options .account-settings .delete-account .delete-account-form .input-button {
+  width: 170px;
+}
+
+.account-options .account-settings .delete-account .delete-account-form .input-button:hover,
+.account-options .account-settings .delete-account .delete-account-form .input-button:focus {
+  background-color: red;
 }
 
 @media (max-width: 450px) {
@@ -879,4 +899,13 @@ CONTENT SECTION
   border-width: 1px;
   border-radius: 5px;
   border-color: #d9d9d9;
+}
+
+/* -----------------------------
+  Sorry to see you go page
+   ----------------------------- */
+.sorry {
+  margin: 20px 200px;
+  height: 200px;
+  width: auto;
 }
