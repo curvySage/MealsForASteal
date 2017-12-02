@@ -926,3 +926,12 @@ label {
   border-radius: 5px;
   border-color: #d9d9d9;
 }
+
+/* -----------------------------
+  Sorry to see you go page
+   ----------------------------- */
+.sorry {
+  margin: 20px 200px;
+  height: 200px;
+  width: auto;
+}
