@@ -39,7 +39,7 @@
 	    <label>
 	      <span>ID of the <span class="mod-type">user</span> to delete:</span>
 	      &nbsp;&nbsp;&nbsp;
-
+		<span class="admin-error-msg">ID was not found in Database. Try Again!</span>
 	      <input type="text" name="del-user-id" form="delete-user-id" >
 	    </label>
 	    <form action="/admin.php" method="post" id="delete-user-id">
@@ -60,7 +60,7 @@
 	    <label>
 	      <span>ID of the <span class="mod-type">post</span> to delete:</span>
 	      &nbsp;&nbsp;&nbsp;
-
+		
 	      <input type="text" name="del-post-id" form="delete-post-id">
 	    </label>
 	    <form action="admin.php" method="post" id="delete-post-id">

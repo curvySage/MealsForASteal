@@ -960,6 +960,24 @@ label {
     width: 97%;
   }
 
+.admin-error-msg {
+  color:red;
+  }
+
+ 
+  .home-button {
+    cursor: pointer;
+    width: 350px;
+    font-size: 14px;
+    margin: 5px 0 5px;
+    padding: 12px 50px;
+    background-color: #2595ff;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 4.2px;
+    transition: all ease-in-out 0.2s;
+  }
+
   .delete-button {
     cursor: pointer;
     font-size: 14px;
