@@ -1,3 +1,58 @@
+<?php
+
+//echo "Recipe id : " . $_GET['recipe_id'];
+//^works
+
+$db = @mysqli_connect (localhost, "root", "root")
+  Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
+
+@mysqli_select_db($db, "group_c")
+  Or die("<div class='error'><p>Could not connect to database<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
+
+// Get recipe info:
+//     recipe_id, title, ingredients, description, created, user_id, image
+$q = 'SELECT *
+      FROM recipes
+      WHERE recipe_id = "' .$_GET['recipe_id']. '"';
+
+$result = mysqli_query($db, $q);
+$recipeRow = mysqli_fetch_assoc($result);
+mysqli_free_result($result);
+
+$created = date("m\/d\/Y g:iA", $recipeRow['created']);
+
+//echo "title : " .$recipeRow['title'];
+//^works
+
+// Get votes for recipe:
+$q = 'SELECT SUM(vote)
+      FROM feedback
+      WHERE type = "v"
+      AND recipe_id = "' .$_GET['recipe_id']. '"';
+
+$result = mysqli_query($db, $q);
+$voteRow = mysqli_fetch_row($result);
+
+  if(is_null($voteRow[0])){
+     $votes = 0;
+  }else{
+     $votes = $voteRow[0];
+  }
+
+mysqli_free_result($result);
+
+$q = 'SELECT username
+      FROM users, recipes
+      WHERE users.user_id = recipes.user_id
+      	    AND recipe_id = "' .$_GET['recipe_id']. '"';
+
+$result = mysqli_query($db, $q);
+$row = mysqli_fetch_row($result);
+$username = $row[0];
+
+mysqli_close($db);
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -36,30 +91,32 @@
       <div class="recipe-header">
         <div class="votes">
           <img src="public/img/voting/upvote-not-selected.svg" alt="upvote" id = "recUp" onclick = "up(this.id);">
-          <span class="score">27</span>
+          <span class="score"><?=$votes?></span>
           <img src="public/img/voting/downvote-not-selected.svg" alt="downvote" id = "recDown" onclick = "down(this.id);">
         </div>
         <div class="posting-details">
-          <span class="food-title">Hot Deli Sub Sandwich</span>
-          <span class="date">8 hours ago</span>
-          <a class="author" href="profile.html">jamesParty</a>
+          <span class="food-title"><?=$recipeRow['title']?></span>
+          <span class="date"><?=$created?></span>
+          <a class="author" href="profile.html"><?=$username?></a>
         </div>
       </div>
-      <img class="finished-food" src="public/img/filler/food1.png" alt="user submitted food">
+      <img class="finished-food" src="<?=$recipeRow['image']?>" alt="user submitted food">
       <div class="recipe-details">
         <div class="recipe-ingredients">
           <span class="detail-title">Ingredients</span>
           <ul>
-            <li>1 Cup of Flour</li>
-            <li>2 Cups of Sugar</li>
-            <li>3 Cups of Spice</li>
-            <li>4 Teaspoons of Everything Nice</li>
+	    <?php
+	      $ingredients = explode(',',$recipeRow['ingredients']);
+
+	      foreach ($ingredients as $ingredient) {
+	         echo '<li>' .$ingredient. '</li>';
+	      }
+	    ?>
           </ul>
         </div>
         <div class="recipe-instructions">
           <span class="detail-title">Instructions</span>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p><?=$recipeRow['description']?></p>
         </div>
       </div>
       <div class="comments">

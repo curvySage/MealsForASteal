@@ -39,12 +39,21 @@ if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
 		       . $rows[0] . '", "' . $_POST['image'] . '")';
 
    $result = mysqli_query($db, $q);
-   mysqli_free_result($result);
-   mysqli_close($db);
 
-   // Redirect to home
-   // Want: redirect to details page
-   header("Location: /index.php"); // how do i redirect to details page?
+   // Get recipe id of newly created recipe
+   // for redirection
+   $q = 'SELECT recipe_id
+         FROM recipes
+         WHERE title="'.$_POST['title'].'"
+         AND created="'.$date_created.'"';
+
+   $result = mysqli_query($db, $q);
+   $row = mysqli_fetch_row($result);		
+   mysqli_free_result($result);
+
+   mysqli_close($db);
+ 
+   header("Location: /recipe.php?recipe_id=".$row[0]);
 } else {
   echo "Sorry, there was an error uploading your file.";
 }

@@ -18,7 +18,6 @@
     AND token = "'.$_COOKIE['token'].'"'); 
 
 
-mysqli_free_result($res);
 mysqli_close($db);
 
   }
