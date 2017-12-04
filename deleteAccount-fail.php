@@ -65,11 +65,8 @@
         <div id="change-password-div" class="change-password">  
           <form action="changePassword.php" method="post" id="change-password-form" autocomplete="off">
             <span class="account-error-msg" id="change-password-form-password2-error">&nbsp;</span>
-            <label for="change-password-form-password1">change-password-form-password1</label>
             <input type="password" id="change-password-form-oldpassword" value="" name="oldPassword" placeholder="Enter your old password" class="input-field" required>
-            <label for="change-password-form-password1">change-password-form-password1</label>
             <input type="password" id="change-password-form-password1" value="" name="newPassword1" placeholder="Enter your new password" class="input-field" required>
-            <label for="change-password-form-password2">change-password-form-password2</label>
             <input type="password" id="change-password-form-password2" value="" name="newPassword2" placeholder="Re-enter your new password" class="input-field" required>
             <input type="submit" id="change-password-form-submit" value="Update Password" name="subscribe" class="input-button">
           </form>
