@@ -50,7 +50,6 @@
           } else {
             echo '<span class="username" >Not logged in</span>';
           }
-
         ?>
       </div>
     </div>
@@ -81,6 +80,20 @@
             <input type="password" id="delete-account-form" value="" name="dPassword" placeholder="Enter password to confirm" class="input-field" required>
             <input type="submit" class="input-button" id="change-password-form-oldpassword" value="DELETE" name="oldPassword" placeholder="Enter password to confirm" required>
           </form>
+          <?php
+          $u_name = $_COOKIE['username'];
+
+          $SQLstring = "SELECT *
+            FROM users WHERE username = '$u_name'";
+            //get results from db
+          $result = mysqli_query($db,$SQLstring);
+          $Row = mysqli_fetch_assoc($result);
+
+            //if user is admin show button
+            if($Row['admin'] == 1){
+             echo (' <a href="/admin_page.php" class="go-home" style= "justify-content: center; background-color: #2595ff;"> Admin Page</a> ');
+            }
+        ?>
         </div>
       </div>
     </div>
