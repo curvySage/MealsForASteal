@@ -65,7 +65,9 @@ mysqli_close($db);
     </div>
     <div class="right-header">
       <div class="account-selector">
-         <?php
+         <div>
+           <a href="account.php"><img src="public/img/user.svg" alt="account"></a>
+      <?php
           if(isset($_COOKIE['username'])){
             $db = @mysqli_connect (localhost, "root", "root")
             Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
@@ -80,13 +82,17 @@ mysqli_close($db);
             $result = mysqli_query($db, $q);
             $userIDRow = mysqli_fetch_row($result);
             $userID = $userIDRow[0];
-          }
           ?>
-          <div>
-            <a href="account.php"><img src="public/img/user.svg" alt="account"></a>
             <a href="addrecipeform.php"><img src="public/img/plus.svg" alt="recipe"></a>
           </div>
           <a class="username" href="profile.html?user_id=<?=$userID?>"><?=$_COOKIE['username']?></a>
+	  <?php
+	    } else {
+	  ?>
+	  </div>
+	  <?php
+	    }
+	  ?>
       </div>
     </div>
   </div>
