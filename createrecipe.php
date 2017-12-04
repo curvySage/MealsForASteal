@@ -1,4 +1,9 @@
 <?
+if (!isset($_COOKIE['token'])) {
+    header("Location: /account.html");
+    exit();
+  }
+
 $db = @mysqli_connect (localhost, "root", "root")
   Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
 
@@ -7,21 +12,14 @@ $db = @mysqli_connect (localhost, "root", "root")
 
 $date_created = time();
 $target_dir = "public/img/uploads";
-$target_file = $target_dir . '/' . $date_created . '_' . $_FILES["image"]["name"];
 
-// Check if file already exists
-if (file_exists($target_file)) {
-   echo "Sorry, file already exists.";
+if(!isset($_FILES['image']) || $_FILES['image']['error'] == UPLOAD_ERR_NO_FILE) {
+   $_POST['image'] = $target_dir . '/0_none.jpg';
+} else {
+   $target_file = $target_dir . '/' . $date_created . '_' . $_FILES["image"]["name"];
+   move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+   $_POST['image'] = $target_file;
 }
-
-// If moved successfully to specified path
-if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-   if ($target_file != null){
-      $_POST['image'] = $target_file;
-   }
-   else {
-      $_POST['image'] = $target_dir . '/0_none.jpg';
-   }
 
    // Get user id of logged in user
    $q = 'SELECT user_id
@@ -51,10 +49,12 @@ if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
    $row = mysqli_fetch_row($result);		
    mysqli_free_result($result);
 
+   // Insert a 0 vote to newly created recipe into feedback
+   $q = 'INSERT INTO feedback(user_id, recipe_id, vote, created, type)
+      		VALUES("'.$rows[0].'", "'.$row[0].'", 0, "'.$date_created.'", "v")';
+
+   $result = mysqli_query($db, $q);
    mysqli_close($db);
  
    header("Location: /recipe.php?recipe_id=".$row[0]);
-} else {
-  echo "Sorry, there was an error uploading your file.";
-}
 ?>

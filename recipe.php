@@ -1,8 +1,4 @@
 <?php
-
-//echo "Recipe id : " . $_GET['recipe_id'];
-//^works
-
 $db = @mysqli_connect (localhost, "root", "root")
   Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
 
@@ -19,10 +15,8 @@ $result = mysqli_query($db, $q);
 $recipeRow = mysqli_fetch_assoc($result);
 mysqli_free_result($result);
 
+// Format date stored in db
 $created = date("m\/d\/Y g:iA", $recipeRow['created']);
-
-//echo "title : " .$recipeRow['title'];
-//^works
 
 // Get votes for recipe:
 $q = 'SELECT SUM(vote)
@@ -32,12 +26,7 @@ $q = 'SELECT SUM(vote)
 
 $result = mysqli_query($db, $q);
 $voteRow = mysqli_fetch_row($result);
-
-  if(is_null($voteRow[0])){
-     $votes = 0;
-  }else{
-     $votes = $voteRow[0];
-  }
+$votes = $voteRow[0];
 
 mysqli_free_result($result);
 
@@ -76,12 +65,28 @@ mysqli_close($db);
     </div>
     <div class="right-header">
       <div class="account-selector">
-        <!-- Will need to replace these links later -->
-        <div>
-          <a href="account.php"><img src="public/img/user.svg" alt="account"></a>
-          <a href="addrecipe.html"><img src="public/img/plus.svg" alt="recipe"></a>
-        </div>
-        <a class="username" href="profile.html">jamesParty</a>
+         <?php
+          if(isset($_COOKIE['username'])){
+            $db = @mysqli_connect (localhost, "root", "root")
+            Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
+
+            @mysqli_select_db($db, "group_c")
+            Or die("<div class='error'><p>Could not connect to database<br>Error Code" .mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
+
+            $q = 'SELECT user_id
+                  FROM users
+                  WHERE username ="'.$_COOKIE['username'].'"';
+
+            $result = mysqli_query($db, $q);
+            $userIDRow = mysqli_fetch_row($result);
+            $userID = $userIDRow[0];
+          }
+          ?>
+          <div>
+            <a href="account.php"><img src="public/img/user.svg" alt="account"></a>
+            <a href="addrecipeform.php"><img src="public/img/plus.svg" alt="recipe"></a>
+          </div>
+          <a class="username" href="profile.html?user_id=<?=$userID?>"><?=$_COOKIE['username']?></a>
       </div>
     </div>
   </div>

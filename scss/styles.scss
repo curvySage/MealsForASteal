@@ -698,6 +698,13 @@ label {
     resize: none;
   }
 
+  .add-recipe-form-errors {
+      color: red;
+      font: {
+	  size: 70%;
+      }
+  }
+  
   .add-title {
     margin: 0 0 20px;
 

@@ -607,6 +607,11 @@ CONTENT SECTION
   resize: none;
 }
 
+.add-recipe-form .add-recipe-form-errors {
+  color: red;
+  font-size: 70%;
+}
+
 .add-recipe-form .add-title {
   margin: 0 0 20px;
 }
