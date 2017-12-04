@@ -76,8 +76,7 @@
 
     <?php
       $posts_array = mysqli_query($db,
-        "SELECT sum(f.vote), r.title, r.user_id, r.created, r.image, r.recipe_id from recipes r inner join feedback f on r.recipe_id = f.recipe_id group by r.title order by created DESC LIMIT 15");
-
+        "SELECT sum(f.vote), r.title, r.user_id, r.created, r.image, r.recipe_id FROM recipes r inner join feedback f on r.recipe_id = f.recipe_id group by r.title, r.user_id, r.created, r.image, r.recipe_id order by r.created DESC LIMIT 15;");
 
       if (mysqli_num_rows($posts_array) == 0) {
         echo '
@@ -87,7 +86,7 @@
       } else {
         while ($row = mysqli_fetch_assoc($posts_array)) {
 
-          $post_created = date("m\/d\/Y g:iA", ($row['created'] - 9 * 60 * 60));
+          $post_created = date("m\/d\/Y g:iA", ($row['created'] - 8 * 60 * 60));
 
           $vote_status_q = mysqli_query($db,
             "SELECT vote FROM feedback where user_id = ".$user_id." and recipe_id = ".$row['recipe_id'].";");
@@ -140,7 +139,7 @@
             
           echo '
             </div>
-            <img class="thumbnail" src="'.$row['image'].'" alt="user submitted food">
+            <img class="thumbnail" src="'.$row['image'].'" onError="this.onerror=null;this.src=\'/group_C/public/img/uploads/0_none.png\';" alt="user submitted food">
             <div class="posting-details">
               <a class="food-title" href="recipe.php?recipe_id='.$row['recipe_id'].'">'.$row['title'].'</a>
               <span class="date">'.$post_created.'</span>

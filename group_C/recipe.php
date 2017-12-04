@@ -17,7 +17,7 @@ $recipeRow = mysqli_fetch_assoc($result);
 mysqli_free_result($result);
 
 // Format date stored in db
-$created = date("m\/d\/Y g:iA", $recipeRow['created'] - 9 * 60 * 60);
+$created = date("m\/d\/Y g:iA", $recipeRow['created'] - 8 * 60 * 60);
 
 // Get votes for recipe:
 $q = 'SELECT SUM(vote)
@@ -192,7 +192,7 @@ $comments = mysqli_query($db, $q);
           echo "<h4>No Comments</h4>";
         } else {
           while ($row = mysqli_fetch_assoc($comments)) {
-            $comment_created = date("m\/d\/Y g:iA", ($row['created']- 9 * 60 * 60));
+            $comment_created = date("m\/d\/Y g:iA", ($row['created']- 8 * 60 * 60));
             $comment_username_q = mysqli_query($db,
                 "SELECT username FROM users where user_id = ".$row['user_id'].";");
 

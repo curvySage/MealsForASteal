@@ -88,7 +88,7 @@
 
             //if user is admin show button
             if($Row['admin'] == 0){
-             echo (' <a href="/admin_page.php" class="go-home" style= "justify-content: center; background-color: #2595ff;"> Admin Page</a> ');
+             echo (' <a href="/group_C/admin_page.php" class="go-home" style= "justify-content: center; background-color: #2595ff;"> Admin Page</a> ');
             }
         ?>
         </div>

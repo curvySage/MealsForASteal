@@ -76,7 +76,7 @@
       <div class="add-title">
         <label for="title">Title:
     	  <br/><span class="add-recipe-form-errors" id="title-error">&nbsp;</span>	
-    	  <br/><input type="text" value="" placeholder="Title" class="title-input" title="title" name="title" id="title" />
+    	  <br/><input type="text" value="" autocomplete="off" placeholder="Title" class="title-input" title="title" name="title" id="title" />
     	</label>
       </div>
 
@@ -84,7 +84,7 @@
       <div class="add-title">
         <label for="title">Image:
     <br/><!-- <span class="add-recipe-form-errors" id="title-error">&nbsp;</span>   -->
-    <br/><input type="text" value="" placeholder="Image URL" class="title-input" title="title" name="image" id="image" />
+    <br/><input type="text" value="" autocomplete="off" placeholder="Image URL" class="title-input" title="title" name="image" id="image" />
   </label>
       </div>
 

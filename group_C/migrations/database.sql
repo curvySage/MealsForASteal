@@ -24,8 +24,8 @@ CREATE TABLE `feedback` (
   `feedback_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `recipe_id` int(11) NOT NULL,
-  `comment` varchar(255) NOT NULL,
-  `vote` int(11) NOT NULL,
+  `comment` varchar(255),
+  `vote` int(11),
   `created` int(11) NOT NULL,
   `type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

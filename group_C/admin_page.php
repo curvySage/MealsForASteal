@@ -48,7 +48,7 @@ else{
       <a href="index.php"><img src="/group_C/public/img/logo.svg" alt="Meals for a Steal logo"></a>
       <div class="header-text">
         <span class="title">Meals for a Steal</span>
-        <span class="current-page">Account</span>
+        <span class="current-page">Admin</span>
       </div>
     </div>
     <div class="right-header">

@@ -17,7 +17,7 @@ $date_created = time();
 
 // added for url
 if (!isset($_POST['image']) || $_POST['image'] == "") {
-  $target_dir = "/group_C/public/img/uploads/0_none.jpg";
+  $target_dir = "/group_C/public/img/uploads/0_none.svg";
 } else {
   $target_dir = $_POST['image'];
 }
@@ -68,7 +68,8 @@ if (!isset($_POST['image']) || $_POST['image'] == "") {
 
    // Insert a 0 vote to newly created recipe into feedback
    $q = 'INSERT INTO feedback(user_id, recipe_id, vote, created, type)
-      		VALUES("'.$rows[0].'", "'.$row[0].'", 0, "'.$date_created.'", "v")';
+      		VALUES('.$rows[0].', '.$row[0].', 0, '.$date_created.', "v")';
+
 
    $result = mysqli_query($db, $q);
    mysqli_close($db);

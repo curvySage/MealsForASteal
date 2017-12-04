@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  <title>Meals for a Steal</title>
+  <title>Meals for a Steal - Profile</title>
   <link rel="stylesheet" href="/group_C/public/css/styles.css">
   <link rel="icon" type="image/png" href="/group_C/public/img/favicon.png" />
 </head>
@@ -15,7 +15,7 @@
       <!-- Will need to replace these links later -->
       <a href="index.php"><img src="/group_C/public/img/logo.svg" alt="Meals for a Steal logo"></a>
       <div class="header-text">
-        <span class="title">Meals for a Steal - Profile</span>
+        <span class="title">Meals for a Steal</span>
         <span class="current-page">Profile</span>  
       </div>
     </div>
@@ -132,7 +132,7 @@
             <?php
 
             $posts_array = mysqli_query($db,
-            "SELECT sum(f.vote), r.title, r.user_id, r.created, r.image, r.recipe_id from recipes r inner join feedback f on r.recipe_id = f.recipe_id WHERE r.user_id = ".$profile_id." group by r.title order by sum(f.vote) DESC");
+            "SELECT sum(f.vote), r.title, r.user_id, r.created, r.image, r.recipe_id from recipes r inner join feedback f on r.recipe_id = f.recipe_id WHERE r.user_id = ".$profile_id." group by r.title, r.user_id, r.created, r.image, r.recipe_id order by sum(f.vote) DESC");
             if (mysqli_num_rows($posts_array) != 0) {
               echo '
                 <a href="profile.php?username='.$_GET['username'].'">Recent</a>
@@ -157,7 +157,7 @@
           } else {
             while ($row = mysqli_fetch_assoc($posts_array)) {
 
-              $post_created = date("m\/d\/Y g:iA", ($row['created'] - 9 * 60 * 60));
+              $post_created = date("m\/d\/Y g:iA", ($row['created'] - 8 * 60 * 60));
 
               $vote_status_q = mysqli_query($db,
                 "SELECT vote FROM feedback where user_id = ".$user_id." and recipe_id = ".$row['recipe_id'].";");
@@ -203,7 +203,7 @@
                 
               echo '
                 </div>
-                <img class="thumbnail" src="'.$row['image'].'" alt="user submitted food">
+                <img class="thumbnail" src="'.$row['image'].'" onError="this.onerror=null;this.src=\'/group_C/public/img/uploads/0_none.png\';" alt="user submitted food">
                 <div class="posting-details">
                   <a class="food-title" href="recipe.php?recipe_id='.$row['recipe_id'].'">'.$row['title'].'</a>
                   <span class="date">'.$post_created.'</span>
