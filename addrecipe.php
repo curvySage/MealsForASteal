@@ -40,10 +40,25 @@
 	  ?>
 	  <!-- Will need to replace these links later -->
           <div>
-	    <a href="account.php"><img src="public/img/user.svg" alt="account"></a>
+	           <a href="account.php"><img src="public/img/user.svg" alt="account"></a>
             <a href="addrecipeform.php"><img src="public/img/plus.svg" alt="recipe"></a>
           </div>
-          <a class="username" href="profile.html?user_id=<?=$userID?>"><?=$_COOKIE['username']?></a>
+           <?php
+            $is_logged_in = mysqli_query($db, 'SELECT *
+            FROM users WHERE
+            username = "'.$_COOKIE['username'].'"
+            AND token = "'.$_COOKIE['token'].'"'); 
+
+            $ro = mysqli_fetch_assoc($is_logged_in);
+            $user_id = $ro['user_id'];
+
+
+            if ($is_logged_in->num_rows != 0) {
+              echo '<a class="username" href="profile.php?username='.$_COOKIE['username'].'">'.$_COOKIE['username'].'</a>';
+            } else {
+              echo '<span class="username" >Not logged in</span>';
+            }
+           ?>
       </div>
     </div>
   </div>
@@ -82,5 +97,6 @@
       <script src="public/js/addrecipe.js"></script>
     </form>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>

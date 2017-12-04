@@ -351,7 +351,7 @@ CONTENT SECTION
   resize: none;
 }
 
-.recipe-posting .add-comment button {
+.recipe-posting .add-comment .post-comment-button {
   display: flex;
   font-size: 18px;
   padding: 12px 50px;
@@ -367,11 +367,12 @@ CONTENT SECTION
   margin: auto;
 }
 
-.recipe-posting .add-comment button:hover,
-.recipe-posting .add-comment button:focus {
+.recipe-posting .add-comment .post-comment-button:hover,
+.recipe-posting .add-comment .post-comment-button:focus {
   background-color: #007cf1;
   background-image: none;
   color: white;
+  cursor: pointer;
 }
 
 @media (max-width: 800px) {
