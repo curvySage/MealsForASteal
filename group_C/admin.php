@@ -93,7 +93,7 @@ $db = @mysqli_connect (localhost, "root", "root")
 		        <!-- Will need to replace these links later -->
 		        <div>
 		          <a href="account.php"><img src="/group_C/public/img/user.svg" alt="account"></a>
-		          <a href="addrecipe.html"><img src="/group_C/public/img/plus.svg" alt="recipe"></a>
+		          <a href="addrecipe.php"><img src="/group_C/public/img/plus.svg" alt="recipe"></a>
 		        </div>
 		        <?php
 
@@ -122,7 +122,7 @@ $db = @mysqli_connect (localhost, "root", "root")
 		<div id="content-section">
 		  <div class="admin-panel"> 
 		  <p> <?php echo $type.' '.$id.' was deleted!'; ?> </p>
-		<a href="/admin_page.php" class="go-home" style= "justify-content: center; background-color: #2595ff;"> Admin Page</a>
+		<a href="/group_C/admin_page.php" class="go-home" style= "justify-content: center; background-color: #2595ff;"> Admin Page</a>
     	<a href="index.php" class="go-home" style= "justify-content: center;"> Home</a>
 		</div>
 	</div>

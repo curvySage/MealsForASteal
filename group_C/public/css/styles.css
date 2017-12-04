@@ -158,13 +158,11 @@ CONTENT SECTION
 .page-posting .votes img {
   height: 22px;
   width: 22px;
-  cursor: pointer;
 }
 
 .page-posting img {
   height: 120px;
   width: 200px;
-  cursor: pointer;
 }
 
 .page-posting .posting-details {
