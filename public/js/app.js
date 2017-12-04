@@ -60,6 +60,16 @@ $(document).ready(function(){
 
 		$(this).parent().children(".score").html(score);
 
+		var requestParser = this.id;
+		console.log(requestParser);
+		var parsedRequest = requestParser.split("_");
+		console.log(parsedRequest);
+
+		var xmlhttp = new XMLHttpRequest();
+		// Get current vote, then post new vote
+		xmlhttp.open("GET", "makeVote.php?direction=" + parsedRequest[1] + "&recipe_id=" + parsedRequest[2], true);
+		xmlhttp.send();
+
 	});
 
 	$(".downvote-button").click(function(){
@@ -81,7 +91,19 @@ $(document).ready(function(){
 
 		$(this).parent().children(".score").html(score);
 
+		var requestParser = this.id;
+		console.log(requestParser);
+		var parsedRequest = requestParser.split("_");
+		console.log(parsedRequest);
+
+		var xmlhttp = new XMLHttpRequest();
+		// Get current vote, then post new vote
+		xmlhttp.open("GET", "makeVote.php?direction=" + parsedRequest[1] + "&recipe_id=" + parsedRequest[2], true);
+		xmlhttp.send();
+
 	});
+
+
 
 });
 
