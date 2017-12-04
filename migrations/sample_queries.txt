@@ -1,0 +1,32 @@
+select sum(f.vote), u.username, r.title, r.created, f.vote from users u inner join recipes r on u.user_id LEFT JOIN feedback f on f.user_id = u.user_id where u.username = "admin" group by r.title, r.created, f.vote;
+
+
+select sum(vote) from feedback where type ="v";
+
+
+
+select sum(f.vote), u.username, r.title, r.created, f.vote from users u inner join recipes r on u.user_id LEFT JOIN feedback f on f.user_id = u.user_id where u.username = "admin" group by r.title, r.created, f.vote;
+
+
+
+select sum(feedback.votes), recipes.title from feedback, recipes;
+
+select sum(feedback.votes), recipes.title from feedback, recipes ;
+
+
+
+
+select sum(f.vote), r.title from recipes r inner join feedback f on r.recipe_id = f.recipe_id;
+
+
+
+
+
+
+select *, user.username FROM user.user_id in
+(select sum(f.vote), r.title, r.user_id, r.created from recipes r inner join feedback f on r.recipe_id = f.recipe_id group by r.recipe_id);
+
+
+
+
+select sum(feedback.vote) from feedback, recipes, where recepies.user_id = 1;
