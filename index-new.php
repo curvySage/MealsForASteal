@@ -63,8 +63,8 @@
       <div>
       <?php
         echo '
-              <a class="selected" href="index.php">Popular</a>
-              <a href="index-new.php">Recent</a>
+              <a href="index.php">Popular</a>
+              <a class="selected" href="index-new.php">Recent</a>
             ';
         ?>
 
@@ -76,7 +76,7 @@
 
     <?php
       $posts_array = mysqli_query($db,
-        "SELECT sum(f.vote), r.title, r.user_id, r.created, r.image, r.recipe_id from recipes r inner join feedback f on r.recipe_id = f.recipe_id group by r.title order by sum(f.vote) DESC LIMIT 15");
+        "SELECT sum(f.vote), r.title, r.user_id, r.created, r.image, r.recipe_id from recipes r inner join feedback f on r.recipe_id = f.recipe_id group by r.title order by created DESC LIMIT 15");
 
 
       if (mysqli_num_rows($posts_array) == 0) {
