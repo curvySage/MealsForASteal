@@ -24,7 +24,7 @@
         <!-- Will need to replace these links later -->
         <div>
           <a href="account.php"><img src="public/img/user.svg" alt="account"></a>
-          <a href="addrecipe.html"><img src="public/img/plus.svg" alt="recipe"></a>
+          <a href="addrecipe.php"><img src="public/img/plus.svg" alt="recipe"></a>
         </div>
         
         <?php
@@ -201,7 +201,7 @@
                 </div>
                 <img class="thumbnail" src="'.$row['image'].'" alt="user submitted food">
                 <div class="posting-details">
-                  <a class="food-title" href="/localhost/recipe.php?recipe_id='.$row['recipe_id'].'">'.$row['title'].'</a>
+                  <a class="food-title" href="recipe.php?recipe_id='.$row['recipe_id'].'">'.$row['title'].'</a>
                   <span class="date">'.$post_created.'</span>
                 </div>
               </div>';

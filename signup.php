@@ -18,7 +18,7 @@ FROM users
 WHERE username = "'.$_POST['username'].'"'); 
 
 if ($check->num_rows > 0) {
-  mysqli_free_result($res);
+  mysqli_free_result($check);
   mysqli_close($db);
   header("Location: /signup-fail.php");
   exit();
@@ -42,7 +42,6 @@ if(isset($token))
 {
     setcookie("token", $token, time()+3600);
     setcookie("username", $_POST['username'], time() + 3600);
-    mysqli_free_result($res);
     mysqli_close($db);
     header("Location: /index.php");
     exit();

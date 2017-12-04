@@ -1,6 +1,6 @@
 function loadImg(Img){
 	var photo = document.getElementById("img")
-	var image = document.getElementById("photo");
+	var image = document.getElementById("image");
 	image.src = photo.src;
 }
 
@@ -61,9 +61,7 @@ $(document).ready(function(){
 		$(this).parent().children(".score").html(score);
 
 		var requestParser = this.id;
-		console.log(requestParser);
 		var parsedRequest = requestParser.split("_");
-		console.log(parsedRequest);
 
 		var xmlhttp = new XMLHttpRequest();
 		// Get current vote, then post new vote
@@ -92,9 +90,7 @@ $(document).ready(function(){
 		$(this).parent().children(".score").html(score);
 
 		var requestParser = this.id;
-		console.log(requestParser);
 		var parsedRequest = requestParser.split("_");
-		console.log(parsedRequest);
 
 		var xmlhttp = new XMLHttpRequest();
 		// Get current vote, then post new vote

@@ -79,10 +79,6 @@ HEADER SECTION
 /* -----------------------------
 CONTENT SECTION
 ----------------------------- */
-label {
-  display: none;
-}
-
 #content-section {
   display: flex;
   flex-direction: column;
@@ -355,7 +351,7 @@ label {
   resize: none;
 }
 
-.recipe-posting .add-comment button {
+.recipe-posting .add-comment .post-comment-button {
   display: flex;
   font-size: 18px;
   padding: 12px 50px;
@@ -371,11 +367,12 @@ label {
   margin: auto;
 }
 
-.recipe-posting .add-comment button:hover,
-.recipe-posting .add-comment button:focus {
+.recipe-posting .add-comment .post-comment-button:hover,
+.recipe-posting .add-comment .post-comment-button:focus {
   background-color: #007cf1;
   background-image: none;
   color: white;
+  cursor: pointer;
 }
 
 @media (max-width: 800px) {
@@ -581,26 +578,46 @@ label {
 /* -----------------------------
   Add Recipe
   ----------------------------- */
-.add-recipe {
+.add-recipe-form {
   display: flex;
   flex-direction: column;
-  width: 800px;
   align-items: center;
+  justify-content: center;
+  width: 800px;
   margin: 20px 20px 20px 20px;
   padding: 10px 20px 20px 20px;
   border-radius: 7px;
   box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
 }
 
-.add-recipe .add-recipe-title {
-  margin: 0 0 20px;
-}
-
-.add-recipe .add-recipe-title .title-label {
+.add-recipe-form label {
   font-size: 22px;
 }
 
-.add-recipe .add-recipe-title .recipe-title {
+.add-recipe-form textarea {
+  height: 20rem;
+  width: 30rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #eaeaea;
+  padding: 0 1rem;
+  line-height: 45px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 200;
+  resize: none;
+}
+
+.add-recipe-form .add-recipe-form-errors {
+  color: red;
+  font-size: 70%;
+}
+
+.add-recipe-form .add-title {
+  margin: 0 0 20px;
+}
+
+.add-recipe-form .add-title .title-input {
   display: flex;
   height: 2.5rem;
   width: 20rem;
@@ -615,9 +632,9 @@ label {
   font-weight: 200;
 }
 
-.add-recipe .add-recipe-photo {
+.add-recipe-form .add-photo-preview {
   padding: 10px 10px 10px 10px;
-  margin: 0 0 20px;
+  margin: 0 0 10px;
   width: 28rem;
   height: 10rem;
   display: flex;
@@ -629,69 +646,33 @@ label {
   border-color: #808080;
 }
 
-.add-recipe .add-recipe-photo img {
+.add-recipe-form .add-photo-preview img {
   width: 120px;
   cursor: pointer;
 }
 
-.add-recipe .add-recipe-ingredients .ingredients-title {
-  font-size: 22px;
+.add-recipe-form .thumb {
+  height: 75px;
+  border: 1px solid #000;
+  margin: 10px 5px 0 0;
 }
 
-.add-recipe .add-recipe-ingredients .add-ingredient-input {
+.add-recipe-form .add-ingredients {
   display: flex;
   flex-direction: column;
 }
 
-.add-recipe .add-recipe-ingredients .add-ingredient-input .ingredient {
-  height: 2.5rem;
-  width: 20rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #eaeaea;
-  padding: 0 1rem;
-  line-height: 45px;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-  font-weight: 200;
-}
-
-.add-recipe .add-recipe-ingredients .add-ingredient-input img {
-  align-self: flex-start;
-  margin: 0 0 0 0.5rem;
-  width: 2rem;
-  cursor: pointer;
-}
-
-.add-recipe .add-recipe-instructions {
+.add-recipe-form .add-instructions {
   display: flex;
   flex-direction: column;
 }
 
-.add-recipe .add-recipe-instructions .instructions-title {
-  font-size: 22px;
-}
-
-.add-recipe .add-recipe-instructions .instructions {
-  height: 20rem;
-  width: 30rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #eaeaea;
-  padding: 0 1rem;
-  line-height: 45px;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-  font-weight: 200;
-  resize: none;
-}
-
-.add-recipe .add-recipe-form .final-buttons {
+.add-recipe-form .buttons {
   display: flex;
   margin: 20px;
 }
 
-.add-recipe .add-recipe-form .final-buttons .add-button {
+.add-recipe-form .buttons .add-button {
   cursor: pointer;
   font-size: 18px;
   padding: 12px 50px;
@@ -704,7 +685,7 @@ label {
   margin: 0 .5rem;
 }
 
-.add-recipe .add-recipe-form .final-buttons .clear-button {
+.add-recipe-form .buttons .clear-button {
   cursor: pointer;
   cursor: pointer;
   font-size: 18px;
