@@ -94,15 +94,8 @@ $db = @mysqli_connect (localhost, "root", "root")
 		<div id="content-section">
 		  <div class="admin-panel"> 
 		  <p> '.$type.' '.$id.' was deleted! </p>
-		  <form action="/admin.html" id="back">
-		<button class="home-button" form ="back">
-	        Delete More!
-		</button>
-		</form>
-		<form action="/index.html" id="home">
-		<button class="home-button" form ="home">
-	      Home 
-		</button>
+		<a href="/admin_page.php" class="go-home" style= "justify-content: center; background-color: #2595ff;"> Delete More</a>
+    	<a href="index.html" class="go-home" style= "justify-content: center;"> Home</a>
 		</form>
 		</div>
 		</div>
