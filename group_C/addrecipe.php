@@ -19,7 +19,7 @@
 <body>
   <div id="header-section">
     <div class="logo">
-      <!-- Will need to replace these links later -->
+      
       <a href="index.php"><img src="/group_C/public/img/logo.svg" alt="Meals for a Steal logo"></a>
       <div class="header-text">
         <span class="title">Meals for a Steal</span>
@@ -45,7 +45,7 @@
 	    $userID = $userIDRow[0];
 	  }
 	  ?>
-	  <!-- Will need to replace these links later -->
+	  
           <div>
 	           <a href="account.php"><img src="/group_C/public/img/menu.svg" alt="account"></a>
             <a href="addrecipe.php"><img src="/group_C/public/img/plus.svg" alt="recipe"></a>
@@ -71,7 +71,7 @@
   </div>
   
   <div id="content-section">
-    <!-- Stuff goes here -->
+    
     <form action="/group_C/createrecipe.php" method="post" id="add-recipe" class="add-recipe-form">
       <div class="add-title">
         <label for="title">Title:

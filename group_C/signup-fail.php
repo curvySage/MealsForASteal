@@ -7,15 +7,12 @@
   <title>Meals for a Steal - Signing</title>
   <link rel="stylesheet" href="/group_C/public/css/styles.css">
   <link rel="icon" type="image/png" href="/group_C/public/img/favicon.png" />
-
-  <!-- <meta http-equiv="refresh" content="0; url=/index.php" /> -->
-  <!--  -->
 </head>
 
 <body>
   <div id="header-section">
     <div class="logo">
-      <!-- Will need to replace these links later -->
+      
       <a href="index.php"><img src="/group_C/public/img/logo.svg" alt="Meals for a Steal logo"></a>
       <div class="header-text">
         <span class="title">Meals for a Steal</span>
@@ -24,7 +21,7 @@
     </div>
     <div class="right-header">
       <div class="account-selector">
-        <!-- Will need to replace these links later -->
+        
         <div>
           <a href="account.php"><img src="/group_C/public/img/menu.svg" alt="account"></a>
           <a href="addrecipe.php"><img src="/group_C/public/img/plus.svg" alt="recipe"></a>

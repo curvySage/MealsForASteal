@@ -67,11 +67,11 @@ $comments = mysqli_query($db, $q);
 <body>
   <div id="header-section">
     <div class="logo">
-      <!-- Will need to replace these links later -->
+      
       <a href="index.php"><img src="/group_C/public/img/logo.svg" alt="Meals for a Steal logo"></a>
       <div class="header-text">
         <span class="title">Meals for a Steal</span>
-        <!-- <span class="current-page">Home</span>   -->
+        <span class="current-page">Recipe</span>  
       </div>
     </div>
     <div class="right-header">
@@ -99,7 +99,7 @@ $comments = mysqli_query($db, $q);
     </div>
   </div>
   <div id="content-section">
-    <!-- Stuff goes here -->
+    
     <div class="recipe-posting">
 
     <?php 

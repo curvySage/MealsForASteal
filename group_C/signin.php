@@ -1,5 +1,4 @@
 <?php
-// $db = @mysqli_connect (localhost, "abedm001", "Vt564j")
 
 if (isset($_COOKIE['token'])) {
   header("Location: /group_C/index.php");
@@ -62,7 +61,7 @@ mysqli_close($db);
 <body>
   <div id="header-section">
     <div class="logo">
-      <!-- Will need to replace these links later -->
+      
       <a href="index.php"><img src="/group_C/public/img/logo.svg" alt="Meals for a Steal logo"></a>
       <div class="header-text">
         <span class="title">Meals for a Steal</span>
@@ -71,7 +70,7 @@ mysqli_close($db);
     </div>
     <div class="right-header">
       <div class="account-selector">
-        <!-- Will need to replace these links later -->
+        
         <div>
           <a href="account.php"><img src="/group_C/public/img/menu.svg" alt="account"></a>
           <a href="addrecipe.php"><img src="/group_C/public/img/plus.svg" alt="recipe"></a>
