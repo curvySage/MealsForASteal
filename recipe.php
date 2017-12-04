@@ -58,7 +58,7 @@ $comments = mysqli_query($db, $q);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  <title>Meals for a Steal</title>
+  <title>Meals for a Steal - Recipe</title>
   <link rel="stylesheet" href="public/css/styles.css">
   <link rel="icon" type="image/png" href="public/img/favicon.png" />
 </head>
@@ -180,7 +180,7 @@ $comments = mysqli_query($db, $q);
           echo "<h4>No Comments</h4>";
         } else {
           while ($row = mysqli_fetch_assoc($comments)) {
-            $comment_created = gmdate("m/d/Y H:i", $row['created']);
+            $comment_created = gmdate("m/d/Y H:i", ($row['created']- 8 * 60 * 60));
             $comment_username_q = mysqli_query($db,
                 "SELECT username FROM users where user_id = ".$row['user_id'].";");
 

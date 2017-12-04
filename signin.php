@@ -51,7 +51,7 @@ mysqli_close($db);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  <title>Meals for a Steal</title>
+  <title>Meals for a Steal - Signing</title>
   <link rel="stylesheet" href="public/css/styles.css">
   <link rel="icon" type="image/png" href="public/img/favicon.png" />
 

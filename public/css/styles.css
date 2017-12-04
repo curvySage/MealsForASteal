@@ -827,6 +827,23 @@ CONTENT SECTION
   width: 97%;
 }
 
+.admin-panel .admin-error-msg {
+  color: red;
+}
+
+.admin-panel .home-button {
+  cursor: pointer;
+  width: 350px;
+  font-size: 14px;
+  margin: 5px 0 5px;
+  padding: 12px 50px;
+  background-color: #2595ff;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 4.2px;
+  transition: all ease-in-out 0.2s;
+}
+
 .admin-panel .delete-button {
   cursor: pointer;
   font-size: 14px;

@@ -15,7 +15,7 @@
       <!-- Will need to replace these links later -->
       <a href="index.html"><img src="public/img/logo.svg" alt="Meals for a Steal logo"></a>
       <div class="header-text">
-        <span class="title">Meals for a Steal</span>
+        <span class="title">Meals for a Steal - Profile</span>
         <span class="current-page">Profile</span>  
       </div>
     </div>
@@ -82,7 +82,7 @@
           $exists_rows = mysqli_fetch_assoc($exists);
           $profile_id = $exists_rows['user_id'];
           $profile_created = $exists_rows['created'];
-          $profile_created = gmdate("m/d/Y", $profile_created);
+          $profile_created = gmdate("m/d/Y", ($profile_created - 8 * 60 * 60));
 
           $posts_number_q = mysqli_query($db,
             "SELECT count(*) from recipes WHERE recipes.user_id = " . $profile_id . ";");
