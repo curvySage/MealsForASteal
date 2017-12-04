@@ -36,8 +36,6 @@
       $currVote = $ro['vote'];  
     }
 
-    echo $currVote;
-
     $vote = 0;
 
     if ($_REQUEST['direction'] == "up") {
@@ -67,6 +65,9 @@
       $res = mysqli_query($db,'INSERT INTO feedback
           (user_id, recipe_id, vote, created, type)
           VALUES('.$user_id.', '.$_REQUEST['recipe_id'].', '.$vote.', '.time().', "v")');
+      echo 'INSERT INTO feedback
+          (user_id, recipe_id, vote, created, type)
+          VALUES('.$user_id.', '.$_REQUEST['recipe_id'].', '.$vote.', '.time().', "v")';
     }
 
     mysqli_free_result($res);
