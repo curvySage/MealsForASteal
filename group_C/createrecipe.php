@@ -17,7 +17,7 @@ $date_created = time();
 
 // added for url
 if (!isset($_POST['image']) || $_POST['image'] == "") {
-  $target_dir = "/group_C/public/img/uploads/0_none.svg";
+  $target_dir = "/group_C/public/img/uploads/0_none.png";
 } else {
   $target_dir = $_POST['image'];
 }

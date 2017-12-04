@@ -160,6 +160,11 @@ CONTENT SECTION
   width: 22px;
 }
 
+.page-posting .votes img:hover,
+.page-posting .votes img:focus {
+  cursor: pointer;
+}
+
 .page-posting img {
   height: 120px;
   width: 200px;
@@ -208,7 +213,12 @@ CONTENT SECTION
     font-size: 18px;
     margin: 10px;
     width: 100px;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+  }
+  .page-posting .votes .score {
+    margin: 0 15px;
+    font-size: 28px;
   }
   .page-posting .posting-details {
     align-items: center;
@@ -262,7 +272,7 @@ CONTENT SECTION
 .recipe-posting .recipe-header .votes {
   display: flex;
   flex-direction: column;
-  font-size: 22px;
+  font-size: 34px;
   margin: 20px;
   align-items: center;
   width: 50px;
@@ -316,6 +326,12 @@ CONTENT SECTION
 .recipe-posting .comments a {
   text-decoration: none;
   color: black;
+  font-weight: 600;
+}
+
+.recipe-posting .comments a:hover,
+.recipe-posting .comments a:focus {
+  text-decoration: underline;
 }
 
 .recipe-posting .comments .comment-date {

@@ -175,6 +175,10 @@ label {
       height: 22px;
       width: 22px;
     }
+    img:hover,
+    img:focus {
+      cursor: pointer;
+    }
   }
 
   img {
@@ -227,7 +231,13 @@ label {
       font-size: 18px;
       margin: 10px;
       width: 100px;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: center;
+
+      .score {
+        margin: 0 15px;
+        font-size: 28px;
+      }
     }
 
     .posting-details {
@@ -291,7 +301,7 @@ label {
     .votes {
       display: flex;
       flex-direction: column;
-      font-size: 22px;
+      font-size: 34px;
       margin: 20px;
       align-items: center;
       width: 50px;
@@ -346,6 +356,12 @@ label {
     a {
       text-decoration: none;
       color: black;
+      font-weight: 600;
+
+    }
+    a:hover, 
+    a:focus {
+      text-decoration: underline;
     }
 
     .comment-date {

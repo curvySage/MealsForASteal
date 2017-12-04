@@ -73,7 +73,7 @@
         </div>
         <div class="delete-account">
           <button id="delete-account-warning" class="input-button">DELETE ACCOUNT</button>
-          <form action="/group_C/deleteAccount.php" method="post" id="delete-account-form" autocomplete="off" class="delete-account-form">
+          <form action="/group_C/deleteAccount.php" style="display:none;" method="post" id="delete-account-form" autocomplete="off" class="delete-account-form">
             <span class="account-error-msg" id="enter-delete-password">&nbsp;</span>
             <input type="password" id="delete-account-form" value="" name="dPassword" placeholder="Enter password to confirm" class="input-field" required>
             <input type="submit" class="input-button" id="change-password-form-oldpassword" value="DELETE" name="oldPassword" placeholder="Enter password to confirm" required>
