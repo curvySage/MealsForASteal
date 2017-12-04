@@ -165,7 +165,7 @@ $comments = mysqli_query($db, $q);
           <?php echo '<a class="author" href="profile.php?username='.$username.'">'.$username.'</a>'; ?>
         </div>
       </div>
-      <img class="finished-food" src="<?=$recipeRow['image']?>" alt="user submitted food">
+      <img class="finished-food" src="<?=$recipeRow['image']?>"  onError="this.onerror=null;this.src='/group_C/public/img/uploads/0_none.png';" alt="user submitted food">
       <div class="recipe-details">
         <div class="recipe-ingredients">
           <span class="detail-title">Ingredients</span>
