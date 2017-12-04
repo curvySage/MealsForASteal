@@ -87,7 +87,7 @@
       } else {
         while ($row = mysqli_fetch_assoc($posts_array)) {
 
-          $post_created = gmdate("m/d/Y H:i", $row['created']);
+          $post_created = gmdate("m/d/Y H:i", ($row['created'] - 8 * 60 * 60));
 
           $vote_status_q = mysqli_query($db,
             "SELECT vote FROM feedback where user_id = ".$user_id." and recipe_id = ".$row['recipe_id'].";");

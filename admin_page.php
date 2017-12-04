@@ -1,7 +1,7 @@
 <?php
 
 //if cookie isnt set
-if (!isset($_COOKIE['username'])) {
+if (!isset($_COOKIE['token'])) {
   header("Location: /error.html");
   exit();
 }
@@ -17,29 +17,26 @@ else{
 	
 	//query string
 	$SQLstring = "SELECT *
-	FROM users WHERE username = '$u_name'";
+	FROM users WHERE token = '".$_COOKIE_token."'";
 
 	//get results from db
 	$result = mysqli_query($db,$SQLstring);
 	$Row = mysqli_fetch_assoc($result);
 
 	//if user isnt admin redirect, else show admin page
-	if($Row['admin'] != 1){
+	if($Row['admin'] != 0){
 		header("Location: /error.html");
   		exit();
 	}
+?>
 
-	else{
-		
-		//admin page
-		echo ('
-		<!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  <title>Meals for a Steal</title>
+  <title>Meals for a Steal - Admin</title>
   <link rel="stylesheet" href="public/css/styles.css">
   <link rel="icon" type="image/png" href="public/img/favicon.png" />
 </head>
@@ -60,7 +57,8 @@ else{
         <div>
           <a href="account.php"><img src="public/img/user.svg" alt="account"></a>
           <a href="addrecipe.html"><img src="public/img/plus.svg" alt="recipe"></a>
-        </div>');
+        </div>
+        <?php
 
           $is_logged_in = mysqli_query($db, 'SELECT *
           FROM users WHERE
@@ -76,81 +74,79 @@ else{
           } else {
             echo '<span class="username" >Not logged in</span>';
           }
-          echo('
-		      </div>
-		    </div>
-		  </div>
-		  <div id="content-section">
-		    <div class="admin-panel">
-		      <span class="welcome">Admin Dashboard</span>
-		      <hr>
-		      <div class="user-admin">
-			<span class="section-headers">Users</span>
-			<div class="user-actions">
-			  <div class="prompt">
-			    <label>
-			      <span>ID of the <span class="mod-type">user</span> to delete:</span>
-			      &nbsp;&nbsp;&nbsp;
+          ?>
+      </div>
+    </div>
+  </div>
+  <div id="content-section">
+    <div class="admin-panel">
+      <span class="welcome">Admin Dashboard</span>
+      <hr>
+      <div class="user-admin">
+	<span class="section-headers">Users</span>
+	<div class="user-actions">
+	  <div class="prompt">
+	    <label>
+	      <span>Username of the <span class="mod-type">user</span> to delete:</span>
+	      &nbsp;&nbsp;&nbsp;
 
-			      <input type="text" name="del-user-id" form="delete-user-id" >
-			    </label>
-			    <form action="/admin.php" method="post" id="delete-user-id">
-			      <div class="user-button">
-				<button name="type" value = "User" class="delete-button" form ="delete-user-id">
-			        Delete
-				</button>
-			      </div>
-			    </form>
+	      <input type="text" name="del-user-id" form="delete-user-id" >
+	    </label>
+	    <form action="/admin.php" method="post" id="delete-user-id">
+	      <div class="user-button">
+		<button name="type" value = "User" class="delete-button" form ="delete-user-id">
+	        Delete
+		</button>
+	      </div>
+	    </form>
 
-			  </div>
-			</div>
-		      </div>
-		      <div class="post-admin">
-			<span class="section-headers">Posts</span>
-			<div class="post-actions">
-			  <div class="prompt">
-			    <label>
-			      <span>ID of the <span class="mod-type">post</span> to delete:</span>
-			      &nbsp;&nbsp;&nbsp;
+	  </div>
+	</div>
+      </div>
+      <div class="post-admin">
+	<span class="section-headers">Posts</span>
+	<div class="post-actions">
+	  <div class="prompt">
+	    <label>
+	      <span>ID of the <span class="mod-type">post</span> to delete:</span>
+	      &nbsp;&nbsp;&nbsp;
 
-			      <input type="text" name="del-post-id" form="delete-post-id">
-			    </label>
-			    <form action="admin.php" method="post" id="delete-post-id">
-			      <div class="post-button">
-				<button name="type" value="Post" class="delete-button" form="delete-post-id">
-			        Delete
-				</button>
-			      </div>
-			    </form>
+	      <input type="text" name="del-post-id" form="delete-post-id">
+	    </label>
+	    <form action="admin.php" method="post" id="delete-post-id">
+	      <div class="post-button">
+		<button name="type" value="Post" class="delete-button" form="delete-post-id">
+	        Delete
+		</button>
+	      </div>
+	    </form>
 
-			  </div>
-			</div>
-		      </div>
-		      <div class="comment-admin">
-			<span class="section-headers">Comments</span>
-			<div class="comment-actions">
-			  <div class="prompt">
-			    <label>
-			      <span>Enter the ID of the <span class="mod-type">comment</span> to delete:&nbsp;</span>
-			      <input type="text" name="del-comment-id" form="delete-comment">
-			    </label>
-			    <form action="admin.php" method="post" id="delete-comment">
-			      <div class="comment-button">
-				<button name="type" value= "Comment" class="delete-button" form="delete-comment">
-			        Delete
-				</button>
-			      </div>
-			    </form>
-			  </div>
-			</div>
-		      </div>
-		    </div>
-		  </div>
-		  <script type="text/javascript" src="public/js/app.js"></script>
-		</body>
-		</html>
-		');
-	}
+	  </div>
+	</div>
+      </div>
+      <div class="comment-admin">
+	<span class="section-headers">Comments</span>
+	<div class="comment-actions">
+	  <div class="prompt">
+	    <label>
+	      <span>Enter the ID of the <span class="mod-type">comment</span> to delete:&nbsp;</span>
+	      <input type="text" name="del-comment-id" form="delete-comment">
+	    </label>
+	    <form action="admin.php" method="post" id="delete-comment">
+	      <div class="comment-button">
+		<button name="type" value= "Comment" class="delete-button" form="delete-comment">
+	        Delete
+		</button>
+	      </div>
+	    </form>
+	  </div>
+	</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<?php
 
 mysqli_free_result($result);
 mysqli_close($db);

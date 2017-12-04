@@ -1,6 +1,6 @@
 <?php
 //if cookie isnt set
-if (!isset($_COOKIE['username'])) {
+if (!isset($_COOKIE['token'])) {
   header("Location: /error.html");
   exit();
 }
@@ -23,7 +23,7 @@ else{
 	$Row = mysqli_fetch_assoc($result);
 
 	//if user isnt admin redirect, else show admin page
-	if($Row['admin'] != 1){
+	if($Row['admin'] != 0){
 		header("Location: /error.html");
   		exit();
 	}

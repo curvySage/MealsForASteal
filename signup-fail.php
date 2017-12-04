@@ -18,7 +18,7 @@
       <!-- Will need to replace these links later -->
       <a href="index.html"><img src="public/img/logo.svg" alt="Meals for a Steal logo"></a>
       <div class="header-text">
-        <span class="title">Meals for a Steal</span>
+        <span class="title">Meals for a Steal - Signing</span>
         <span class="current-page">Account</span>
       </div>
     </div>

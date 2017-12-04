@@ -15,7 +15,7 @@
       <!-- Will need to replace these links later -->
       <a href="index.html"><img src="public/img/logo.svg" alt="Meals for a Steal logo"></a>
       <div class="header-text">
-        <span class="title">Meals for a Steal</span>
+        <span class="title">Meals for a Steal - Settings</span>
         <span class="current-page">Account</span>
       </div>
     </div>
@@ -87,7 +87,7 @@
           $Row = mysqli_fetch_assoc($result);
 
             //if user is admin show button
-            if($Row['admin'] == 1){
+            if($Row['admin'] == 0){
              echo (' <a href="/admin_page.php" class="go-home" style= "justify-content: center; background-color: #2595ff;"> Admin Page</a> ');
             }
         ?>

@@ -50,19 +50,19 @@ CREATE TABLE `recipes` (
 -- Dumping data for table `recipes`
 --
 
-INSERT INTO `recipes` (`recipe_id`, `title`, `ingredients`, `description`, `created`, `user_id`, `image`) VALUES
-(2, 'Deli Sandwich', 'cheese,bread,deli', 'lorem ipsum lorem ipsum lorem ipsum', 1512018570, 1, ''),
-(3, 'Cheese Burger', 'cheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018590, 1, ''),
-(4, 'asdasdasd', 'knsajkd,aksmdl', 'asdasdsdasdipsum', 1512018571, 1, ''),
-(5, 'Sasadaslmon', 'casdadsfashfeese,breadfad,meat', 'lorem ipsum asdfloadsfreadsfm ipsum lorem ipsum', 1512018572, 1, ''),
-(6, 'Sasdfalmon', 'casdheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018573, 1, ''),
-(7, 'asdfasfSalmon', 'casdheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018574, 1, ''),
-(8, 'gfhdSalmon', 'casdheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018575, 1, ''),
-(9, 'dfjhdhSalmon', 'casdheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018576, 1, ''),
-(10, 'wretSwertalmon', 'casdheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018577, 1, ''),
-(11, 'uyiySalmon', 'casdheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018578, 1, ''),
-(12, 'gjhkgjhkSalmon', 'casdheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018579, 1, ''),
-(13, 'qweqweSalmon', 'casdheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018580, 1, '');
+-- INSERT INTO `recipes` (`recipe_id`, `title`, `ingredients`, `description`, `created`, `user_id`, `image`) VALUES
+-- (2, 'Deli Sandwich', 'cheese,bread,deli', 'lorem ipsum lorem ipsum lorem ipsum', 1512018570, 1, ''),
+-- (3, 'Cheese Burger', 'cheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018590, 1, ''),
+-- (4, 'asdasdasd', 'knsajkd,aksmdl', 'asdasdsdasdipsum', 1512018571, 1, ''),
+-- (5, 'Sasadaslmon', 'casdadsfashfeese,breadfad,meat', 'lorem ipsum asdfloadsfreadsfm ipsum lorem ipsum', 1512018572, 1, ''),
+-- (6, 'Sasdfalmon', 'casdheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018573, 1, ''),
+-- (7, 'asdfasfSalmon', 'casdheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018574, 1, ''),
+-- (8, 'gfhdSalmon', 'casdheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018575, 1, ''),
+-- (9, 'dfjhdhSalmon', 'casdheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018576, 1, ''),
+-- (10, 'wretSwertalmon', 'casdheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018577, 1, ''),
+-- (11, 'uyiySalmon', 'casdheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018578, 1, ''),
+-- (12, 'gjhkgjhkSalmon', 'casdheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018579, 1, ''),
+-- (13, 'qweqweSalmon', 'casdheese,bread,meat', 'lorem ipsum lorem ipsum lorem ipsum', 1512018580, 1, '');
 
 -- --------------------------------------------------------
 
@@ -76,7 +76,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `created` int(11) NOT NULL,
-  `admin` tinyint(1) NOT NULL
+  `admin` tinyint(1) NOT NULL, 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -146,3 +146,5 @@ ALTER TABLE `feedback`
 --
 ALTER TABLE `recipes`
   ADD CONSTRAINT `userRM` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+  
