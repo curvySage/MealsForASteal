@@ -1,5 +1,4 @@
 <?php
-// $db = @mysqli_connect (localhost, "abedm001", "Vt564j")
 
 if (isset($_COOKIE['token']) || $_POST['password1'] == "" || $_POST['password2'] == "" || $_POST['username'] == "" || ($_POST['password1'] != $_POST['password2'])) {
   header("Location: /group_C/error.html");

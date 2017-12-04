@@ -1,44 +1,42 @@
 <?php
+
 //if cookie isnt set
 if (!isset($_COOKIE['token'])) {
   header("Location: /group_C/error.html");
   exit();
 }
-else{
-	//to get cookie name
-	$u_name = $_COOKIE['username'];
-	
-  $db = @mysqli_connect (localhost, "root", "root")
-	  Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
-	
-	@mysqli_select_db($db, "group_c")
-	  Or die("<div class='error'><p>Could not connect to database<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
-	
-	//query string
-	$SQLstring = "SELECT *
-	FROM users WHERE username = '$u_name'";
+//to get cookie name
+$u_name = $_COOKIE['username'];
 
-	//get results from db
-	$result = mysqli_query($db,$SQLstring);
-	$Row = mysqli_fetch_assoc($result);
+$db = @mysqli_connect (localhost, "root", "root")
+	Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
 
-	//if user isnt admin redirect, else show admin page
-	if($Row['admin'] != 0){
-		header("Location: /group_C/error.html");
-  		exit();
-	}
+@mysqli_select_db($db, "group_c")
+  Or die("<div class='error'><p>Could not connect to database<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
 
-	else{
-		
-				//admin page
-		echo ('
-		<!doctype html>
+//query string
+$SQLstring = "SELECT admin
+FROM users WHERE token = '".$_COOKIE['token']."' AND admin = 0;";
+
+//get results from db
+$result = mysqli_query($db, $SQLstring);
+
+// echo $Row['admin'];
+
+
+//if user isnt admin redirect, else show admin page
+if($result->num_rows == 0){
+	header("Location: /group_C/error.html");
+	exit();
+}
+?>
+<!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  <title>Meals for a Steal</title>
+  <title>Meals for a Steal - Admin Panel</title>
   <link rel="stylesheet" href="/group_C/public/css/styles.css">
   <link rel="icon" type="image/png" href="/group_C/public/img/favicon.png" />
 </head>
@@ -46,20 +44,21 @@ else{
 <body>
   <div id="header-section">
     <div class="logo">
-      <!-- Will need to replace these links later -->
+      
       <a href="index.php"><img src="/group_C/public/img/logo.svg" alt="Meals for a Steal logo"></a>
       <div class="header-text">
         <span class="title">Meals for a Steal</span>
-        <span class="current-page">Account</span>
+        <span class="current-page">Admin Panel</span>
       </div>
     </div>
     <div class="right-header">
       <div class="account-selector">
-        <!-- Will need to replace these links later -->
+        
         <div>
           <a href="account.php"><img src="/group_C/public/img/menu.svg" alt="account"></a>
           <a href="addrecipe.php"><img src="/group_C/public/img/plus.svg" alt="recipe"></a>
-        </div>');
+        </div>
+        <?php
 
           $is_logged_in = mysqli_query($db, 'SELECT *
           FROM users WHERE
@@ -150,8 +149,6 @@ else{
 		</body>
 		</html>
 		');
-	}
 mysqli_free_result($result);
 mysqli_close($db);
-}
 ?>
