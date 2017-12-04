@@ -574,21 +574,6 @@ label {
       color: red;
   }
 
-
-  // // DEBUG XXX
-  // .sign-in {
-  //   color: blue;
-  //   .account-error-msg {
-  //     color: red;
-  //   }
-  // }
-
-  // .sign-up {
-  //   .account-error-msg {
-  //     color: red;
-  //   }
-  // }
-
   .sign-out {
     .input-button {
       display: flex;
@@ -654,6 +639,29 @@ label {
         }
       }
     }
+  }
+
+  .admin-panel-entrance {
+    text-decoration: none;
+    display: flex;
+    font-size: 18px;
+    padding: 12px 50px;
+    background-color: #43A047;
+    color: white;
+    line-height: 1.25;
+    border: 1px solid transparent;
+    border-radius: 4.2px;
+    transition: all ease-in-out 0.2s;
+    margin-top: 30px;
+    text-decoration: none;
+    justify-content: center;
+  }
+
+  .admin-panel-entrance:hover,
+  .admin-panel-entrance:focus {
+    background-color: #2E7D32;
+    background-image: none;
+    color: white;
   }
 }
 
@@ -928,6 +936,7 @@ label {
   padding: 10px 20px 20px 20px;
   border-radius: 7px;
   box-shadow: 2px 1px 35px -6px rgba(0, 0, 0, 0.75);
+
 
   hr {
     border: 0;

@@ -77,7 +77,7 @@ $comments = mysqli_query($db, $q);
     <div class="right-header">
       <div class="account-selector">
          <div>
-             <a href="account.php"><img src="/group_C/public/img/user.svg" alt="account"></a>
+             <a href="account.php"><img src="/group_C/public/img/menu.svg" alt="account"></a>
             <a href="addrecipe.php"><img src="/group_C/public/img/plus.svg" alt="recipe"></a>
           </div>
            <?php

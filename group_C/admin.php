@@ -1,38 +1,4 @@
 <?php
-
-$SQlstring;
-
-//get type
-$type = $_POST['type'];
-
-//get the id value, and set table, and primary key
-//to the right values
-if($type == 'Post')
-{	
-	$id = $_POST['del-post-id'];
-	$table= "recipes";
-	$pk = "recipe_id";
-	$SQlstring = "DELETE
-	FROM $table WHERE $pk = $id";
-}
-else if($type == 'User')
-{	
-	$id = $_POST['del-user-id'];
-	$table = "users";
-	$pk = "username";
-	$SQlstring = "DELETE
-	FROM $table WHERE $pk = '$id'";
-
-}
-else if($type == 'Comment')
-{
-	$id = $_POST['del-comment-id'];
-	$table = "feedback";
-	$pk = "feedback_id";
-	$SQlstring = "DELETE
-	FROM $table WHERE $pk = $id";
-}
-
 $db = @mysqli_connect (localhost, "root", "root")
 	  Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
 	
@@ -42,10 +8,56 @@ $db = @mysqli_connect (localhost, "root", "root")
 	// test 1
 	mysqli_query($db, 'SET foreign_key_checks = 0');
 
-	//Delete SQl Code  
+$check;
+$num;
 
- 	$check  = mysqli_query($db, $SQlstring);
+//get type
+$type = $_POST['type'];
+
+//get the id value, and set table, and primary key
+//to the right values
+if($type == 'Post')
+{	
+	$id = $_POST['del-post-id'];
+	$table= "Recipes";
+	$pk = "recipe_id";
+	$SQlstring1 = "DELETE
+	FROM feedback WHERE recipe_id = ".$recipe_id.";";
+	$SQlstring2 = "DELETE
+	FROM recipes WHERE recipe_id = ".$recipe_id.";";
+	mysqli_query($db, $SQlstring1);
+	$check  = mysqli_query($db, $SQlstring2);
  	$num = mysqli_affected_rows($db);
+ 	$r_id = $id;
+}
+else if($type == 'User')
+{	
+	$r_id = $_POST['del-user-id'];
+	$table = "Users";
+	$SQlstring1 = "SELECT user_id from users WHERE username='".$r_id."';";
+	$get_r_id = mysqli_query($db, $SQlstring1);
+	$get_r_id_row = mysqli_fetch_assoc($get_r_id);
+	$id = $get_r_id_row ['user_id'];
+	$SQlstring2 = "DELETE FROM feedback WHERE user_id = ".$id.";";
+	$SQlstring3 = "DELETE FROM recipes WHERE user_id = ".$id.";";
+	$SQlstring4 = "DELETE FROM users WHERE user_id = ".$id.";";
+	mysqli_query($db, $SQlstring2);
+	mysqli_query($db, $SQlstring3);
+	$check = mysqli_query($db, $SQlstring4);
+	$num = mysqli_affected_rows($db);
+
+
+}
+else if($type == 'Comment')
+{
+	$id = $_POST['del-comment-id'];
+	$table = "Feedback";
+	$SQlstring = "DELETE from feedback WHERE feedback_id=".$id.";";
+	$check = mysqli_query($db, $SQlstring4);
+	$num = mysqli_affected_rows($db);
+	$r_id = $id;
+}
+
 
  	// test 2
 	mysqli_query($db, 'SET foreign_key_checks = 1');
@@ -92,7 +104,7 @@ $db = @mysqli_connect (localhost, "root", "root")
 		      <div class="account-selector">
 		        <!-- Will need to replace these links later -->
 		        <div>
-		          <a href="account.php"><img src="/group_C/public/img/user.svg" alt="account"></a>
+		          <a href="account.php"><img src="/group_C/public/img/menu.svg" alt="account"></a>
 		          <a href="addrecipe.php"><img src="/group_C/public/img/plus.svg" alt="recipe"></a>
 		        </div>
 		        <?php
@@ -121,7 +133,7 @@ $db = @mysqli_connect (localhost, "root", "root")
 
 		<div id="content-section">
 		  <div class="admin-panel"> 
-		  <p> <?php echo $type.' '.$id.' was deleted!'; ?> </p>
+		  <p> <?php echo $type.' '.$r_id.' was deleted!'; ?> </p>
 		<a href="/group_C/admin_page.php" class="go-home" style= "justify-content: center; background-color: #2595ff;"> Admin Page</a>
     	<a href="index.php" class="go-home" style= "justify-content: center;"> Home</a>
 		</div>
