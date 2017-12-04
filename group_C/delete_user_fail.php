@@ -1,37 +1,33 @@
 <?php
+
 //if cookie isnt set
 if (!isset($_COOKIE['token'])) {
   header("Location: /group_C/error.html");
   exit();
 }
-else{
-	//to get cookie name
-	$u_name = $_COOKIE['username'];
-	
-  $db = @mysqli_connect (localhost, "root", "root")
-	  Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
-	
-	@mysqli_select_db($db, "group_c")
-	  Or die("<div class='error'><p>Could not connect to database<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
-	
-	//query string
-	$SQLstring = "SELECT *
-	FROM users WHERE username = '$u_name'";
+//to get cookie name
+$u_name = $_COOKIE['username'];
 
-	//get results from db
-	$result = mysqli_query($db,$SQLstring);
-	$Row = mysqli_fetch_assoc($result);
+$db = @mysqli_connect (localhost, "root", "root")
+	Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
 
-	//if user isnt admin redirect, else show admin page
-	if($Row['admin'] != 0){
-		header("Location: /group_C/error.html");
-  		exit();
-	}
+@mysqli_select_db($db, "group_c")
+  Or die("<div class='error'><p>Could not connect to database<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
 
-	else{
-		//admin page
-				//admin page
-		echo ('
+//query string
+$SQLstring = "SELECT admin
+FROM users WHERE token = '".$_COOKIE['token']."' AND admin = 0;";
+
+//get results from db
+$result = mysqli_query($db, $SQLstring);
+
+
+//if user isnt admin redirect, else show admin page
+if($result->num_rows == 0){
+	header("Location: /group_C/error.html");
+	exit();
+}
+?>
 		<!doctype html>
 		<html lang="en">
 
@@ -59,7 +55,8 @@ else{
 		        <div>
 		          <a href="account.php"><img src="/group_C/public/img/menu.svg" alt="account"></a>
 		          <a href="addrecipe.php"><img src="/group_C/public/img/plus.svg" alt="recipe"></a>
-		        </div>');
+		        </div>
+		        <?php
 
           $is_logged_in = mysqli_query($db, 'SELECT *
           FROM users WHERE
@@ -149,8 +146,6 @@ else{
 		</body>
 		</html>
 		');
-	}
 mysqli_free_result($result);
 mysqli_close($db);
-}
 ?>

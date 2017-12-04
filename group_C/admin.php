@@ -1,12 +1,32 @@
 <?php
-$db = @mysqli_connect (localhost, "root", "root")
-	  Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
-	
-	@mysqli_select_db($db, "group_c")
-	  Or die("<div class='error'><p>Could not connect to database<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
 
-	// test 1
-	mysqli_query($db, 'SET foreign_key_checks = 0');
+//if cookie isnt set
+if (!isset($_COOKIE['token'])) {
+  header("Location: /group_C/error.html");
+  exit();
+}
+//to get cookie name
+$u_name = $_COOKIE['username'];
+
+$db = @mysqli_connect (localhost, "root", "root")
+	Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
+
+@mysqli_select_db($db, "group_c")
+  Or die("<div class='error'><p>Could not connect to database<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
+
+//query string
+$SQLstring = "SELECT admin
+FROM users WHERE token = '".$_COOKIE['token']."' AND admin = 0;";
+
+//get results from db
+$result = mysqli_query($db, $SQLstring);
+
+//if user isnt admin redirect, else show admin page
+if($result->num_rows == 0){
+	header("Location: /group_C/error.html");
+	exit();
+}
+mysqli_query($db, 'SET foreign_key_checks = 0');
 
 $check;
 $num;
@@ -22,11 +42,11 @@ if($type == 'Post')
 	$table= "Recipes";
 	$pk = "recipe_id";
 	$SQlstring1 = "DELETE
-	FROM feedback WHERE recipe_id = ".$recipe_id.";";
+	FROM feedback WHERE recipe_id = ".$id.";";
 	$SQlstring2 = "DELETE
-	FROM recipes WHERE recipe_id = ".$recipe_id.";";
+	FROM recipes WHERE recipe_id = ".$id.";";
 	mysqli_query($db, $SQlstring1);
-	$check  = mysqli_query($db, $SQlstring2);
+	$check = mysqli_query($db, $SQlstring2);
  	$num = mysqli_affected_rows($db);
  	$r_id = $id;
 }
@@ -53,7 +73,7 @@ else if($type == 'Comment')
 	$id = $_POST['del-comment-id'];
 	$table = "Feedback";
 	$SQlstring = "DELETE from feedback WHERE feedback_id=".$id.";";
-	$check = mysqli_query($db, $SQlstring4);
+	$check = mysqli_query($db, $SQlstring);
 	$num = mysqli_affected_rows($db);
 	$r_id = $id;
 }
