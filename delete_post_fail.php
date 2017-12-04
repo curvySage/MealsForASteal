@@ -29,17 +29,19 @@ else{
 	}
 
 	else{
-		//admin page
+				//admin page
 		echo ('
 		<!doctype html>
 		<html lang="en">
 
 		<head>
 		  <meta charset="UTF-8">
+		  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		  <title>Meals for a Steal</title>
 		  <link rel="stylesheet" href="public/css/styles.css">
 		  <link rel="icon" type="image/png" href="public/img/favicon.png" />
 		</head>
+
 		<body>
 		  <div id="header-section">
 		    <div class="logo">
@@ -47,7 +49,7 @@ else{
 		      <a href="index.html"><img src="public/img/logo.svg" alt="Meals for a Steal logo"></a>
 		      <div class="header-text">
 		        <span class="title">Meals for a Steal</span>
-		        <!-- <span class="current-page">Home</span>   -->
+		        <span class="current-page">Account</span>
 		      </div>
 		    </div>
 		    <div class="right-header">
@@ -56,8 +58,23 @@ else{
 		        <div>
 		          <a href="account.php"><img src="public/img/user.svg" alt="account"></a>
 		          <a href="addrecipe.html"><img src="public/img/plus.svg" alt="recipe"></a>
-		        </div>
-		        <a class="username" href="profile.html">Admin</a>
+		        </div>');
+
+          $is_logged_in = mysqli_query($db, 'SELECT *
+          FROM users WHERE
+          username = "'.$_COOKIE['username'].'"
+          AND token = "'.$_COOKIE['token'].'"'); 
+
+          $ro = mysqli_fetch_assoc($is_logged_in);
+          $user_id = $ro['user_id'];
+
+
+          if ($is_logged_in->num_rows != 0) {
+            echo '<a class="username" href="profile.php?username='.$_COOKIE['username'].'">'.$_COOKIE['username'].'</a>';
+          } else {
+            echo '<span class="username" >Not logged in</span>';
+          }
+          echo('
 		      </div>
 		    </div>
 		  </div>
