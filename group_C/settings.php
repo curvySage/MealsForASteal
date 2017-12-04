@@ -23,7 +23,7 @@
       <div class="account-selector">
         <!-- Will need to replace these links later -->
         <div>
-          <a href="account.php"><img src="/group_C/public/img/user.svg" alt="account"></a>
+          <a href="account.php"><img src="/group_C/public/img/menu.svg" alt="account"></a>
           <a href="addrecipe.php"><img src="/group_C/public/img/plus.svg" alt="recipe"></a>
         </div>
         <?php
@@ -78,17 +78,17 @@
             <input type="submit" class="input-button" id="change-password-form-oldpassword" value="DELETE" name="oldPassword" placeholder="Enter password to confirm" required>
           </form>
           <?php
-          $u_name = $_COOKIE['username'];
+          $u_token = $_COOKIE['token'];
 
           $SQLstring = "SELECT *
-            FROM users WHERE username = '$u_name'";
+            FROM users WHERE token = '$u_token'";
             //get results from db
           $result = mysqli_query($db,$SQLstring);
           $Row = mysqli_fetch_assoc($result);
 
             //if user is admin show button
             if($Row['admin'] == 0){
-             echo (' <a href="/group_C/admin_page.php" class="go-home" style= "justify-content: center; background-color: #2595ff;"> Admin Page</a> ');
+             echo (' <a href="/group_C/admin_page.php" class="admin-panel-entrance"> Admin Page</a> ');
             }
         ?>
         </div>
