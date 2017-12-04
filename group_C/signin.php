@@ -74,7 +74,7 @@ mysqli_close($db);
         <!-- Will need to replace these links later -->
         <div>
           <a href="account.php"><img src="/group_C/public/img/user.svg" alt="account"></a>
-          <a href="addrecipe.html"><img src="/group_C/public/img/plus.svg" alt="recipe"></a>
+          <a href="addrecipe.php"><img src="/group_C/public/img/plus.svg" alt="recipe"></a>
         </div>
         <?php
 
