@@ -129,14 +129,15 @@
       <div class="posts-side">
         <div class="posting-selection">
           <div>
-          <?php
+            <?php
+
             $posts_array = mysqli_query($db,
-            "SELECT sum(f.vote), r.title, r.user_id, r.created, r.image, r.recipe_id from recipes r inner join feedback f on r.recipe_id = f.recipe_id WHERE r.user_id = ".$profile_id." group by r.title order by r.created DESC");
+            "SELECT sum(f.vote), r.title, r.user_id, r.created, r.image, r.recipe_id from recipes r inner join feedback f on r.recipe_id = f.recipe_id WHERE r.user_id = ".$profile_id." group by r.title order by sum(f.vote) DESC");
             if (mysqli_num_rows($posts_array) != 0) {
               echo '
-              <a class="selected" href="profile.php?username='.$_GET['username'].'">Recent</a>
-              <a href="profile-hot.php?username='.$_GET['username'].'">Top Upvoted</a>
-            ';  
+                <a href="profile.php?username='.$_GET['username'].'">Recent</a>
+                <a class="selected" href="profile-hot.php?username='.$_GET['username'].'">Top Upvoted</a>
+              ';
             }
           ?>
           </div>
@@ -145,11 +146,14 @@
 
         <?php
 
+          $posts_array = mysqli_query($db,
+            "SELECT sum(f.vote), r.title, r.user_id, r.created, r.image, r.recipe_id from recipes r inner join feedback f on r.recipe_id = f.recipe_id WHERE r.user_id = ".$profile_id." group by r.title order by sum(f.vote) DESC");
+
+
           if (mysqli_num_rows($posts_array) == 0) {
             echo '
               <img class="sorry" src="public/img/empty_user.jpg">
               <h1>There\'s nothing here</h1>';
-
           } else {
             while ($row = mysqli_fetch_assoc($posts_array)) {
 
