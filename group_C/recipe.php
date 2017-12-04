@@ -123,7 +123,7 @@ $comments = mysqli_query($db, $q);
 
         <?php
               $vote_status_q = mysqli_query($db,
-                "SELECT vote FROM feedback where user_id = ".$user_id." and recipe_id = ".$_GET['recipe_id'].";");
+                "SELECT vote FROM feedback where user_id = ".$user_id." and recipe_id = ".$_GET['recipe_id']." and type = 'v';");
 
               $ro = mysqli_fetch_assoc($vote_status_q);
               $vote = $ro['vote'];

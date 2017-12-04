@@ -160,7 +160,7 @@
               $post_created = date("m\/d\/Y g:iA", ($row['created'] - 8 * 60 * 60));
 
               $vote_status_q = mysqli_query($db,
-                "SELECT vote FROM feedback where user_id = ".$user_id." and recipe_id = ".$row['recipe_id'].";");
+                "SELECT vote FROM feedback where user_id = ".$user_id." and recipe_id = ".$row['recipe_id']." and type = 'v';");
 
               $ro = mysqli_fetch_assoc($vote_status_q);
               $vote = $ro['vote'];

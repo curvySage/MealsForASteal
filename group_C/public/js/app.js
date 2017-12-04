@@ -99,11 +99,6 @@ $(document).ready(function(){
 
 	});
 
-	$(".thumbnail").onerror(function(){
-		this.attr("src", "/group_C/public/img/uploads/0_none.jpg");
-
-	});
-
 
 
 });

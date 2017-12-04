@@ -76,7 +76,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `created` int(11) NOT NULL,
-  `admin` tinyint(1) NOT NULL, 
+  `admin` tinyint(1) NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -138,7 +138,7 @@ ALTER TABLE `users`
 -- Constraints for table `feedback`
 --
 ALTER TABLE `feedback`
-  ADD CONSTRAINT `UserRecipeRM` FOREIGN KEY (`user_id`) REFERENCES `recipes` (`user_id`),
+  ADD CONSTRAINT `UserRecipeRM` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
   ADD CONSTRAINT `recipeRM` FOREIGN KEY (`recipe_id`) REFERENCES `recipes` (`recipe_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
