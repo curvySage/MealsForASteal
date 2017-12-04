@@ -1,3 +1,10 @@
+<?php
+  if(!isset($_COOKIE['token'])) {
+    header("Location: /group_C/account.php");
+    exit();
+  }
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -65,30 +72,41 @@
   
   <div id="content-section">
     <!-- Stuff goes here -->
-    <form action="/group_C/createrecipe.php" method="post" id="add-recipe" class="add-recipe-form" enctype="multipart/form-data">
+    <form action="/group_C/createrecipe.php" method="post" id="add-recipe" class="add-recipe-form">
       <div class="add-title">
         <label for="title">Title:
-	  <br/><span class="add-recipe-form-errors" id="title-error">&nbsp;</span>	
-	  <br/><input type="text" value="" placeholder="Title" class="title-input" title="title" name="title" id="title" />
-	</label>
+    	  <br/><span class="add-recipe-form-errors" id="title-error">&nbsp;</span>	
+    	  <br/><input type="text" value="" placeholder="Title" class="title-input" title="title" name="title" id="title" />
+    	</label>
       </div>
-      <input type="file" id="image" name="image" accept="image/*" />
-      <div class="add-photo-preview">
-	<label for="image">
-          <img src="/group_C/public/img/addphoto.svg" alt="add photo" id = "photo"/>
-	</label>
+
+
+      <div class="add-title">
+        <label for="title">Image:
+    <br/><!-- <span class="add-recipe-form-errors" id="title-error">&nbsp;</span>   -->
+    <br/><input type="text" value="" placeholder="Image URL" class="title-input" title="title" name="image" id="image" />
+  </label>
       </div>
+
+
+      <!-- <input type="file" id="image" name="image" accept="image/*" /> -->
+      <!-- <div class="add-photo-preview"> -->
+	<!-- <label for="image"> -->
+          <!-- <img src="/group_C/public/img/addphoto.svg" alt="add photo" id = "photo"/> -->
+	<!-- </label> -->
+      <!-- </div> -->
+
       <div class="add-ingredients">
         <label for="ingredients">Ingredients:
- 	  <br/><span class="add-recipe-form-errors" id="ingredient-error">&nbsp;</span>
+ 	      <br/><span class="add-recipe-form-errors" id="ingredient-error">&nbsp;</span>
           <br/><textarea type="text" value="" placeholder="Amount & Ingredient (separated by commas)" id="ingredients" name="ingredients" title="amount and ingredient"></textarea>  
-	</label>
+	   </label>
       </div>
       <div class="add-instructions">
         <label for="instructions">Instructions:
 	  <br/><span class="add-recipe-form-errors" id="instruction-error">&nbsp;</span>
 	  <br/><textarea  placeholder="Add instructions" title="add instructions" id="instructions" name="instructions"></textarea>
-	</label>
+	   </label>
       </div>
       <div class="buttons">
         <input type="submit" id="submit-btn" value="Add" class="add-button" />
