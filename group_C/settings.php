@@ -1,3 +1,31 @@
+<?php
+
+$db = @mysqli_connect (localhost, "root", "root")
+  Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
+
+@mysqli_select_db($db, "group_c")
+  Or die("<div class='error'><p>Could not connect to database<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
+
+// check if logged in user is still good
+
+$is_logged_in = mysqli_query($db, 'SELECT *
+FROM users WHERE
+username = "'.$_COOKIE['username'].'"
+AND token = "'.$_COOKIE['token'].'"'); 
+
+$ro = mysqli_fetch_assoc($is_logged_in);
+
+
+
+if ($is_logged_in->num_rows == 0) {
+  header("Location: /group_C/error.html"); /* Redirect browser */
+  exit();
+} 
+
+$user_id = $ro['user_id'];
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -28,20 +56,7 @@
         </div>
         <?php
 
-          $db = @mysqli_connect (localhost, "root", "root")
-            Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
-  
-          @mysqli_select_db($db, "group_c")
-            Or die("<div class='error'><p>Could not connect to database<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
-
           // check if logged in user is still good
-
-          $is_logged_in = mysqli_query($db, 'SELECT *
-          FROM users WHERE
-          username = "'.$_COOKIE['username'].'"
-          AND token = "'.$_COOKIE['token'].'"'); 
-
-          $ro = mysqli_fetch_assoc($is_logged_in);
           $user_id = $ro['user_id'];
 
 

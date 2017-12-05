@@ -138,7 +138,7 @@ ALTER TABLE `users`
 -- Constraints for table `feedback`
 --
 ALTER TABLE `feedback`
-  ADD CONSTRAINT `UserRecipeRM` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `UserRecipeRM` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)  ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `recipeRM` FOREIGN KEY (`recipe_id`) REFERENCES `recipes` (`recipe_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --

@@ -33,21 +33,25 @@ submitBtn.onclick = function(){
     titleErr.innerHTML = "&nbsp;";
     ingrErr.innerHTML = "&nbsp;";
     instrErr.innerHTML = "&nbsp;";
+    var bad = false;
     
     if(title.value == ""){
-	titleErr.innerHTML = "Title cannot be blank.";
+	   titleErr.innerHTML = "Title cannot be blank.";
+       bad = true;
     }
 
     if(ingredients.value == ""){
-	ingrErr.innerHTML = "Must include atleast 1 ingredient."; 
+	   ingrErr.innerHTML = "Must include atleast 1 ingredient."; 
+       bad = true;
     }
 
     if(instructions.value ==""){
-	instrErr.innerHTML = "Instructions cannot be blank.";
+	   instrErr.innerHTML = "Instructions cannot be blank.";
+       bad = true;
     }
-    else
-    {
-	return true;
+    
+    if (!bad) {
+        return true;
     }
 
     return false;

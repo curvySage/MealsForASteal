@@ -26,7 +26,6 @@ if($result->num_rows == 0){
 	header("Location: /group_C/error.html");
 	exit();
 }
-mysqli_query($db, 'SET foreign_key_checks = 0');
 
 $check;
 $num;
@@ -41,11 +40,9 @@ if($type == 'Post')
 	$id = $_POST['del-post-id'];
 	$table= "Recipes";
 	$pk = "recipe_id";
-	$SQlstring1 = "DELETE
-	FROM feedback WHERE recipe_id = ".$id.";";
 	$SQlstring2 = "DELETE
 	FROM recipes WHERE recipe_id = ".$id.";";
-	mysqli_query($db, $SQlstring1);
+	// mysqli_query($db, $SQlstring1);
 	$check = mysqli_query($db, $SQlstring2);
  	$num = mysqli_affected_rows($db);
  	$r_id = $id;
@@ -58,11 +55,7 @@ else if($type == 'User')
 	$get_r_id = mysqli_query($db, $SQlstring1);
 	$get_r_id_row = mysqli_fetch_assoc($get_r_id);
 	$id = $get_r_id_row ['user_id'];
-	$SQlstring2 = "DELETE FROM feedback WHERE user_id = ".$id.";";
-	$SQlstring3 = "DELETE FROM recipes WHERE user_id = ".$id.";";
 	$SQlstring4 = "DELETE FROM users WHERE user_id = ".$id.";";
-	mysqli_query($db, $SQlstring2);
-	mysqli_query($db, $SQlstring3);
 	$check = mysqli_query($db, $SQlstring4);
 	$num = mysqli_affected_rows($db);
 
@@ -78,9 +71,6 @@ else if($type == 'Comment')
 	$r_id = $id;
 }
 
-
- 	// test 2
-	mysqli_query($db, 'SET foreign_key_checks = 1');
 
  	if($num <= 0)
  	{

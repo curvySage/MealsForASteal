@@ -19,7 +19,6 @@
 <body>
   <div id="header-section">
     <div class="logo">
-      
       <a href="index.php"><img src="/group_C/public/img/logo.svg" alt="Meals for a Steal logo"></a>
       <div class="header-text">
         <span class="title">Meals for a Steal</span>
@@ -74,7 +73,7 @@
     
     <form action="/group_C/createrecipe.php" method="post" id="add-recipe" class="add-recipe-form">
       <div class="add-title">
-        <label for="title">Title:
+        <label for="title">Title*
     	  <br/><span class="add-recipe-form-errors" id="title-error">&nbsp;</span>	
     	  <br/><input type="text" value="" autocomplete="off" placeholder="Title" class="title-input" title="title" name="title" id="title" />
     	</label>
@@ -82,7 +81,7 @@
 
 
       <div class="add-title">
-        <label for="title">Image:
+        <label for="title">Image
     <br/><!-- <span class="add-recipe-form-errors" id="title-error">&nbsp;</span>   -->
     <br/><input type="text" value="" autocomplete="off" placeholder="Image URL" class="title-input" title="title" name="image" id="image" />
   </label>
@@ -97,13 +96,13 @@
       <!-- </div> -->
 
       <div class="add-ingredients">
-        <label for="ingredients">Ingredients:
+        <label for="ingredients">Ingredients*
  	      <br/><span class="add-recipe-form-errors" id="ingredient-error">&nbsp;</span>
           <br/><textarea type="text" value="" placeholder="Amount & Ingredient (separated by commas)" id="ingredients" name="ingredients" title="amount and ingredient"></textarea>  
 	   </label>
       </div>
       <div class="add-instructions">
-        <label for="instructions">Instructions:
+        <label for="instructions">Instructions*
 	  <br/><span class="add-recipe-form-errors" id="instruction-error">&nbsp;</span>
 	  <br/><textarea  placeholder="Add instructions" title="add instructions" id="instructions" name="instructions"></textarea>
 	   </label>

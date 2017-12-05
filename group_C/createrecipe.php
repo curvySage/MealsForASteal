@@ -2,7 +2,14 @@
 if (!isset($_COOKIE['token'])) {
     header("Location: /group_C/account.php");
     exit();
-  }
+}
+
+if (!isset($_POST['title']) || !isset($_POST['ingredients']) || !isset($_POST['instructions']) 
+  || $_POST['title'] == "" || $_POST['ingredients'] == "" || $_POST['instructions'] == "") {
+
+  header("Location: /group_C/error.html");
+    exit(); 
+}
 
 $db = @mysqli_connect (localhost, "root", "root")
   Or die("<div class='error' ><p>Could not connect to mysql.<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");

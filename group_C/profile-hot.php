@@ -147,7 +147,7 @@
         <?php
 
           $posts_array = mysqli_query($db,
-            "SELECT sum(f.vote), r.title, r.user_id, r.created, r.image, r.recipe_id from recipes r inner join feedback f on r.recipe_id = f.recipe_id WHERE r.user_id = ".$profile_id." group by r.title order by sum(f.vote) DESC");
+            "SELECT sum(f.vote), r.title, r.user_id, r.created, r.image, r.recipe_id from recipes r inner join feedback f on r.recipe_id = f.recipe_id WHERE r.user_id = ".$profile_id." group by r.title, r.user_id, r.created, r.image, r.recipe_id order by sum(f.vote) DESC");
 
 
           if (mysqli_num_rows($posts_array) == 0) {

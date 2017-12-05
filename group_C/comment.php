@@ -6,13 +6,11 @@ $db = @mysqli_connect (localhost, "root", "root")
 @mysqli_select_db($db, "group_c")
   Or die("<div class='error'><p>Could not connect to database<br>Error Code" . mysqli_connect_errno() . ": " . mysqli_connect_error() . "</p></div>");
 
-// echo "uo";
-
 $check = mysqli_query($db, 'SELECT user_id
 FROM users WHERE 
 token = "'.$_COOKIE['token'].'"'); 
 
-if ($check->num_rows == 0) {
+if ($check->num_rows == 0 || $_POST['comment'] == "" || !isset($_POST['comment'])) {
 	header("Location: /group_C/error.html"); /* Redirect browser */
 	exit();
 }
