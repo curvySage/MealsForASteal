@@ -91,8 +91,6 @@
           $vote_status_q = mysqli_query($db,
             "SELECT vote FROM feedback where user_id = ".$user_id." and recipe_id = ".$row['recipe_id']." and vote = 'v';");
 
-          echo "SELECT vote FROM feedback where user_id = ".$user_id." and recipe_id = ".$row['recipe_id']." and vote = 'v';";
-
           $ro = mysqli_fetch_assoc($vote_status_q);
           $vote = $ro['vote'];
 
