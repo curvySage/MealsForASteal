@@ -849,6 +849,17 @@ label {
       }
     }
   }
+  .add-recipe-form {
+    textarea {
+      width: 18rem; 
+    }
+    
+    .add-title {
+      .title-input {
+        width: 18rem;
+      }
+    }
+  }
 }
 
 

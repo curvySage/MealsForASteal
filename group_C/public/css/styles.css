@@ -755,6 +755,12 @@ CONTENT SECTION
   .add-recipe .add-recipe-instructions .instructions {
     width: 300px;
   }
+  .add-recipe-form textarea {
+    width: 18rem;
+  }
+  .add-recipe-form .add-title .title-input {
+    width: 18rem;
+  }
 }
 
 /* -----------------------------
