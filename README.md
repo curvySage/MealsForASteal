@@ -23,3 +23,23 @@ When using MAMP or similar Apache Server Application (LAMP, WAMP), consider the 
 Once server is setup, initialize your database
  * phpMyAdmin is useful for quickly looking at your local database
  * run the database.sql migragation, which also has some prefilled data
+
+## Screenshots:
+
+### Homepage:
+![Homepage](https://user-images.githubusercontent.com/11904444/37320629-d8152876-2631-11e8-9e8e-aeceeacd0626.png)
+
+### Profile page:
+![Profile Page](https://user-images.githubusercontent.com/11904444/37320631-d87ec20e-2631-11e8-9d38-7c2fa9b2e132.png)
+
+### Add Recipe page:
+![Add Recipe](https://user-images.githubusercontent.com/11904444/37320633-d8978e42-2631-11e8-8084-affb7546a5af.png)
+
+### Recipe Details page:
+![Recipe Details](https://user-images.githubusercontent.com/11904444/37320635-d8d91934-2631-11e8-80fd-374075e2be03.png)
+
+### Account page:
+![Account](https://user-images.githubusercontent.com/11904444/37320634-d8b1a98a-2631-11e8-9368-1c5864db248d.png)
+
+### Admin page:
+![Admin](https://user-images.githubusercontent.com/11904444/37320759-6b839278-2632-11e8-9921-b3ed5b52be2e.png)
