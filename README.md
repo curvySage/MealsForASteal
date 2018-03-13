@@ -39,7 +39,7 @@ Once server is setup, initialize your database
 ![Recipe Details](https://user-images.githubusercontent.com/11904444/37320958-767edc18-2633-11e8-8d48-c04cf743931d.png)
 
 ### Account page:
-![Account](https://user-images.githubusercontent.com/11904444/37320955-74b5bbfe-2633-11e8-816b-583775b810d5.png])
+![Account](https://user-images.githubusercontent.com/11904444/37320955-74b5bbfe-2633-11e8-816b-583775b810d5.png)
 
 ### Admin page:
 ![Admin](https://user-images.githubusercontent.com/11904444/37320759-6b839278-2632-11e8-9921-b3ed5b52be2e.png)
