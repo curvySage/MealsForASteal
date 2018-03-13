@@ -26,20 +26,20 @@ Once server is setup, initialize your database
 
 ## Screenshots:
 
-### Homepage:
-![Homepage](https://user-images.githubusercontent.com/11904444/37320629-d8152876-2631-11e8-9e8e-aeceeacd0626.png)
+### Homepage:png
+![Homepage](https://user-images.githubusercontent.com/11904444/37320966-7a0ffc4a-2633-11e8-9f48-29d9dc5dd33d.png)
 
 ### Profile page:
-![Profile Page](https://user-images.githubusercontent.com/11904444/37320631-d87ec20e-2631-11e8-9d38-7c2fa9b2e132.png)
+![Profile Page](https://user-images.githubusercontent.com/11904444/37320963-79c8b59c-2633-11e8-9304-774847df2427.png)
 
 ### Add Recipe page:
-![Add Recipe](https://user-images.githubusercontent.com/11904444/37320633-d8978e42-2631-11e8-8084-affb7546a5af.png)
+![Add Recipe](https://user-images.githubusercontent.com/11904444/37320965-79f3773c-2633-11e8-8b1d-18cfdf9e81d3.png)
 
 ### Recipe Details page:
-![Recipe Details](https://user-images.githubusercontent.com/11904444/37320635-d8d91934-2631-11e8-80fd-374075e2be03.png)
+![Recipe Details](https://user-images.githubusercontent.com/11904444/37320958-767edc18-2633-11e8-8d48-c04cf743931d.png)
 
 ### Account page:
-![Account](https://user-images.githubusercontent.com/11904444/37320634-d8b1a98a-2631-11e8-9368-1c5864db248d.png)
+![Account](https://user-images.githubusercontent.com/11904444/37320955-74b5bbfe-2633-11e8-816b-583775b810d5.png])
 
 ### Admin page:
 ![Admin](https://user-images.githubusercontent.com/11904444/37320759-6b839278-2632-11e8-9921-b3ed5b52be2e.png)
