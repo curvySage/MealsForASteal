@@ -7,7 +7,7 @@ College   students   often   are   stretched   financially   --   with   tuition
 ### Project Purpose
 Our   application,   Meals   for   a   Steal,   will   serve   as   a   platform   where   users   may   post   recipes   that   are affordable.   It   will   serve   as   a   convenient   virtual   cookbook   for   those   looking   to   make   a   delicious   and affordable   home   cooked   meal.   This   is   advantageous   over   existing   recipe   sites   because   often   times,   other recipe   sites   do   not   take   price   into   account.
 
-#### Note:
+#### Developer's Note:
 
 When using Scout/Scss, select the following for environment:
 
